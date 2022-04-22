@@ -1,0 +1,261 @@
+.total {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  padding: 10px;
+  gap: 30px;
+}
+
+.goBackPage,
+.goBackPage a {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px 10px 0 15px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.container {
+  padding: 0 2rem;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  min-height: 100%;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: scale(.5, .5);
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.grid input[type="checkbox"] {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.contentBox.activeM label .inputText {
+  background-color: rgb(168, 168, 168);
+  color: #ffffff;
+  border: 1px solid #0070f3;
+  font-family: inherit;
+  font-size: 1.8rem;
+  padding: 3rem 2rem 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  width: 100%;
+}
+
+.enabled,
+.enabled label {
+  display: flex;
+  justify-content: start;
+  padding: 0 50px 0 10px;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.contentBox {
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 2fr);
+  flex-wrap: wrap;
+  max-width: 800px;
+  width: 55vw;
+}
+
+.title {
+  margin: 0 0 20px 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.input {
+  margin: 1rem;
+  padding: 10px 10px;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+}
+
+.heading-secondary {
+  font-size: 3rem;
+}
+
+.heading-primary {
+  font-size: 5rem;
+}
+
+.signup-container,
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.signup-container {
+  width: 100vw;
+  padding: 10rem 10rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
+.signup-form {
+  max-width: 45rem;
+  width: 100%;
+}
+
+.text-mute {
+  color: #aaa;
+}
+
+.inputText {
+  font-family: inherit;
+  font-size: 1.8rem;
+  padding: 3rem 4.5rem 1rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  background: #eee;
+  width: 100%;
+}
+
+.inputText:focus {
+  outline-color: #2196f3;
+}
+
+.btn {
+  padding: 2rem 3rem;
+  border: none;
+  background: #2196f3;
+  color: #fff;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.btnLogin {
+  width: 54%;
+  margin-top: 2rem;
+  box-shadow: 0 5px 5px #00000020;
+}
+
+.btnLogin:active {
+  box-shadow: none;
+}
+
+.btnLogin:hover {
+  background: #2180f9;
+}
+
+.inp {
+  position: relative;
+}
+
+.label {
+  pointer-events: none;
+
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: #00000070;
+  font-weight: 500;
+  font-size: 1.8rem;
+
+  transition: all 0.2s;
+  transform-origin: left;
+}
+
+.inputText:not(:placeholder-shown)+.label,
+.inputText:focus+.label {
+  top: 0.7rem;
+  transform: scale(0.75);
+}
+
+.inputText:focus+.label {
+  color: #2196f3;
+}
+
+.inputIcon {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #00000070;
+}
+
+.input-icon-password {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 700px) {
+  .main {
+    transform: scale(.5, .5);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .signup-container {
+    padding: 5rem;
+  }
+
+  .main {
+    transform: scale(1.5, 1.5);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+
+  .inputText:not(:placeholder-shown)+.label,
+  .inputText:focus+.label {
+    top: 0.6rem;
+    transform: scale(2, 2);
+  }
+
+  .label {
+    font-size: 1.9rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .signup-container {
+    grid-column: 1 / 3;
+    grid-row: 1/3;
+  }
+
+  .welcome-container {
+    display: none;
+  }
+}
