@@ -38,17 +38,17 @@ const Home: NextPage = () => {
             </a>
           </Link>
 
-          <Link href="/">
+          <Link href="/furukawa">
             <a className={styles.card}>
-              <h2>FUTURO &rarr;</h2>
-              <p>Implemetação futura!{'\n'}Implemetação futura!</p>
+              <h2>Furukawa &rarr;</h2>
+              <p>Gera template para instalação de onu Furukawa</p>
             </a>
           </Link>
 
-          <Link href="/">
+          <Link href="/furukawa/remove">
             <a className={styles.card}>
-              <h2>FUTURO &rarr;</h2>
-              <p>Implemetação futura!{'\n'}Implemetação futura!</p>
+              <h2>Furukawa &rarr;</h2>
+              <p>Gera template para retirar da OLT onu Furukawa.</p>
             </a>
           </Link>
 
