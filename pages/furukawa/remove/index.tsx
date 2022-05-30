@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Link from "next/link";
 import { useState } from "react";
-import copy from "copy-to-clipboard";
+import CopyToClipboard from "copy-to-clipboard";
 
 import {
   CgArrowLeft as ArrowLeft,
@@ -15,17 +15,17 @@ export default function remove() {
   const [ PonNumber, setPonNumber ] = useState(0);
   const [ OnuNumber, setOnuNumber ] = useState(0);
 
-  function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
+  async function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const template = `conf t
-gpon
-gpon-olt ${PonNumber}
-no onu ${OnuNumber}
-write memory
-en
-`;
+      gpon
+      gpon-olt ${PonNumber}
+      no onu ${OnuNumber}
+      write memory
+      en
+    `;
 
-    copy(template);
+    await CopyToClipboard(template);
     alert("Copied to clipboard");
   }
 
@@ -72,7 +72,13 @@ en
                 />
                 <span className={styles.label}>ONU</span>
                 <span className={styles.inputIcon}>
-                  <ONUIcon width={10} height={10} />
+                  <ONUIcon style={{
+                      height: '2.5rem',
+                      width: '2.5rem'
+                    }}
+                    width={20}
+                    height={20}
+                  />
                 </span>
               </label>
             </div>
