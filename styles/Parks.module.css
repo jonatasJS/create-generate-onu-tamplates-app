@@ -277,6 +277,12 @@
   cursor: pointer;
 }
 
+
+@media only screen and (max-width: 1000px) {
+  .contentBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 /* @media only screen and (min-width: 700px) {
   .main {
     transform: scale(.5, .5);
