@@ -1,8 +1,14 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { CgArrowLeft as ArrowLeft, CgRename as HostNameIcon } from "react-icons/cg";
-import { AiOutlineUserSwitch as UserIconSwitch, AiOutlineUser as UserIcon } from "react-icons/ai";
+import {
+  CgArrowLeft as ArrowLeft,
+  CgRename as HostNameIcon,
+} from "react-icons/cg";
+import {
+  AiOutlineUserSwitch as UserIconSwitch,
+  AiOutlineUser as UserIcon,
+} from "react-icons/ai";
 import { BiPlanet as PlanetIcon } from "react-icons/bi";
 import { RiLockPasswordLine as PasswordIcon } from "react-icons/ri";
 
@@ -31,12 +37,15 @@ export default function parks() {
   return (
     <div className={styles.total}>
       <Link href="/">
-          <a className={styles.goBackPage}>
-            <ArrowLeft width={20} height={20} /> HOME
-          </a>
+        <a className={styles.goBackPage}>
+          <ArrowLeft width={20} height={20} /> HOME
+        </a>
       </Link>
       <div className={styles.container}>
-        <form onSubmit={generateTamplate} className={styles.main}>
+        <div className={styles.container}>
+          <h1 className={styles.title}>Em construção...</h1>
+        </div>
+        {/* <form onSubmit={generateTamplate} className={styles.main}>
           <h1 className={styles.title}>Parks</h1>
 
           <div className={styles.grid}>
@@ -93,12 +102,11 @@ export default function parks() {
             
           </div>
           <button className={`${styles.btn} ${styles.btnLogin}`}>Copiar</button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
 }
-
 
 /**
  * 

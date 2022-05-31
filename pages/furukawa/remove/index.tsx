@@ -14,19 +14,21 @@ import styles from "../../../styles/Parks.module.css";
 export default function remove() {
   const [ PonNumber, setPonNumber ] = useState(0);
   const [ OnuNumber, setOnuNumber ] = useState(0);
+  const [ statsCopied, setStatsCopied ] = useState(false);
 
   async function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const template = `conf t
-      gpon
-      gpon-olt ${PonNumber}
-      no onu ${OnuNumber}
-      write memory
-      en
-    `;
+gpon
+gpon-olt ${PonNumber}
+no onu ${OnuNumber}
+write memory
+en
+`;
 
     await CopyToClipboard(template);
-    alert("Copied to clipboard");
+    setStatsCopied(true);
+    setTimeout(() => setStatsCopied(false), 2000);
   }
 
   return (
@@ -85,9 +87,10 @@ export default function remove() {
           </div>
           <button
             type="submit"
+            style={statsCopied ? { backgroundColor: "#00ff00", color: '#363636', fontWeight: 'bold' } : {}}
             className={`${styles.btn} ${styles.btnLogin}`}
           >
-            Copiar
+            {statsCopied ? "Copiado!" : "Gerar Template"}
           </button>
         </form>
       </div>
