@@ -32,14 +32,14 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
           <Link href="/parks">
-            <a className={styles.card}>
+            <a style={{ opacity: .5, cursor: 'not-allowed' }} className={styles.card}>
               <h2>Parks &rarr;</h2>
               <p>Gera template para instalação de onu Parks.</p>
             </a>
           </Link>
 
           <Link href="/furukawa">
-            <a className={styles.card}>
+            <a style={{ opacity: .5, cursor: 'not-allowed' }} className={styles.card}>
               <h2>Furukawa &rarr;</h2>
               <p>Gera template para instalação de onu Furukawa</p>
             </a>
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
           </Link>
 
           <Link href="/">
-            <a className={styles.card}>
+            <a style={{ opacity: .5, cursor: 'not-allowed' }} className={styles.card}>
               <h2>FUTURO &rarr;</h2>
               <p>Implemetação futura!{'\n'}Implemetação futura!</p>
             </a>
