@@ -25,7 +25,7 @@ const Home: NextPage = () => {
           Qualquer bug ou problema{": "}
           <code className={styles.code}>
             <Link href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20estou%20com%20problema%20no%20gerador%20de%20templates!">
-              <a target={"_blank"}>Jônatas</a>
+              <a target={"_blank"}>Jônatas - NOC 1</a>
             </Link>
           </code>
         </p>
