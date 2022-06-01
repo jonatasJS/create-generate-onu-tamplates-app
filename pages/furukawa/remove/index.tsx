@@ -12,14 +12,16 @@ import { FaServer as OLTIcon } from "react-icons/fa";
 import styles from "../../../styles/Parks.module.css";
 
 export default function remove() {
-  const [ PonNumber, setPonNumber ] = useState(0);
-  const [ OnuNumber, setOnuNumber ] = useState(0);
+  const [ PonNumber, setPonNumber ] = useState<number | string>(0 || '');
+  const [ OnuNumber, setOnuNumber ] = useState<number | string>(0 || '');
   const [ statsCopied, setStatsCopied ] = useState(false);
 
   async function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const template = `conf t\ngpon\ngpon-olt ${PonNumber}\nno onu ${OnuNumber}\nwrite memory\nen\n\n`;
 
+    setPonNumber('');
+    setOnuNumber('');
     await CopyToClipboard(template);
     setStatsCopied(true);
     setTimeout(() => setStatsCopied(false), 2000);
@@ -46,6 +48,7 @@ export default function remove() {
                 <input
                   required
                   type="number"
+                  value={PonNumber}
                   onChange={e => setPonNumber(parseInt(e.target.value))}
                   className={styles.inputText}
                   placeholder="&nbsp;"
@@ -63,6 +66,7 @@ export default function remove() {
                   required
                   onChange={e => setOnuNumber(parseInt(e.target.value))}
                   type="number"
+                  value={OnuNumber}
                   className={styles.inputText}
                   placeholder="&nbsp;"
                 />
