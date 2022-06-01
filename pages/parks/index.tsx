@@ -3,14 +3,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
   CgArrowLeft as ArrowLeft,
-  CgRename as HostNameIcon,
 } from "react-icons/cg";
-import {
-  AiOutlineUserSwitch as UserIconSwitch,
-  AiOutlineUser as UserIcon,
-} from "react-icons/ai";
-import { BiPlanet as PlanetIcon } from "react-icons/bi";
-import { RiLockPasswordLine as PasswordIcon } from "react-icons/ri";
 
 import styles from "../../styles/Parks.module.css";
 
@@ -42,9 +35,7 @@ export default function parks() {
         </a>
       </Link>
       <div className={styles.container}>
-        <div className={styles.container}>
           <h1 className={styles.title}>Em construção...</h1>
-        </div>
         {/* <form onSubmit={generateTamplate} className={styles.main}>
           <h1 className={styles.title}>Parks</h1>
 

@@ -18,13 +18,7 @@ export default function remove() {
 
   async function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const template = `conf t
-gpon
-gpon-olt ${PonNumber}
-no onu ${OnuNumber}
-write memory
-en
-`;
+    const template = `conf t\ngpon\ngpon-olt ${PonNumber}\nno onu ${OnuNumber}\nwrite memory\nen\n\n`;
 
     await CopyToClipboard(template);
     setStatsCopied(true);
