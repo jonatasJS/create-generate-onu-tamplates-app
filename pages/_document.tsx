@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/next-script-for-ga */
+/* eslint-disable @next/next/no-title-in-document-head */
 import Document, {
   DocumentContext,
   Html,
@@ -5,10 +7,6 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-
-declare var Window: {
-  dataLayer: any;
-};
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
