@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
@@ -32,44 +33,65 @@ const Home: NextPage = () => {
 
         <div className={styles.grid}>
           <Link href="/parks">
-            <a style={{ opacity: .5, cursor: 'not-allowed' }} className={styles.card}>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              style={{ opacity: 0.5, cursor: "not-allowed" }}
+              className={styles.card}
+            >
               <h2>Parks &rarr;</h2>
               <p>Gera template para instalação de onu Parks.</p>
-            </a>
+            </motion.a>
           </Link>
 
           <Link href="/furukawa">
-            <a style={{ opacity: .5, cursor: 'not-allowed' }} className={styles.card}>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              style={{ opacity: 0.5, cursor: "not-allowed" }}
+              className={styles.card}
+            >
               <h2>Furukawa &rarr;</h2>
               <p>Gera template para instalação de onu Furukawa</p>
-            </a>
+            </motion.a>
           </Link>
 
           <Link href="/furukawa/remove">
-            <a className={styles.card}>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className={styles.card}
+            >
               <h2>Furukawa &rarr;</h2>
               <p>Gera template para retirar da OLT onu Furukawa.</p>
-            </a>
+            </motion.a>
           </Link>
 
           <Link href="/">
-            <a style={{ opacity: .5, cursor: 'not-allowed' }} className={styles.card}>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              style={{ opacity: 0.5, cursor: "not-allowed" }}
+              className={styles.card}
+            >
               <h2>FUTURO &rarr;</h2>
-              <p>Implemetação futura!{'\n'}Implemetação futura!</p>
-            </a>
+              <p>Implemetação futura!{"\n"}Implemetação futura!</p>
+            </motion.a>
           </Link>
         </div>
       </main>
 
       <footer className={styles.footer}>
         <Link href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20gostaria%20de%20verificar%20um%20or%C3%A7amento.">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a target="_blank" rel="noopener noreferrer">
             Powered by{" "}
             <span className={styles.logo}>
-              <Image src="/jonatas.svg" alt="Criador por Jônatas" width={72} height={16} />
+              <Image
+                src="/jonatas.svg"
+                alt="Criador por Jônatas"
+                width={72}
+                height={16}
+              />
             </span>
           </a>
         </Link>
