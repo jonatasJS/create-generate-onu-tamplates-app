@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/rules-of-hooks */
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import {
@@ -30,9 +31,13 @@ export default function parks() {
   return (
     <div className={styles.total}>
       <Link href="/">
-        <a className={styles.goBackPage}>
+        <motion.a
+          whileHover={{ scale: 1.1, zIndex: 9999 }}
+          whileTap={{ scale: 0.9 }}
+          className={styles.goBackPage}
+        >
           <ArrowLeft width={20} height={20} /> HOME
-        </a>
+        </motion.a>
       </Link>
       <div className={styles.container}>
           <h1 className={styles.title}>Em construção...</h1>

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import CopyToClipboard from "copy-to-clipboard";
+import { motion } from "framer-motion";
 
 import {
   CgArrowLeft as ArrowLeft,
@@ -30,9 +31,13 @@ export default function remove() {
   return (
     <div className={styles.total}>
       <Link href="/">
-        <a className={styles.goBackPage}>
+        <motion.a
+          whileHover={{ scale: 1.1, zIndex: 9999 }}
+          whileTap={{ scale: 0.9 }}
+          className={styles.goBackPage}
+        >
           <ArrowLeft width={20} height={20} /> HOME
-        </a>
+        </motion.a>
       </Link>
       <div className={styles.container}>
         <title>Desautorizar uma Furukawa</title>

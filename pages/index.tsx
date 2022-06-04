@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         <div className={styles.grid}>
           <Link href="/parks">
             <motion.a
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.1, zIndex: 9999 }}
               whileTap={{ scale: 0.9 }}
               style={{ opacity: 0.5, cursor: "not-allowed" }}
               className={styles.card}
@@ -46,7 +46,7 @@ const Home: NextPage = () => {
 
           <Link href="/furukawa">
             <motion.a
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.1, zIndex: 9999 }}
               whileTap={{ scale: 0.9 }}
               style={{ opacity: 0.5, cursor: "not-allowed" }}
               className={styles.card}
@@ -58,7 +58,7 @@ const Home: NextPage = () => {
 
           <Link href="/furukawa/remove">
             <motion.a
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.1, zIndex: 9999 }}
               whileTap={{ scale: 0.9 }}
               className={styles.card}
             >
@@ -69,7 +69,7 @@ const Home: NextPage = () => {
 
           <Link href="/">
             <motion.a
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.1, zIndex: 9999 }}
               whileTap={{ scale: 0.9 }}
               style={{ opacity: 0.5, cursor: "not-allowed" }}
               className={styles.card}
