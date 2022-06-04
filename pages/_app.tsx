@@ -7,16 +7,22 @@ import { motion } from "framer-motion";
 import GlobalStyle from "../styles/globalStyle";
 import theme from "../styles/theme/light";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps, router}: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <motion.div initial="pageInitial" animate="pageAnimate" variants={{
-        
-      }} exit="exit">
+    <motion.div
+      key={router.pathname}
+      initial="pageInitial"
+      animate="pageAnimate"
+      variants={{
+        pageInitial: { opacity: 0, x: -100 },
+        pageAnimate: { opacity: 1, x: 0 },
+      }}
+    >
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Component {...pageProps} />
-      </motion.div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </motion.div>
   );
 }
 
