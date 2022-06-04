@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/next-script-for-ga */
 /* eslint-disable @next/next/no-title-in-document-head */
 import Document, {
@@ -7,6 +8,7 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
+import Link from "next/link";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -32,7 +34,7 @@ class MyDocument extends Document {
                 gtag('js', new Date());
 
                 gtag('config', 'G-H2B3G6Y4J8');
-              `
+              `,
             }}
           ></script>
           <meta charSet="utf-8" />

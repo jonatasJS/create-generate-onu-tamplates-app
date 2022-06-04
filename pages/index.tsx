@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
 
@@ -80,22 +79,6 @@ const Home: NextPage = () => {
           </Link>
         </div>
       </main>
-
-      <footer className={styles.footer}>
-        <Link href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20gostaria%20de%20verificar%20um%20or%C3%A7amento.">
-          <a target="_blank" rel="noopener noreferrer">
-            Powered by{" "}
-            <span className={styles.logo}>
-              <Image
-                src="/jonatas.svg"
-                alt="Criador por Jônatas"
-                width={72}
-                height={16}
-              />
-            </span>
-          </a>
-        </Link>
-      </footer>
     </div>
   );
 };

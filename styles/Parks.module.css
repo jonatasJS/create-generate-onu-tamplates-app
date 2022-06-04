@@ -93,6 +93,10 @@
   border: 1px solid #ccc;
 }
 
+.grid .card {
+  background-color: #fff !important;
+}
+
 .contentBox.activeM label .inputText {
   background-color: rgb(168, 168, 168);
   color: #ffffff;
