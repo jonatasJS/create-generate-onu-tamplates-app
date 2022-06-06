@@ -26,14 +26,17 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           pageInitial: {
             opacity: 0,
             x: -100,
+            // scale: 0,
           },
           pageAnimate: {
             opacity: 1,
             x: 0,
+            // scale: 1,
           },
           pageExit: {
             opacity: 0,
             x: "15vw",
+            // scale: 0,
           },
         }}
       >

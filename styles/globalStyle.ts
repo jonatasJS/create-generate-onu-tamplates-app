@@ -12,12 +12,18 @@ export default createGlobalStyle`
   }
 
   a,
+  p,
+  h1,
+  h2,
+  h3,
+  span,
   input[type="number"],
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     color: inherit;
     text-decoration: none;
     -webkit-appearance: none;
+    overflow-y: hidden;
   }
 
   * {
