@@ -41,7 +41,6 @@ class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <title>Gerador de template para configuração!</title>
           <meta name="theme-color" content="#000000" />
           {/* <Head /> */}
         </Head>

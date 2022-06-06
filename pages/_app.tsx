@@ -8,6 +8,7 @@ import GlobalStyle from "../styles/globalStyle";
 import theme from "../styles/theme/light";
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -20,7 +21,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         transition={{
           type: "spring",
           stiffness: 700,
-          damping: 30
+          damping: 30,
         }}
         variants={{
           pageInitial: {
@@ -41,6 +42,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         }}
       >
         <ThemeProvider theme={theme}>
+          <Head>
+            <title>Gerador de template para configuração!</title>
+          </Head>
+          
           <GlobalStyle />
           <Component {...pageProps} />
 
