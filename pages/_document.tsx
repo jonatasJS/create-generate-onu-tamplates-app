@@ -8,7 +8,6 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-import Link from "next/link";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
