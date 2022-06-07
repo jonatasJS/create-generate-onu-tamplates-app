@@ -96,6 +96,10 @@ export default function remove() {
             {statsCopied ? "Copiado!" : "Gerar Template"}
           </button>
         </form>
+
+        <div>
+          
+        </div>
       </div>
     </div>
   );
