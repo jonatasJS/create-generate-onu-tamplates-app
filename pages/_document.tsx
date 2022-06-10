@@ -36,6 +36,7 @@ class MyDocument extends Document {
               `,
             }}
           ></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
           <meta charSet="utf-8" />
           <meta
             name="viewport"
