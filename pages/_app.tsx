@@ -78,6 +78,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
               fontSize: "30px",
               boxShadow: "2px 2px 2px #999",
               zIndex: 9999,
+              display: "grid",
+              alignItems: "center",
+              justifyItems: "center",
             }} target="_blank">
               <i className="fa fa-whatsapp my-float"></i>
             </a>
