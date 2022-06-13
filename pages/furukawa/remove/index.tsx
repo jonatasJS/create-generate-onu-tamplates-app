@@ -106,6 +106,70 @@ export default function remove() {
 }
 
 /**
+ *     <Total>
+      <Link href="/">
+        <motion.a
+          whileHover={{ scale: 1.1, zIndex: 9999 }}
+          whileTap={{ scale: 0.9 }}
+          className={styles.goBackPage}
+        >
+          <ArrowLeft width={20} height={20} /> HOME
+        </motion.a>
+      </Link>
+      <Container>
+        <title>Desautorizar uma Furukawa</title>
+        <Main onSubmit={generateTamplate}>
+          <Title>Desautorizar uma Furukawa</Title>
+
+          <Grid>
+            <ContentBox>
+               <Inp>
+               <InputText
+                 required
+                 type="number"
+                 value={PonNumber}
+                 onChange={e => setPonNumber(parseInt(e.target.value))}
+                 placeholder="&nbsp;"
+               />
+               <Label>PON</Label>
+               <InputIcon>
+                 <OLTIcon width={10} height={10} />
+               </InputIcon>
+             </Inp>
+             <Inp>
+               <InputText
+                 required
+                 onChange={e => setOnuNumber(parseInt(e.target.value))}
+                 type="number"
+                 value={OnuNumber}
+                 placeholder="&nbsp;"
+               />
+               <Label>ONU</Label>
+               <InputIcon>
+                 <ONUIcon style={{
+                     height: '2.5rem',
+                     width: '2.5rem'
+                   }}
+                   width={20}
+                   height={20}
+                 />
+               </InputIcon>
+             </Inp>
+           </ContentBox>
+         </Grid>
+         <Btn
+           type="submit"
+           style={statsCopied ? { backgroundColor: "#00ff00", color: '#363636', fontWeight: 'bold' } : {}}
+           className={`${styles.btn} ${styles.btnLogin}`}
+         >
+           {statsCopied ? "Copiado!" : "Gerar Template"}
+         </Btn>
+       </Main>
+     </Container>
+   </Total>
+ */
+
+/**
  * 
  * <div className={styles.enabled}>
               <label>

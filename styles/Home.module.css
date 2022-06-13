@@ -41,7 +41,7 @@
 
 .title {
   margin: 0;
-  line-height: 1.15;
+  /* line-height: 1.15; */
   font-size: 4rem;
 }
 
@@ -52,7 +52,7 @@
 
 .description {
   margin: 4rem 0;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   font-size: 1.5rem;
 }
 
@@ -61,7 +61,7 @@
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+  font-family: "Inter", Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
@@ -100,7 +100,7 @@
 .card p {
   margin: 0;
   font-size: 1.25rem;
-  line-height: 1.5;
+  /* line-height: 1.5; */
 }
 
 .logo {

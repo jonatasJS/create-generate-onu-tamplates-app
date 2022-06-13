@@ -20,7 +20,6 @@ class MyDocument extends Document {
     return (
       <Html lang="pt-BR">
         <Head>
-          {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-H2B3G6Y4J8"
@@ -29,6 +28,7 @@ class MyDocument extends Document {
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
+                console.log(window.dataLayer);
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
@@ -36,14 +36,20 @@ class MyDocument extends Document {
               `,
             }}
           ></script>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+          <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+          />
           <meta charSet="utf-8" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           <meta name="theme-color" content="#000000" />
-          {/* <Head /> */}
+          <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />
