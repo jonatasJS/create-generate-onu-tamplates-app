@@ -4,25 +4,23 @@ import { useState } from "react";
 import CopyToClipboard from "copy-to-clipboard";
 import { motion } from "framer-motion";
 
-import {
-  CgArrowLeft as ArrowLeft,
-  CgModem as ONUIcon
-} from "react-icons/cg";
+import { CgArrowLeft as ArrowLeft, CgModem as ONUIcon } from "react-icons/cg";
 import { FaServer as OLTIcon } from "react-icons/fa";
 
 import styles from "../../../styles/Parks.module.css";
+import Head from "next/head";
 
 export default function remove() {
-  const [ PonNumber, setPonNumber ] = useState<number | string>(0 || '');
-  const [ OnuNumber, setOnuNumber ] = useState<number | string>(0 || '');
-  const [ statsCopied, setStatsCopied ] = useState(false);
+  const [PonNumber, setPonNumber] = useState<number | string>(0 || "");
+  const [OnuNumber, setOnuNumber] = useState<number | string>(0 || "");
+  const [statsCopied, setStatsCopied] = useState(false);
 
   async function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const template = `en\nconf t\ngpon\ngpon-olt ${PonNumber}\nno onu ${OnuNumber}\nwrite memory\nen\n\n`;
 
-    setPonNumber('');
-    setOnuNumber('');
+    setPonNumber("");
+    setOnuNumber("");
     await CopyToClipboard(template);
     setStatsCopied(true);
     setTimeout(() => setStatsCopied(false), 2000);
@@ -30,6 +28,9 @@ export default function remove() {
 
   return (
     <div className={styles.total}>
+      <Head>
+        <title>Desautorizar uma Furukawa</title>
+      </Head>
       <Link href="/">
         <motion.a
           whileHover={{ scale: 1.1, zIndex: 9999 }}
@@ -40,7 +41,6 @@ export default function remove() {
         </motion.a>
       </Link>
       <div className={styles.container}>
-        <title>Desautorizar uma Furukawa</title>
         <form onSubmit={generateTamplate} className={styles.main}>
           <h1 className={styles.title}>Desautorizar uma Furukawa</h1>
 
@@ -54,7 +54,7 @@ export default function remove() {
                   required
                   type="number"
                   value={PonNumber}
-                  onChange={e => setPonNumber(parseInt(e.target.value))}
+                  onChange={(e) => setPonNumber(parseInt(e.target.value))}
                   className={styles.inputText}
                   placeholder="&nbsp;"
                 />
@@ -69,7 +69,7 @@ export default function remove() {
               <label className={styles.inp}>
                 <input
                   required
-                  onChange={e => setOnuNumber(parseInt(e.target.value))}
+                  onChange={(e) => setOnuNumber(parseInt(e.target.value))}
                   type="number"
                   value={OnuNumber}
                   className={styles.inputText}
@@ -77,9 +77,10 @@ export default function remove() {
                 />
                 <span className={styles.label}>ONU</span>
                 <span className={styles.inputIcon}>
-                  <ONUIcon style={{
-                      height: '2.5rem',
-                      width: '2.5rem'
+                  <ONUIcon
+                    style={{
+                      height: "2.5rem",
+                      width: "2.5rem",
                     }}
                     width={20}
                     height={20}
@@ -90,16 +91,22 @@ export default function remove() {
           </div>
           <button
             type="submit"
-            style={statsCopied ? { backgroundColor: "#00ff00", color: '#363636', fontWeight: 'bold' } : {}}
+            style={
+              statsCopied
+                ? {
+                    backgroundColor: "#00ff00",
+                    color: "#363636",
+                    fontWeight: "bold",
+                  }
+                : {}
+            }
             className={`${styles.btn} ${styles.btnLogin}`}
           >
             {statsCopied ? "Copiado!" : "Gerar Template"}
           </button>
         </form>
 
-        <div>
-          
-        </div>
+        <div></div>
       </div>
     </div>
   );

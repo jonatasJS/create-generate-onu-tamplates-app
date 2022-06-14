@@ -39,7 +39,13 @@ export default function parks() {
           <ArrowLeft width={20} height={20} /> HOME
         </motion.a>
       </Link>
-      <div className={styles.container}>
+      <div className={styles.container} style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+      }}>
           <h1 className={styles.title}>Em construção...</h1>
         {/* <form onSubmit={generateTamplate} className={styles.main}>
           <h1 className={styles.title}>Parks</h1>

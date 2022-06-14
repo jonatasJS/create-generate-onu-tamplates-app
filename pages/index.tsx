@@ -17,17 +17,17 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           Gerador de template para{" "}
           <Link href="/">
-            <a>configuração!</a>
-          </Link>
+            <a>configuração</a>
+          </Link>!
         </h1>
 
         <p className={styles.description}>
           Qualquer bug ou problema{": "}
-          <code className={styles.code}>
+          <span className={styles.code}>
             <Link href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20estou%20com%20problema%20no%20gerador%20de%20templates!">
               <a target={"_blank"}>Jônatas - NOC 1</a>
             </Link>
-          </code>
+          </span>
         </p>
 
         <div className={styles.grid}>
