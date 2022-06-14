@@ -47,7 +47,6 @@ const Home: NextPage = () => {
             <motion.a
               whileHover={{ scale: 1.1, zIndex: 9999 }}
               whileTap={{ scale: 0.9 }}
-              style={{ opacity: 0.5, cursor: "not-allowed" }}
               className={styles.card}
             >
               <h2>Furukawa &rarr;</h2>
