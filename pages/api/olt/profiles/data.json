@@ -1,0 +1,63 @@
+{
+  "colinas1": {
+    "pon1": "GPON1-570",
+    "pon2": "GPON1-571",
+    "pon3": "GPON1-572",
+    "pon4": "GPON1-573",
+    "pon5": "GPON1-574",
+    "pon6": "GPON1-575",
+    "pon7": "GPON1-576",
+    "pon8": "GPON1-577"
+  },
+  "colinas2": {
+    "pon1": "GPON1-581",
+    "pon2": "GPON1-582",
+    "pon3": "GPON1-583",
+    "pon4": "GPON1-584",
+    "pon5": "GPON1-585",
+    "pon6": "GPON1-586",
+    "pon7": "GPON1-587",
+    "pon8": "GPON1-588"
+  },
+  "pafonso1": {
+    "pon1": {
+      "router": "GPON1_R_VLAN_615",
+      "bridge": "GPON1_B_VLAN_615"
+    },
+    "pon2": {
+      "router": "GPON1_R_VLAN_616",
+      "bridge": "GPON1_B_VLAN_616"
+    },
+    "pon3": {
+      "router": "GPON1_R_VLAN_617",
+      "bridge": "GPON1_B_VLAN_617"
+    },
+    "pon4": {
+      "router": "GPON1_R_VLAN_618",
+      "bridge": "GPON1_B_VLAN_618"
+    },
+    "pon5": {
+      "router": "GPON1_R_VLAN_619",
+      "bridge": "GPON1_B_VLAN_619"
+    },
+    "pon6": {
+      "router": "GPON1_R_VLAN_620",
+      "bridge": "GPON1_B_VLAN_620"
+    },
+    "pon7": {
+      "router": "GPON1_R_VLAN_621",
+      "bridge": "GPON1_B_VLAN_621"
+    },
+    "pon8": {
+      "router": "GPON1_R_VLAN_622",
+      "bridge": "GPON1_B_VLAN_622"
+    }
+  },
+  "pafonso2": {
+    "pon1": "GPON1-WIFI",
+    "pon2": "GPON2-WIFI",
+    "pon3": "GPON3-WIFI",
+    "pon4": "GPON4-WIFI",
+    "pon5": "GPON5-WIFI"
+  }
+}
