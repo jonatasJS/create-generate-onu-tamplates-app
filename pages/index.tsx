@@ -18,7 +18,8 @@ const Home: NextPage = () => {
           Gerador de template para{" "}
           <Link href="/">
             <a>configuração</a>
-          </Link>!
+          </Link>
+          !
         </h1>
 
         <p className={styles.description}>
@@ -31,6 +32,17 @@ const Home: NextPage = () => {
         </p>
 
         <div className={styles.grid}>
+          <Link href="/furukawa">
+            <motion.a
+              whileHover={{ scale: 1.1, zIndex: 9999 }}
+              whileTap={{ scale: 0.9 }}
+              className={styles.card}
+            >
+              <h2>Furukawa &rarr;</h2>
+              <p>Gera template para instalação de onu Furukawa</p>
+            </motion.a>
+          </Link>
+
           <Link href="/parks">
             <motion.a
               whileHover={{ scale: 1.1, zIndex: 9999 }}
@@ -40,17 +52,6 @@ const Home: NextPage = () => {
             >
               <h2>Parks &rarr;</h2>
               <p>Gera template para instalação de onu Parks.</p>
-            </motion.a>
-          </Link>
-
-          <Link href="/furukawa">
-            <motion.a
-              whileHover={{ scale: 1.1, zIndex: 9999 }}
-              whileTap={{ scale: 0.9 }}
-              className={styles.card}
-            >
-              <h2>Furukawa &rarr;</h2>
-              <p>Gera template para instalação de onu Furukawa</p>
             </motion.a>
           </Link>
 
