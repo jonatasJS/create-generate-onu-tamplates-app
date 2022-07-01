@@ -54,14 +54,15 @@ const Home: NextPage = () => {
             </motion.a>
           </Link>
 
-          <Link href="/furukawa/remove">
+          <Link href="/">
             <motion.a
               whileHover={{ scale: 1.1, zIndex: 9999 }}
               whileTap={{ scale: 0.9 }}
+              style={{ opacity: 0.5, cursor: "not-allowed" }}
               className={styles.card}
             >
-              <h2>Furukawa &rarr;</h2>
-              <p>Gera template para retirar da OLT onu Furukawa.</p>
+              <h2>FUTURO &rarr;</h2>
+              <p>Implemetação futura!{"\n"}Implemetação futura!</p>
             </motion.a>
           </Link>
 

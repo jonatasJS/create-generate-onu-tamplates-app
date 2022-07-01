@@ -1,10 +1,8 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import Link from "next/link";
 import { useState } from "react";
 import CopyToClipboard from "copy-to-clipboard";
-import { motion } from "framer-motion";
 
-import { CgArrowLeft as ArrowLeft, CgModem as ONUIcon } from "react-icons/cg";
+import { CgModem as ONUIcon } from "react-icons/cg";
 import { FaServer as OLTIcon } from "react-icons/fa";
 
 import styles from "../../../styles/Parks.module.css";
@@ -31,15 +29,7 @@ export default function remove() {
       <Head>
         <title>Desautorizar uma Furukawa</title>
       </Head>
-      <Link href="/">
-        <motion.a
-          whileHover={{ scale: 1.1, zIndex: 9999 }}
-          whileTap={{ scale: 0.9 }}
-          className={styles.goBackPage}
-        >
-          <ArrowLeft width={20} height={20} /> HOME
-        </motion.a>
-      </Link>
+      
       <div className={styles.container}>
         <form onSubmit={generateTamplate} className={styles.main}>
           <h1 className={styles.title}>Desautorizar uma Furukawa</h1>

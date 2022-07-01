@@ -1,96 +1,135 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
+import CopyToClipboard from "copy-to-clipboard";
 
-import styles from "../../styles/Parks.module.css";
+import { CgModem as ONUIcon } from "react-icons/cg";
+import { FaServer as OLTIcon } from "react-icons/fa";
+import { AiFillProfile as ProfileIcon } from "react-icons/ai";
 
-export default function parks() {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [isChecked, setIsChecked] = useState<boolean | undefined>(true);
+import styles from "../../../styles/Parks.module.css";
+import Head from "next/head";
 
-  useEffect(() => {
-    if (inputRef.current) {
-      setIsChecked(inputRef.current.checked);
-      inputRef.current.addEventListener("click", () => {
-        console.log(inputRef.current);
-        console.log(inputRef.current?.checked);
-        setIsChecked(inputRef.current?.checked);
-      });
-    }
-  }, []);
+export default function FurukawaAdd() {
+  const [PonNumber, setPonNumber] = useState<number | string>(0 || "");
+  const [OnuNumber, setOnuNumber] = useState<number | string>(0 || "");
+  const [OnuProfile, setOnuProfile] = useState<string>("");
+  const [statsCopied, setStatsCopied] = useState(false);
 
-  function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
+  async function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log(isChecked);
+    const template = `en\nconf t\ngpon\ngpon-olt ${PonNumber}\nonu-profile ${OnuNumber} ${OnuProfile}\nwrite memory\nen\nshow onu ip ${PonNumber} ${OnuNumber}\nshow onu info | grep ${PonNumber} ${OnuNumber}\n\n`;
+
+    setPonNumber("");
+    setOnuNumber("");
+    setOnuProfile("");
+    await CopyToClipboard(template);
+    setStatsCopied(true);
+    setTimeout(() => setStatsCopied(false), 2000);
   }
 
   return (
     <div className={styles.total}>
-      <div className={styles.container} style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100%",
-      }}>
-          <h1 className={styles.title}>Em construção...</h1>
-        {/* <form onSubmit={generateTamplate} className={styles.main}>
-          <h1 className={styles.title}>Parks</h1>
+      <Head>
+        <title>Autorizar uma Furukawa</title>
+      </Head>
+      <div className={styles.container}>
+        <form onSubmit={generateTamplate} className={styles.main}>
+          <h1 className={styles.title}>Autorizar uma Furukawa</h1>
 
           <div className={styles.grid}>
             <div className={styles.contentBox}>
-              <label className={styles.inp}>
-                <input
-                  required
-                  type="text"
-                  className={styles.inputText}
-                  placeholder="&nbsp;"
-                />
-                <span className={styles.label}>HostName</span>
-                <span className={styles.inputIcon}>
-                  <HostNameIcon  width={10} height={10}/>
-                </span>
-              </label>
+              {/**
+               * Numero do PON
+               */}
               <label className={styles.inp}>
                 <input
                   required
                   type="number"
+                  value={PonNumber}
+                  onChange={(e) => setPonNumber(parseInt(e.target.value))}
                   className={styles.inputText}
                   placeholder="&nbsp;"
                 />
-                <span className={styles.label}>VLAN</span>
+                <span className={styles.label}>PON</span>
                 <span className={styles.inputIcon}>
-                  <PlanetIcon width={10} height={10}/>
+                  <OLTIcon
+                    width={10}
+                    height={10}
+                    style={{
+                      borderRadius: "6px"
+                    }}
+                  />
                 </span>
               </label>
+              {/**
+               * Numero do ONU
+               */}
               <label className={styles.inp}>
                 <input
                   required
-                  type="text"
+                  onChange={(e) => setOnuNumber(parseInt(e.target.value))}
+                  type="number"
+                  value={OnuNumber}
                   className={styles.inputText}
                   placeholder="&nbsp;"
                 />
-                <span className={styles.label}>User</span>
+                <span className={styles.label}>ONU</span>
                 <span className={styles.inputIcon}>
-                  <UserIcon width={10} height={10}/>
+                  <ONUIcon
+                    style={{
+                      height: "2.5rem",
+                      width: "2.5rem",
+                    }}
+                    width={20}
+                    height={20}
+                  />
                 </span>
               </label>
+              {/**
+               * Profile
+               */}
               <label className={styles.inp}>
                 <input
                   required
+                  onChange={(e) => setOnuProfile(e.target.value)}
                   type="text"
+                  value={OnuProfile}
                   className={styles.inputText}
                   placeholder="&nbsp;"
                 />
-                <span className={styles.label}>Password</span>
+                <span className={styles.label}>Profile</span>
                 <span className={styles.inputIcon}>
-                  <PasswordIcon width={10} height={10}/>
+                  <ProfileIcon
+                    style={{
+                      height: "2.5rem",
+                      width: "2.5rem",
+                      borderRadius: "15px"
+                    }}
+                    width={20}
+                    height={20}
+                  />
                 </span>
               </label>
             </div>
-            
           </div>
-          <button className={`${styles.btn} ${styles.btnLogin}`}>Copiar</button>
-        </form> */}
+          <button
+            type="submit"
+            style={
+              statsCopied
+                ? {
+                    backgroundColor: "#00ff00",
+                    color: "#363636",
+                    fontWeight: "bold",
+                  }
+                : {}
+            }
+            className={`${styles.btn} ${styles.btnLogin}`}
+          >
+            {statsCopied ? "Copiado!" : "Gerar Template"}
+          </button>
+        </form>
+
+        <div></div>
       </div>
     </div>
   );
