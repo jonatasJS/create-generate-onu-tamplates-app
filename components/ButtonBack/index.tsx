@@ -17,7 +17,7 @@ export default function ButtonBack() {
         whileTap={{ scale: 0.9 }}
         className={styles.goBackPage}
       >
-        <ArrowLeft width={20} height={20} /> HOME
+        <ArrowLeft width={20} height={20} /> VOLTAR
       </motion.a>
     </button>
   );
