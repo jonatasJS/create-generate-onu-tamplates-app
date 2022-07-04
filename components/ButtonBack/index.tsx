@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
 import { CgArrowLeft as ArrowLeft } from "react-icons/cg";

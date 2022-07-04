@@ -1,20 +1,21 @@
 // import '../styles/globals.css'
 import type { AppProps } from "next/app";
+import Link from "next/link";
+import Head from "next/head";
+import { UserProvider, withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { ThemeProvider } from "styled-components";
-
 import { motion, AnimatePresence } from "framer-motion";
+
+import { WhatsAppButton } from "../components/WhatsAppButton";
+import ButtonBack from "../components/ButtonBack";
 
 import GlobalStyle from "../styles/globalStyle";
 import theme from "../styles/theme/light";
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
-import Head from "next/head";
-import ButtonBack from "../components/ButtonBack";
-import { WhatsAppButton } from "../components/WhatsAppButton";
 
-function MyApp({ Component, pageProps, router }: AppProps) {
+function MyApp({ Component, pageProps, router  }: AppProps) {
   return (
-    <>
+    <UserProvider>
     {router.pathname !== "/" && <ButtonBack />}
       <AnimatePresence exitBeforeEnter={true}>
         <motion.div
@@ -83,8 +84,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           </a>
         </Link>
       </footer>
-    </>
+    </UserProvider>
   );
 }
 
 export default MyApp;
+
+export const getServerSideProps = withPageAuthRequired();
