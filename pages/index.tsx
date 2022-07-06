@@ -37,6 +37,9 @@ const Home: NextPage = () => {
 
       {user && (
         <motion.div
+          onClick={() => {
+            window.location.href = "/api/auth/logout";
+          }}
           style={{
             position: "fixed",
             right: "10px",
