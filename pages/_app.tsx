@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps, router  }: AppProps) {
           }}
           style={{
             width: "100vw",
-            height: "100vh",
+            height: "97vh",
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
