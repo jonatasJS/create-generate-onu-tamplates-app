@@ -4,6 +4,8 @@ import { useUser } from "@auth0/nextjs-auth0";
 export default function Profile() {
   const { user, error, isLoading } = useUser();
 
+  error && setTimeout(() => window.location.href = "/", 2000);
+
   if (isLoading)
     return (
       <div
