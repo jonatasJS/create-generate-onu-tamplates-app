@@ -50,6 +50,7 @@ function MyApp({ Component, pageProps, router  }: AppProps) {
             width: "100vw",
             height: "100vh",
             display: "flex",
+            justifyContent: "center",
             flexDirection: "column",
             alignItems: "center",
           }}
