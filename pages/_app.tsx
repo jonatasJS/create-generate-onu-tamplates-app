@@ -14,6 +14,7 @@ import theme from "../styles/theme/light";
 import styles from "../styles/Home.module.css";
 
 function MyApp({ Component, pageProps, router  }: AppProps) {
+
   return (
     <UserProvider>
     {router.pathname !== "/" && <ButtonBack />}

@@ -18,23 +18,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {!user && (
-        <Link href="/api/auth/login">
-          <motion.a
-            whileHover={{ scale: 1.1, zIndex: 9999 }}
-            whileTap={{ scale: 0.9 }}
-            className={styles2.goBackPage}
-            style={{
-              position: "fixed",
-              right: "50px",
-              transition: "color border box-shadow 1s linear",
-            }}
-          >
-            <UserIcon width={20} height={20} /> LOGIN
-          </motion.a>
-        </Link>
-      )}
-
       {user && (
         <motion.div
           onClick={() => {
@@ -47,6 +30,7 @@ const Home: NextPage = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            cursor: "pointer",
             width: "100px",
             borderRadius: "50%",
             transition: "color border box-shadow 1s linear",
@@ -57,71 +41,88 @@ const Home: NextPage = () => {
       )}
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Gerador de template para{" "}
-          <Link href="/">
-            <a>configuração</a>
+        {!user && (
+          <Link href="/api/auth/login">
+            <motion.a
+              whileHover={{ scale: 1.1, zIndex: 9999 }}
+              whileTap={{ scale: 0.9 }}
+              className={styles2.goBackPage}
+              style={{
+                position: "fixed",
+                transition: "color border box-shadow 1s linear",
+              }}
+            >
+              <UserIcon width={20} height={20} /> LOGIN
+            </motion.a>
           </Link>
-          !
-        </h1>
-
-        <p className={styles.description}>
-          Qualquer bug ou problema{": "}
-          <span className={styles.code}>
-            <Link href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20estou%20com%20problema%20no%20gerador%20de%20templates!">
-              <a target={"_blank"}>Jônatas - NOC 1</a>
+        )}
+        {user && <>
+          <h1 className={styles.title}>
+            Gerador de template para{" "}
+            <Link href="/">
+              <a>configuração</a>
             </Link>
-          </span>
-        </p>
+            !
+          </h1>
 
-        <div className={styles.grid}>
-          <Link href="/furukawa">
-            <motion.a
-              whileHover={{ scale: 1.1, zIndex: 9999 }}
-              whileTap={{ scale: 0.9 }}
-              className={styles.card}
-            >
-              <h2>Furukawa &rarr;</h2>
-              <p>Gera template para instalação de onu Furukawa</p>
-            </motion.a>
-          </Link>
+          <p className={styles.description}>
+            Qualquer bug ou problema{": "}
+            <span className={styles.code}>
+              <Link href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20estou%20com%20problema%20no%20gerador%20de%20templates!">
+                <a target={"_blank"}>Jônatas - NOC 1</a>
+              </Link>
+            </span>
+          </p>
 
-          <Link href="/parks">
-            <motion.a
-              whileHover={{ scale: 1.1, zIndex: 9999 }}
-              whileTap={{ scale: 0.9 }}
-              style={{ opacity: 0.5, cursor: "not-allowed" }}
-              className={styles.card}
-            >
-              <h2>Parks &rarr;</h2>
-              <p>Gera template para instalação de onu Parks.</p>
-            </motion.a>
-          </Link>
+          <div className={styles.grid}>
+            <Link href="/furukawa">
+              <motion.a
+                whileHover={{ scale: 1.1, zIndex: 9999 }}
+                whileTap={{ scale: 0.9 }}
+                className={styles.card}
+              >
+                <h2>Furukawa &rarr;</h2>
+                <p>Gera template para instalação de onu Furukawa</p>
+              </motion.a>
+            </Link>
 
-          <Link href="/">
-            <motion.a
-              whileHover={{ scale: 1.1, zIndex: 9999 }}
-              whileTap={{ scale: 0.9 }}
-              style={{ opacity: 0.5, cursor: "not-allowed" }}
-              className={styles.card}
-            >
-              <h2>FUTURO &rarr;</h2>
-              <p>Implemetação futura!{"\n"}Implemetação futura!</p>
-            </motion.a>
-          </Link>
+            <Link href="/parks">
+              <motion.a
+                whileHover={{ scale: 1.1, zIndex: 9999 }}
+                whileTap={{ scale: 0.9 }}
+                style={{ opacity: 0.5, cursor: "not-allowed" }}
+                className={styles.card}
+              >
+                <h2>Parks &rarr;</h2>
+                <p>Gera template para instalação de onu Parks.</p>
+              </motion.a>
+            </Link>
 
-          <Link href="/">
-            <motion.a
-              whileHover={{ scale: 1.1, zIndex: 9999 }}
-              whileTap={{ scale: 0.9 }}
-              style={{ opacity: 0.5, cursor: "not-allowed" }}
-              className={styles.card}
-            >
-              <h2>FUTURO &rarr;</h2>
-              <p>Implemetação futura!{"\n"}Implemetação futura!</p>
-            </motion.a>
-          </Link>
-        </div>
+            <Link href="/">
+              <motion.a
+                whileHover={{ scale: 1.1, zIndex: 9999 }}
+                whileTap={{ scale: 0.9 }}
+                style={{ opacity: 0.5, cursor: "not-allowed" }}
+                className={styles.card}
+              >
+                <h2>FUTURO &rarr;</h2>
+                <p>Implemetação futura!{"\n"}Implemetação futura!</p>
+              </motion.a>
+            </Link>
+
+            <Link href="/">
+              <motion.a
+                whileHover={{ scale: 1.1, zIndex: 9999 }}
+                whileTap={{ scale: 0.9 }}
+                style={{ opacity: 0.5, cursor: "not-allowed" }}
+                className={styles.card}
+              >
+                <h2>FUTURO &rarr;</h2>
+                <p>Implemetação futura!{"\n"}Implemetação futura!</p>
+              </motion.a>
+            </Link>
+          </div>
+        </>}
       </main>
     </div>
   );

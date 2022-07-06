@@ -8,6 +8,7 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
+import { useUser } from "@auth0/nextjs-auth0";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -15,8 +16,8 @@ class MyDocument extends Document {
 
     return initialProps;
   }
-
   render() {
+
     return (
       <Html lang="pt-BR">
         <Head>
