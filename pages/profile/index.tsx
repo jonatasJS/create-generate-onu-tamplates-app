@@ -1,26 +1,54 @@
-import React from 'react';
-import { useUser } from '@auth0/nextjs-auth0';
+import React from "react";
+import { useUser } from "@auth0/nextjs-auth0";
 
 export default function Profile() {
   const { user, error, isLoading } = useUser();
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
+  if (isLoading)
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          color: "#000"
+        }}
+      >
+        Loading...
+      </div>
+    );
+  if (error)
+    return (
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
+          color: "#000"
+        }}
+      >
+        {error.message}
+      </div>
+    );
 
   return (
     user && (
       <div
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column'
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
         }}
       >
-        <img src={user.picture || ''} alt={user.nickname || ''} />
+        <img src={user.picture || ""} alt={user.nickname || ""} />
         <h2>{user.nickname}</h2>
         <p>{user.email}</p>
-        <button onClick={() => window.location.href = '/api/auth/logout'}>Logout</button>
+        <button onClick={() => (window.location.href = "/api/auth/logout")}>
+          Logout
+        </button>
       </div>
     )
   );
