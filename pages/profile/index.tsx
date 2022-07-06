@@ -17,8 +17,8 @@ export default function Profile() {
           flexDirection: 'column'
         }}
       >
-        <img src={user.picture || ''} alt={user.name || ''} />
-        <h2>{user.name}</h2>
+        <img src={user.picture || ''} alt={user.nickname || ''} />
+        <h2>{user.nickname}</h2>
         <p>{user.email}</p>
         <button onClick={() => window.location.href = '/api/auth/logout'}>Logout</button>
       </div>
