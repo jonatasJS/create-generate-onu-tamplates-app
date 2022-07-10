@@ -87,6 +87,7 @@ export default function remove() {
                     backgroundColor: "#00ff00",
                     color: "#363636",
                     fontWeight: "bold",
+                    animation: "copy .2s ease-in-out",
                   }
                 : {}
             }
