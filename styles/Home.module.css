@@ -76,6 +76,7 @@
   transition: all .1s linear;
 }
 
+.code,
 .code a:hover,
 .code a:focus,
 .code a:active {
