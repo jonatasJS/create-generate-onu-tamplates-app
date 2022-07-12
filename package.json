@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.9.1",
+    "@next/bundle-analyzer": "^12.2.2",
     "copy-to-clipboard": "^3.3.1",
     "framer-motion": "^6.3.10",
     "next": "^12.1.7-canary.24",
