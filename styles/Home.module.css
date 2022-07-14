@@ -52,8 +52,10 @@
 }
 
 .title,
-.description {
+.description { 
   text-align: center;
+
+  
 }
 
 .description {

@@ -10,6 +10,8 @@ import { FaUserAlt as UserIcon } from "react-icons/fa";
 const Home: NextPage = () => {
   const { user, error, isLoading } = useUser();
 
+  console.log(user);
+
   return (
     <div className={styles.container}>
       <Head>
