@@ -46,7 +46,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         targets={["a", "span", "button", "input", "textarea"]}
         customClass="custom-cursor"
         dimensions={30}
-        fill="#FFF"
+        fill="#000"
         smoothness={{
           movement: 0.2,
           scale: 0.1,
