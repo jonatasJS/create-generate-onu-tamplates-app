@@ -50,7 +50,9 @@ p:hover ~ div.cursor,
 span:hover ~ div.cursor,
 h1:hover ~ div.cursor,
 h2:hover ~ div.cursor,
+img:hover ~ div.cursor,
 h3:hover ~ div.cursor {
   transform: scale(5);
+  opacity: 0.5;
   mix-blend-mode: difference;
 }
