@@ -137,3 +137,12 @@
     flex-direction: column;
   }
 }
+
+/* Cursor */
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-color: #0070f3;
+  position: fixed;
+  border-radius: 50%;
+}

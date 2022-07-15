@@ -1,4 +1,5 @@
 // import '../styles/globals.css'
+import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import Head from "next/head";
@@ -16,9 +17,25 @@ import styles from "../styles/Home.module.css";
 
 function MyApp({ Component, pageProps, router  }: AppProps) {
   const { back } = useRouter();
+  const [cursorX, setCursorX] = useState(0);
+  const [cursorY, setCursorY] = useState(0);
+  const handleMouseMove = (e: MouseEvent) => {
+    setCursorX(e.clientX);
+    setCursorY(e.clientY);
+  }
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    }
+  }, [cursorX, cursorY]);
 
   return (
     <UserProvider>
+      <div className="cursor">
+
+      </div>
     {router.pathname !== "/" && <ButtonBack isArrow={true} onClick={back} value="VOLTAR" />}
       <AnimatePresence exitBeforeEnter={true}>
         <motion.div
