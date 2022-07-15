@@ -47,10 +47,16 @@ export default function Profile() {
           flexDirection: "column",
           width: "100%",
           height: "100%",
-          gap: '200px'
+          gap: "200px",
         }}
       >
-        <div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <img
             src={user.picture || ""}
             alt={user.nickname || ""}
