@@ -21,6 +21,8 @@ const Home: NextPage = () => {
       </Head>
 
       <CursorChat
+        name={user?.name ?? "Anônimo"}
+        showLatency={true}
         presenceURL="https://prsc.yomo.dev"
         presenceAuthEndpoint="/api/app/auth"
         avatar="https://cursor-chat-example.vercel.app/_next/image?url=%2Flogo.png&w=256&q=75"
