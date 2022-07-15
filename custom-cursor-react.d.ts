@@ -1,1 +1,1 @@
-declare  module 'custom-cursor-react'
+declare module 'custom-cursor-react';
