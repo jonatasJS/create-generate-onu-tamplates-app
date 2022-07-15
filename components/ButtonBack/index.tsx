@@ -24,7 +24,7 @@ export default function ButtonBack({
       onClick={onClick}
       whileHover={{ scale: 1.1, zIndex: 9999 }}
       whileTap={{ scale: 0.9 }}
-      className={styles.goBackPage}
+      className={`${styles.buttonBack} ${isArrow ? styles.arrow : ""}`}
       style={style}
     >
       {isArrow && <ArrowLeft width={20} height={20} />} {value || children}
