@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <UserProvider>
       <CustomCursor
-        targets={["a", "span", "button", "input", "textarea"]}
+        targets={["a", "span", "button", "input", "textarea", "select"]}
         customClass="custom-cursor"
         style={{
           zIndex: 9999,
@@ -59,8 +59,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           opacity: 0.2,
         }}
         targetOpacity={0.5}
-        cursorX={cursorX}
-        cursorY={cursorY}
       />
       <div
         className="cursor"
