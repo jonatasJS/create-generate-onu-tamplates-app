@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+// import "../styles/globals.css";
 import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Link from "next/link";
@@ -43,8 +43,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <div
         className="cursor"
         style={{
-          left: cursorX - 10,
-          top: cursorY - 10,
+          // left: cursorX - 10,
+          // top: cursorY - 10,
           zIndex: 9999999999999999999,
         }}
       ></div>
