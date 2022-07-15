@@ -48,7 +48,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         style={{
           zIndex: 9999,
           position: "fixed",
-          
+          height: "100vh",
+          width: "100vw",
         }}
         dimensions={30}
         fill="#000"
