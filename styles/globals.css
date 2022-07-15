@@ -32,3 +32,25 @@ input::-webkit-inner-spin-button {
     font-size: 48.5%;
   }
 } */
+
+/* Cursor */
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-color: #0070f3;
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+*:hover ~ .cursor,
+a:hover ~ div.cursor,
+button:hover ~ div.cursor,
+p:hover ~ div.cursor,
+span:hover ~ div.cursor,
+h1:hover ~ div.cursor,
+h2:hover ~ div.cursor,
+h3:hover ~ div.cursor {
+  transform: scale(5);
+  mix-blend-mode: difference;
+}

@@ -1,4 +1,4 @@
-// import '../styles/globals.css'
+import '../styles/globals.css'
 import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Link from "next/link";
@@ -20,9 +20,16 @@ function MyApp({ Component, pageProps, router  }: AppProps) {
   const [cursorX, setCursorX] = useState(0);
   const [cursorY, setCursorY] = useState(0);
   const handleMouseMove = (e: MouseEvent) => {
+    console.clear();
+    console.log(e.clientX, e.clientY);
     setCursorX(e.clientX);
     setCursorY(e.clientY);
   }
+
+  // window?.addEventListener("mousemove", e => {
+  //   setCursorX(e.pageX);
+  //   setCursorY(e.pageY);
+  // });
 
   useEffect(() => {
     window.addEventListener("mousemove", handleMouseMove);
@@ -33,7 +40,14 @@ function MyApp({ Component, pageProps, router  }: AppProps) {
 
   return (
     <UserProvider>
-      <div className="cursor">
+      <div
+        className='cursor'
+        style={{
+          left: cursorX-10,
+          top: cursorY-10,
+          zIndex: 9999999999999999999,
+        }}
+      >
 
       </div>
     {router.pathname !== "/" && <ButtonBack isArrow={true} onClick={back} value="VOLTAR" />}
