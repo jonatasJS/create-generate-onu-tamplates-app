@@ -1,9 +1,9 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import Head from "next/head";
-import { UserProvider, withPageAuthRequired } from '@auth0/nextjs-auth0';
+import { UserProvider, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { ThemeProvider } from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
@@ -15,16 +15,10 @@ import GlobalStyle from "../styles/globalStyle";
 import theme from "../styles/theme/light";
 import styles from "../styles/Home.module.css";
 
-function MyApp({ Component, pageProps, router  }: AppProps) {
+function MyApp({ Component, pageProps, router }: AppProps) {
   const { back } = useRouter();
   const [cursorX, setCursorX] = useState(0);
   const [cursorY, setCursorY] = useState(0);
-  const handleMouseMove = (e: MouseEvent) => {
-    console.clear();
-    console.log(e.clientX, e.clientY);
-    setCursorX(e.clientX);
-    setCursorY(e.clientY);
-  }
 
   // window?.addEventListener("mousemove", e => {
   //   setCursorX(e.pageX);
@@ -32,25 +26,31 @@ function MyApp({ Component, pageProps, router  }: AppProps) {
   // });
 
   useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", (e: MouseEvent) => {
+      setCursorX(e.clientX);
+      setCursorY(e.clientY);
+    });
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    }
+      window.removeEventListener("mousemove", (e: MouseEvent) => {
+        setCursorX(e.clientX);
+        setCursorY(e.clientY);
+      });
+    };
   }, [cursorX, cursorY]);
 
   return (
     <UserProvider>
       <div
-        className='cursor'
+        className="cursor"
         style={{
-          left: cursorX-10,
-          top: cursorY-10,
+          left: cursorX - 10,
+          top: cursorY - 10,
           zIndex: 9999999999999999999,
         }}
-      >
-
-      </div>
-    {router.pathname !== "/" && <ButtonBack isArrow={true} onClick={back} value="VOLTAR" />}
+      ></div>
+      {router.pathname !== "/" && (
+        <ButtonBack isArrow={true} onClick={back} value="VOLTAR" />
+      )}
       <AnimatePresence exitBeforeEnter={true}>
         <motion.div
           key={router.pathname}
@@ -97,10 +97,10 @@ function MyApp({ Component, pageProps, router  }: AppProps) {
             <Component {...pageProps} />
           </ThemeProvider>
         </motion.div>
-      </AnimatePresence> 
+      </AnimatePresence>
 
       <WhatsAppButton />
-      
+
       <footer
         style={{ top: "47vw", position: "fixed" }}
         className={styles.footer}

@@ -13,11 +13,12 @@
   "dependencies": {
     "@auth0/nextjs-auth0": "^1.9.1",
     "@next/bundle-analyzer": "^12.2.2",
+    "@yomo/react-cursor-chat": "^0.1.6",
     "copy-to-clipboard": "^3.3.1",
     "framer-motion": "^6.3.10",
     "next": "^12.1.7-canary.24",
     "next-auth": "^4.8.0",
-    "react": "18.1.0",
+    "react": "^18.2.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.4.0",
     "react-router": "^6.3.0",
