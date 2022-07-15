@@ -63,7 +63,7 @@ export default function Profile() {
             position: "unset",
           }}
           isArrow={false}
-          value="LogOut"
+          value="Logout"
           onClick={() => (window.location.href = "/api/auth/logout")}
         />
       </div>
