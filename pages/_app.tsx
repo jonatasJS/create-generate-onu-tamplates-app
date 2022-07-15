@@ -53,6 +53,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           opacity: 0.2,
         }}
         targetOpacity={0.5}
+        cursorX={cursorX}
+        cursorY={cursorY}
       />
       <div
         className="cursor"
