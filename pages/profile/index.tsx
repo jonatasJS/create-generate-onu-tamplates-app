@@ -45,6 +45,8 @@ export default function Profile() {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
+          width: "100%",
+          height: "100%",
         }}
       >
         <img
