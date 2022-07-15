@@ -47,17 +47,20 @@ export default function Profile() {
           flexDirection: "column",
           width: "100%",
           height: "100%",
+          gap: '200px'
         }}
       >
-        <img
-          src={user.picture || ""}
-          alt={user.nickname || ""}
-          style={{
-            borderRadius: "50%",
-          }}
-        />
-        <h2>{user.nickname}</h2>
-        <p>{user.email}</p>
+        <div>
+          <img
+            src={user.picture || ""}
+            alt={user.nickname || ""}
+            style={{
+              borderRadius: "50%",
+            }}
+          />
+          <h2>{user.nickname}</h2>
+          <p>{user.email}</p>
+        </div>
         <ButtonBack
           style={{
             position: "unset",
