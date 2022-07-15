@@ -12,18 +12,22 @@ interface ButtonBackProps {
   style?: React.CSSProperties;
 }
 
-export default function ButtonBack({ style, onClick, isArrow, value, children }: ButtonBackProps) {
-
+export default function ButtonBack({
+  style,
+  onClick,
+  isArrow,
+  value,
+  children,
+}: ButtonBackProps) {
   return (
-    <button onClick={onClick}>
-      <motion.a
-        whileHover={{ scale: 1.1, zIndex: 9999 }}
-        whileTap={{ scale: 0.9 }}
-        className={styles.goBackPage}
-        style={style}
-      >
-        {isArrow && <ArrowLeft width={20} height={20} />} {value || children}
-      </motion.a>
-    </button>
+    <motion.button
+      onClick={onClick}
+      whileHover={{ scale: 1.1, zIndex: 9999 }}
+      whileTap={{ scale: 0.9 }}
+      className={styles.goBackPage}
+      style={style}
+    >
+      {isArrow && <ArrowLeft width={20} height={20} />} {value || children}
+    </motion.button>
   );
 }
