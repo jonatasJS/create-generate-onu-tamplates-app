@@ -5,6 +5,7 @@ import Head from "next/head";
 import { UserProvider, withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { ThemeProvider } from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 import { WhatsAppButton } from "../components/WhatsAppButton";
 import ButtonBack from "../components/ButtonBack";
@@ -14,10 +15,11 @@ import theme from "../styles/theme/light";
 import styles from "../styles/Home.module.css";
 
 function MyApp({ Component, pageProps, router  }: AppProps) {
+  const { back } = useRouter();
 
   return (
     <UserProvider>
-    {router.pathname !== "/" && <ButtonBack />}
+    {router.pathname !== "/" && <ButtonBack isArrow={true} onClick={back} value="VOLTAR" />}
       <AnimatePresence exitBeforeEnter={true}>
         <motion.div
           key={router.pathname}

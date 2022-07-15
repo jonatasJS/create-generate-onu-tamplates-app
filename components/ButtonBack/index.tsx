@@ -1,22 +1,28 @@
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
 
 import { CgArrowLeft as ArrowLeft } from "react-icons/cg";
 
 import styles from "../../styles/Parks.module.css";
 
-export default function ButtonBack() {
+interface ButtonBackProps {
+  onClick: () => void;
+  isArrow: boolean;
+  value?: string;
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
+}
 
-  const router = useRouter();
+export default function ButtonBack({ style, onClick, isArrow, value, children }: ButtonBackProps) {
 
   return (
-    <button onClick={() => router.back()}>
+    <button onClick={onClick}>
       <motion.a
         whileHover={{ scale: 1.1, zIndex: 9999 }}
         whileTap={{ scale: 0.9 }}
         className={styles.goBackPage}
+        style={style}
       >
-        <ArrowLeft width={20} height={20} /> VOLTAR
+        {isArrow && <ArrowLeft width={20} height={20} />} {value || children}
       </motion.a>
     </button>
   );
