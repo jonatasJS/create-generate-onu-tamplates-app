@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { FaUserAlt as UserIcon } from "react-icons/fa";
 import { useUser } from "@auth0/nextjs-auth0";
 import styles from "../styles/Home.module.css";
 import styles2 from "../styles/Parks.module.css";
-import { FaUserAlt as UserIcon } from "react-icons/fa";
 
 const Home: NextPage = () => {
   const { user, error, isLoading } = useUser();
@@ -18,29 +18,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {user && (
-        <motion.div
-          onClick={() => {
-            window.location.href = "/profile";
-          }}
-          whileHover={{ scale: 1.1, zIndex: 9999 }}
-          whileTap={{ scale: 0.9 }}
-          style={{
-            position: "fixed",
-            right: "10px",
-            top: "10px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "pointer",
-            width: "100px",
-            borderRadius: "50%",
-            transition: "color border box-shadow 1s linear",
-          }}
-        >
-          <img src={user.picture || ""} alt={user.name || ""} />
-        </motion.div>
-      )}
+      
 
       <main className={styles.main}>
         {!user && (

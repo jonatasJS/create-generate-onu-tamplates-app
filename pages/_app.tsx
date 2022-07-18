@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import Head from "next/head";
-import Router from 'next/router';
+import Router from "next/router";
 import { useRouter } from "next/router";
-import { UserProvider, withPageAuthRequired } from "@auth0/nextjs-auth0";
+import { UserProvider, withPageAuthRequired, useUser } from "@auth0/nextjs-auth0";
 import { ThemeProvider } from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import NProgress from 'nprogress';
+import NProgress from "nprogress";
 
 import { WhatsAppButton } from "../components/WhatsAppButton";
 import ButtonBack from "../components/ButtonBack";
@@ -20,18 +20,18 @@ import styles from "../styles/Home.module.css";
 
 NProgress.configure({ showSpinner: false });
 
-Router.events.on('routeChangeStart', () => {
-  console.log('onRouteChangeStart triggered');
+Router.events.on("routeChangeStart", () => {
+  console.log("onRouteChangeStart triggered");
   NProgress.start();
 });
 
-Router.events.on('routeChangeComplete', () => {
-  console.log('onRouteChangeComplete triggered');
+Router.events.on("routeChangeComplete", () => {
+  console.log("onRouteChangeComplete triggered");
   NProgress.done();
 });
 
-Router.events.on('routeChangeError', () => {
-  console.log('onRouteChangeError triggered');
+Router.events.on("routeChangeError", () => {
+  console.log("onRouteChangeError triggered");
   NProgress.done();
 });
 
@@ -39,6 +39,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   const { back } = useRouter();
   const [cursorX, setCursorX] = useState(0);
   const [cursorY, setCursorY] = useState(0);
+  const { user, error, isLoading } = useUser();
 
   useEffect(() => {
     window.addEventListener("mousemove", (e: MouseEvent) => {
@@ -55,17 +56,34 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <UserProvider>
-      <div
-        className="cursor"
-        style={{
-          // left: cursorX - 10,
-          // top: cursorY - 10,
-          zIndex: 9999999999999999999,
-        }}
-      ></div>
       {router.pathname !== "/" && (
         <ButtonBack isArrow={true} onClick={back} value="VOLTAR" />
       )}
+
+      {user && (
+        <motion.div
+          onClick={() => {
+            window.location.href = "/profile";
+          }}
+          whileHover={{ scale: 1.1, zIndex: 9999 }}
+          whileTap={{ scale: 0.9 }}
+          style={{
+            position: "fixed",
+            right: "10px",
+            top: "10px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            width: "100px",
+            borderRadius: "50%",
+            transition: "color border box-shadow 1s linear",
+          }}
+        >
+          <img src={user.picture || ""} alt={user.name || ""} />
+        </motion.div>
+      )}
+
       <AnimatePresence exitBeforeEnter={true}>
         <motion.div
           key={router.pathname}
