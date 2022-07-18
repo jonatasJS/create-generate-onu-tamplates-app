@@ -34,8 +34,7 @@ const Layout = ({ children, router }: LayoutProps) => {
         crossOrigin="anonymous"
       />
       <link rel="stylesheet" href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css" />
-      <title>Next.js Sample App</title>
-    </Head>
+      </Head>
     <>
       {router.pathname !== "/" && (
         <ButtonBack isArrow={true} onClick={back} value="VOLTAR" />
