@@ -8,7 +8,7 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-import { useUser } from "@auth0/nextjs-auth0";
+import { UserProvider, useUser } from "@auth0/nextjs-auth0";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -17,17 +17,17 @@ class MyDocument extends Document {
     return initialProps;
   }
   render() {
-
     return (
-      <Html lang="pt-BR">
-        <Head>
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-H2B3G6Y4J8"
-          ></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+      <UserProvider>
+        <Html lang="pt-BR">
+          <Head>
+            <script
+              async
+              src="https://www.googletagmanager.com/gtag/js?id=G-H2B3G6Y4J8"
+            ></script>
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
                 window.dataLayer = window.dataLayer || [];
                 console.log(window.dataLayer);
                 function gtag(){dataLayer.push(arguments);}
@@ -35,29 +35,30 @@ class MyDocument extends Document {
 
                 gtag('config', 'G-H2B3G6Y4J8');
               `,
-            }}
-          ></script>
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-          />
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          <meta name="theme-color" content="#000000" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          ></link>
-          <link rel="stylesheet" href="/np/np.css" />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
+              }}
+            ></script>
+            <link
+              rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+            />
+            <meta charSet="utf-8" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no"
+            />
+            <meta name="theme-color" content="#000000" />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+              rel="stylesheet"
+            ></link>
+            <link rel="stylesheet" href="/np/np.css" />
+          </Head>
+          <body>
+            <Main />
+            <NextScript />
+          </body>
+        </Html>
+      </UserProvider>
     );
   }
 }

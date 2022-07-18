@@ -5,7 +5,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Router from "next/router";
 import { useRouter } from "next/router";
-import { UserProvider, withPageAuthRequired, useUser } from "@auth0/nextjs-auth0";
+import { withPageAuthRequired, useUser } from "@auth0/nextjs-auth0";
 import { ThemeProvider } from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import NProgress from "nprogress";
@@ -55,7 +55,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   }, [cursorX, cursorY]);
 
   return (
-    <UserProvider>
+    <>
       {router.pathname !== "/" && (
         <ButtonBack isArrow={true} onClick={back} value="VOLTAR" />
       )}
@@ -152,7 +152,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           </a>
         </Link>
       </footer>
-    </UserProvider>
+    </>
   );
 }
 
