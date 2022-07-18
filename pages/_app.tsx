@@ -3,29 +3,42 @@ import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import Head from "next/head";
+import Router from 'next/router';
+import { useRouter } from "next/router";
 import { UserProvider, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import { ThemeProvider } from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/router";
-import CustomCursor from "custom-cursor-react";
-import "custom-cursor-react/dist/index.css";
+import NProgress from 'nprogress';
 
 import { WhatsAppButton } from "../components/WhatsAppButton";
 import ButtonBack from "../components/ButtonBack";
 
 import GlobalStyle from "../styles/globalStyle";
 import theme from "../styles/theme/light";
+import "custom-cursor-react/dist/index.css";
 import styles from "../styles/Home.module.css";
+
+NProgress.configure({ showSpinner: false });
+
+Router.events.on('routeChangeStart', () => {
+  console.log('onRouteChangeStart triggered');
+  NProgress.start();
+});
+
+Router.events.on('routeChangeComplete', () => {
+  // console.log('onRouteChangeComplete triggered');
+  NProgress.done();
+});
+
+Router.events.on('routeChangeError', () => {
+  // console.log('onRouteChangeError triggered');
+  NProgress.done();
+});
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const { back } = useRouter();
   const [cursorX, setCursorX] = useState(0);
   const [cursorY, setCursorY] = useState(0);
-
-  // window?.addEventListener("mousemove", e => {
-  //   setCursorX(e.pageX);
-  //   setCursorY(e.pageY);
-  // });
 
   useEffect(() => {
     window.addEventListener("mousemove", (e: MouseEvent) => {
@@ -42,24 +55,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
   return (
     <UserProvider>
-      <CustomCursor
-        targets={["a", "span", "button", "input", "textarea", "select"]}
-        customClass="custom-cursor"
-        style={{
-          zIndex: 9999,
-          position: "fixed",
-          height: "100vh",
-          width: "100vw",
-        }}
-        dimensions={30}
-        fill="#000"
-        smoothness={{
-          movement: 0.2,
-          scale: 0.1,
-          opacity: 0.2,
-        }}
-        targetOpacity={0.5}
-      />
       <div
         className="cursor"
         style={{
