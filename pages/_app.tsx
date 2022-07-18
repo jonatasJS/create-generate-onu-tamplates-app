@@ -1,4 +1,4 @@
-// import "../styles/globals.css";
+import "../styles/globals.css";
 import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Link from "next/link";
@@ -26,12 +26,12 @@ Router.events.on('routeChangeStart', () => {
 });
 
 Router.events.on('routeChangeComplete', () => {
-  // console.log('onRouteChangeComplete triggered');
+  console.log('onRouteChangeComplete triggered');
   NProgress.done();
 });
 
 Router.events.on('routeChangeError', () => {
-  // console.log('onRouteChangeError triggered');
+  console.log('onRouteChangeError triggered');
   NProgress.done();
 });
 
