@@ -12,7 +12,7 @@ import ButtonBack from "../../components/ButtonBack";
 
 import theme from "../../styles/theme/light";
 import styles from "../../styles/Home.module.css";
-import styles2 from "../styles/Parks.module.css";
+import styles2 from "../../styles/Parks.module.css";
 import { AppProps } from 'next/app';
 
 interface LayoutProps {
