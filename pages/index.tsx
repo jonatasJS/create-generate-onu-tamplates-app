@@ -102,7 +102,7 @@ const Home: NextPage = () => {
                 <motion.a
                   whileHover={{ scale: 1.1, zIndex: 9999 }}
                   whileTap={{ scale: 0.9 }}
-                  style={{ opacity: 0.5, cursor: "none" }}
+                  style={{ opacity: 0.5 }}
                   className={styles.card}
                 >
                   <h2>Parks &rarr;</h2>
@@ -114,7 +114,7 @@ const Home: NextPage = () => {
                 <motion.a
                   whileHover={{ scale: 1.1, zIndex: 9999 }}
                   whileTap={{ scale: 0.9 }}
-                  style={{ opacity: 0.5, cursor: "none" }}
+                  style={{ opacity: 0.5 }}
                   className={styles.card}
                 >
                   <h2>FUTURO &rarr;</h2>
@@ -126,7 +126,7 @@ const Home: NextPage = () => {
                 <motion.a
                   whileHover={{ scale: 1.1, zIndex: 9999 }}
                   whileTap={{ scale: 0.9 }}
-                  style={{ opacity: 0.5, cursor: "none" }}
+                  style={{ opacity: 0.5 }}
                   className={styles.card}
                 >
                   <h2>FUTURO &rarr;</h2>
