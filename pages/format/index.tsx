@@ -21,6 +21,9 @@ const Format: NextPage = () => {
       .replaceAll("-", "_")
       .replaceAll("]", "")
       .replaceAll(" [", "")
+      .replaceAll(" []", "")
+      .replaceAll("_[]", "")
+      .replaceAll("_[", "")
       .replaceAll(numbers, "");
     const template = `${numbers}_${textNoneNumber}`.toLocaleUpperCase();
 
