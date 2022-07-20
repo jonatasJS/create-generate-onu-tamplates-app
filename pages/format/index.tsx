@@ -14,9 +14,15 @@ const Format: NextPage = () => {
 
   async function formatText(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const numbers = contract.replace(/[^0-9]/g,'');
-    const textNoneNumber = contract.replace(/\d+/g, "").replaceAll(" ", "_");
-    const template = `${numbers}_${textNoneNumber}`;
+    const numbers = contract.replace(/[^0-9]/g, "");
+    const textNoneNumber = contract
+      .replace(/\d+/g, "")
+      .replaceAll(" ", "_")
+      .replaceAll("-", "_")
+      .replaceAll("]", "_")
+      .replaceAll("[", "_")
+      .replaceAll(numbers, "");
+    const template = `${numbers}_${textNoneNumber}`.toLocaleLowerCase();
 
     setContract("");
     await CopyToClipboard(template);
@@ -53,7 +59,7 @@ const Format: NextPage = () => {
                     style={{
                       height: "2.5rem",
                       width: "2.5rem",
-                      borderRadius: "15px"
+                      borderRadius: "15px",
                     }}
                     width={20}
                     height={20}
@@ -83,6 +89,6 @@ const Format: NextPage = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Format;
