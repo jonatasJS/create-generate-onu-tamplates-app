@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useState } from "react";
+import Head from "next/head";
 import CopyToClipboard from "copy-to-clipboard";
 
 import { CgModem as ONUIcon } from "react-icons/cg";
@@ -7,7 +8,6 @@ import { FaServer as OLTIcon } from "react-icons/fa";
 import { AiFillProfile as ProfileIcon } from "react-icons/ai";
 
 import styles from "../../../styles/Parks.module.css";
-import Head from "next/head";
 
 export default function FurukawaAdd() {
   const [PonNumber, setPonNumber] = useState<number | string>(0 || "");
