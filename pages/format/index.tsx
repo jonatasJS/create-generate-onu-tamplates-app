@@ -6,7 +6,7 @@ import CopyToClipboard from "copy-to-clipboard";
 import { CgModem as ONUIcon } from "react-icons/cg";
 import { AiFillProfile as ProfileIcon } from "react-icons/ai";
 
-import styles from "../../../styles/Parks.module.css";
+import styles from "../../styles/Parks.module.css";
 
 const Format: NextPage = () => {
   const [contract, setContract] = useState<string>("");
