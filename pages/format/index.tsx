@@ -19,10 +19,10 @@ const Format: NextPage = () => {
       .replace(/\d+/g, "")
       .replaceAll(" ", "_")
       .replaceAll("-", "_")
-      .replaceAll("]", "_")
-      .replaceAll("[", "_")
+      .replaceAll("]", "")
+      .replaceAll(" [", "")
       .replaceAll(numbers, "");
-    const template = `${numbers}_${textNoneNumber}`.toLocaleLowerCase();
+    const template = `${numbers}_${textNoneNumber}`.toLocaleUpperCase();
 
     setContract("");
     await CopyToClipboard(template);
