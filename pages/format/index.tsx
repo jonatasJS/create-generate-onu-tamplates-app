@@ -14,7 +14,7 @@ const Format: NextPage = () => {
 
   async function formatText(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const numbers = contract.match(/\d/g);
+    const numbers = contract.replace(/[^0-9]/g,'');
     const textNoneNumber = contract.replace(/\d+/g, "").replaceAll(" ", "_");
     const template = `${numbers}_${textNoneNumber}`;
 

@@ -58,15 +58,14 @@ const Home: NextPage = () => {
             </motion.a>
           </Link>
 
-          <Link href="/">
+          <Link href="/format">
             <motion.a
               whileHover={{ scale: 1.1, zIndex: 9999 }}
               whileTap={{ scale: 0.9 }}
-              style={{ opacity: 0.5 }}
               className={styles.card}
             >
-              <h2>FUTURO &rarr;</h2>
-              <p>Implemetação futura!{"\n"}Implemetação futura!</p>
+              <h2>Formatar &rarr;</h2>
+              <p>Formatar contarto para{"\n"}colocar no nome da onu!</p>
             </motion.a>
           </Link>
 
