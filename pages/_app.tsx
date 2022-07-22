@@ -6,8 +6,6 @@ import Router from "next/router";
 import { useRouter } from "next/router";
 import { withPageAuthRequired, UserProvider } from "@auth0/nextjs-auth0";
 
-import ReactAdsense from "@pkasila/react-katex";
-import GoogleAdsense from 'react-adsense-google';
 import { Adsense } from "../components/Ads";
 
 import NProgress from "nprogress";
