@@ -17,7 +17,6 @@ class MyDocument extends Document {
     return initialProps;
   }
   render() {
-
     return (
       <Html lang="pt-BR">
         <Head>
@@ -36,6 +35,11 @@ class MyDocument extends Document {
                 gtag('config', 'G-H2B3G6Y4J8');
               `,
             }}
+          ></script>
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672"
+            crossOrigin="anonymous"
           ></script>
           <link
             rel="stylesheet"
