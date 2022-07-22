@@ -4,10 +4,10 @@ import type { AppProps } from "next/app";
 import Head from "next/head";
 import Router from "next/router";
 import { useRouter } from "next/router";
-import {
-  withPageAuthRequired,
-  UserProvider,
-} from "@auth0/nextjs-auth0";
+import { withPageAuthRequired, UserProvider } from "@auth0/nextjs-auth0";
+
+import ReactAdsense from "@pkasila/react-katex";
+import GoogleAdsense from 'react-adsense-google';
 import { Adsense } from "../components/Ads";
 
 import NProgress from "nprogress";
@@ -61,10 +61,18 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <GlobalStyle />
 
         <Adsense client="ca-pub-5593915309329672" slot="7238080479" />
+        <GoogleAdsense
+          adClient={"ca-pub-5593915309329672"}
+          adSlot={"7238080479"}
+        />
 
         <Component {...pageProps} />
 
         <Adsense client="ca-pub-5593915309329672" slot="1915214729" />
+        <GoogleAdsense
+          adClient={"ca-pub-5593915309329672"}
+          adSlot={"1915214729"}
+        />
       </Layout>
     </UserProvider>
   );
