@@ -6,9 +6,9 @@ import Router from "next/router";
 import { useRouter } from "next/router";
 import {
   withPageAuthRequired,
-  useUser,
   UserProvider,
 } from "@auth0/nextjs-auth0";
+import { Adsense } from "../components/Ads";
 
 import NProgress from "nprogress";
 
@@ -59,7 +59,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         </Head>
 
         <GlobalStyle />
+
+        <Adsense client="ca-pub-5593915309329672" slot="7238080479" />
+
         <Component {...pageProps} />
+
+        <Adsense client="ca-pub-5593915309329672" slot="1915214729" />
       </Layout>
     </UserProvider>
   );
