@@ -60,19 +60,19 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
         <GlobalStyle />
 
-        <Adsense client="ca-pub-5593915309329672" slot="7238080479" />
-        {/* <GoogleAdsense
+        {/* <Adsense client="ca-pub-5593915309329672" slot="7238080479" /> */}
+        <GoogleAdsense
           adClient={"ca-pub-5593915309329672"}
           adSlot={"7238080479"}
-        /> */}
+        />
 
         <Component {...pageProps} />
 
-        <Adsense client="ca-pub-5593915309329672" slot="1915214729" />
-        {/* <GoogleAdsense
+        {/* <Adsense client="ca-pub-5593915309329672" slot="1915214729" /> */}
+        <GoogleAdsense
           adClient={"ca-pub-5593915309329672"}
           adSlot={"1915214729"}
-        /> */}
+        />
       </Layout>
     </UserProvider>
   );
