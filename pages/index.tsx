@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useUser } from "@auth0/nextjs-auth0";
 import styles from "../styles/Home.module.css";
+import { Adsense } from "../components/Ads";
 
 const Home: NextPage = () => {
   const { user, error, isLoading } = useUser();
@@ -33,6 +34,8 @@ const Home: NextPage = () => {
             </Link>
           </span>
         </p>
+
+        <Adsense client="ca-pub-5593915309329672" slot="7238080479" />
 
         <div className={styles.grid}>
           <Link href="/furukawa">
@@ -81,6 +84,8 @@ const Home: NextPage = () => {
             </motion.a>
           </Link>
         </div>
+
+        <Adsense client="ca-pub-5593915309329672" slot="1915214729" />
       </main>
     </div>
   );
