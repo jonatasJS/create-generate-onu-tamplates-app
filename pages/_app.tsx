@@ -11,7 +11,7 @@ import { Adsense } from "../components/Ads";
 import NProgress from "nprogress";
 
 import GlobalStyle from "../styles/globalStyle";
-import "custom-cursor-react/dist/index.css";
+// import "custom-cursor-react/dist/index.css";
 import Layout from "../components/Layout";
 
 NProgress.configure({

@@ -20,7 +20,6 @@ export default createGlobalStyle`
   input[type="number"],
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
-    color: inherit;
     text-decoration: none;
     -webkit-appearance: none;
     overflow-y: hidden;
