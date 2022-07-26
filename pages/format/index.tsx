@@ -43,9 +43,14 @@ const Format: NextPage = () => {
           <h1 className={styles.title}>Formatar nome e contarto do cliente</h1>
 
           <div className={styles.grid}>
-            <div style={{
-              gridTemplateColumns: '1fr !important',
-            }} className={styles.contentBox}>
+            <div
+              className={styles.contentBox}
+              style={{
+                gridTemplateColumns: "1fr !important",
+                gridTemplateRows: "1fr !important",
+                display: "grid",
+              }}
+            >
               {/**
                * .............
                */}
