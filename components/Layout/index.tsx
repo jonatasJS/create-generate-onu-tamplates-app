@@ -127,7 +127,7 @@ const Layout = ({ children, router }: LayoutProps) => {
 
       <WhatsAppButton />
 
-      <footer
+      {/* <footer
         style={{ top: "47vw", position: "fixed" }}
         className={styles.footer}
       >
@@ -144,7 +144,7 @@ const Layout = ({ children, router }: LayoutProps) => {
             </span>
           </a>
         </Link>
-      </footer>
+      </footer> */}
     </div>
   );
 };

@@ -36,14 +36,16 @@ const Format: NextPage = () => {
   return (
     <div className={styles.total}>
       <Head>
-        <title>................</title>
+        <title>Formatar nome e contarto do cliente</title>
       </Head>
       <div className={styles.container}>
         <form onSubmit={formatText} className={styles.main}>
-          <h1 className={styles.title}>................</h1>
+          <h1 className={styles.title}>Formatar nome e contarto do cliente</h1>
 
           <div className={styles.grid}>
-            <div className={styles.contentBox}>
+            <div style={{
+              gridTemplateColumns: '1fr !important',
+            }} className={styles.contentBox}>
               {/**
                * .............
                */}
