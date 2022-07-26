@@ -56,7 +56,7 @@ class MyDocument extends Document {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <meta name="theme-color" content="#000000" />
+          <meta name="theme-color" content="#2196f3" />
           <link
             href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
             rel="stylesheet"
