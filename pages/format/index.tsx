@@ -44,11 +44,15 @@ const Format: NextPage = () => {
 
           <div className={styles.grid}>
             <div
-              className={styles.contentBox}
               style={{
-                gridTemplateColumns: "1fr !important",
-                gridTemplateRows: "1fr !important",
                 display: "grid",
+                gap: "10px",
+                alignItems: "center",
+                justifyContent: "center",
+                gridTemplateColumns: "1fr",
+                padding: "0 2rem",
+                maxWidth: "800px",
+                width: "55vw",
               }}
             >
               {/**
