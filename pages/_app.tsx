@@ -14,7 +14,14 @@ import GlobalStyle from "../styles/globalStyle";
 import "custom-cursor-react/dist/index.css";
 import Layout from "../components/Layout";
 
-NProgress.configure({ showSpinner: false });
+NProgress.configure({
+  showSpinner: false,
+  easing: "ease",
+  speed: 500,
+  trickleSpeed: 200,
+  minimum: 0.1,
+  trickle: true
+});
 
 Router.events.on("routeChangeStart", () => {
   console.log("onRouteChangeStart triggered");
