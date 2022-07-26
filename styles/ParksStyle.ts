@@ -117,7 +117,7 @@ export const Input = styled.input`
   margin: 1rem;
   padding: 10px 10px;
   text-align: left;
-  color: inherit;
+  /* color: inherit; */
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
