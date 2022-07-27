@@ -91,7 +91,7 @@ export default Home;
 
 export const getStaticProps = async () => {
 
-  var url = "https://api.pikwy.com/web/62e15f91d4a80c046c619809.png";
+  var url = "//api.pikwy.com/web/62e15f91d4a80c046c619809.png";
 
   http
     .request(url, function (response) {
