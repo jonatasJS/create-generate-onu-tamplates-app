@@ -103,7 +103,12 @@ const Layout = ({ children, router }: LayoutProps) => {
                   </motion.div>
                 )}
                 {!user ? (
-                  <Link href="/api/auth/login">
+                  router.pathname === "/ogimage" ? (
+                    <>
+                    {children}
+                    </>
+                  ) : (
+                    <Link href="/api/auth/login">
                     <motion.a
                       whileHover={{ scale: 1.1, zIndex: 9999 }}
                       whileTap={{ scale: 0.9 }}
@@ -116,6 +121,7 @@ const Layout = ({ children, router }: LayoutProps) => {
                       <UserIcon width={20} height={20} /> LOGIN
                     </motion.a>
                   </Link>
+                  )
                 ) : (
                   children
                 )}
