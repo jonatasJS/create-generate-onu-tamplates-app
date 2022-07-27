@@ -41,6 +41,7 @@ class MyDocument extends Document {
             name="Abstract"
             content="Gerador de template para configuração!"
           />
+          <meta property="og:image" content="https://api.site-shot.com/?url=https://onu.jonatas.app/ogimage&userkey=QAAIEYKBJA4EB36IYXNAKVGKBC&width=1920&height=1080&zoom=90" />
           <meta name="Revisit-after" content="1 Day" />
           <meta name="expires" content="Saturday, 12 Dec 2140" />
           <link rel="icon" href="/noc2.png" />
