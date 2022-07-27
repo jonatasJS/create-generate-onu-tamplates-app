@@ -1,7 +1,11 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import fs from "fs";
+import http from "http";
+import { Transform } from "stream";
 import { motion } from "framer-motion";
+
 import { useUser } from "@auth0/nextjs-auth0";
 import styles from "../styles/Home.module.css";
 
@@ -30,7 +34,8 @@ const Home: NextPage = () => {
               <a target={"_blank"}>Jônatas - NOC 1</a>
             </Link>
           </span>
-        </p><div className={styles.grid}>
+        </p>
+        <div className={styles.grid}>
           <Link href="/furukawa">
             <motion.a
               whileHover={{ scale: 1.1, zIndex: 9999 }}
@@ -83,3 +88,26 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps = async () => {
+
+  var url = "https://api.pikwy.com/web/62e15f91d4a80c046c619809.png";
+
+  http
+    .request(url, function (response) {
+      var data = new Transform();
+
+      response.on("data", function (chunk) {
+        data.push(chunk);
+      });
+
+      response.on("end", function () {
+        fs.writeFileSync(__dirname+"/../public/ogimage.png", data.read());
+      });
+    })
+    .end();
+
+  return {
+    props: {},
+  };
+};
