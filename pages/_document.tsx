@@ -41,7 +41,7 @@ class MyDocument extends Document {
             name="Abstract"
             content="Gerador de template para configuração!"
           />
-          <meta property="og:image" content="ogimage.png" />
+          <meta property="og:image" content="/ogimage.png" />
           <meta name="Revisit-after" content="1 Day" />
           <meta name="expires" content="Saturday, 12 Dec 2140" />
           <link rel="icon" href="/noc2.png" />
