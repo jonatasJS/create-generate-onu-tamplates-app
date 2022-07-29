@@ -196,7 +196,7 @@ export const InputToggleTheme = styled.input`
   height: var(--size);
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
-  color: #696969;
+  color: #efebe6;
   transition: all 500ms;
   z-index: 999;
   position: fixed;

@@ -20,6 +20,7 @@
     "custom-cursor-react": "^1.0.5",
     "framer-motion": "^6.3.10",
     "gsap": "^3.10.4",
+    "local-storage": "^2.0.0",
     "next": "^12.1.7-canary.24",
     "next-auth": "^4.8.0",
     "nprogress": "^0.2.0",

@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { AppProps } from "next/app";
 import Link from "next/link";
 import Head from "next/head";
-import { useUser } from "@auth0/nextjs-auth0";
 import { useRouter } from "next/router";
+import { useUser } from "@auth0/nextjs-auth0";
 import { AnimatePresence, motion } from "framer-motion";
 import { ThemeProvider } from "styled-components";
 import { FaUserAlt as UserIcon } from "react-icons/fa";
+
+import usePersistedState from "../../utils/hooks/usePersistedState";
 
 import { WhatsAppButton } from "../../components/WhatsAppButton";
 import ButtonBack from "../../components/ButtonBack";
@@ -15,7 +18,6 @@ import darkTheme from "../../styles/theme/dark";
 import styles from "../../styles/Home.module.css";
 import styles2 from "../../styles/Parks.module.css";
 import { InputToggleTheme, LoginTheme } from "../../styles/StylesThemes";
-import { AppProps } from "next/app";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -25,7 +27,11 @@ interface LayoutProps {
 const Layout = ({ children, router }: LayoutProps) => {
   const { back } = useRouter();
   const { user, error, isLoading } = useUser();
-  const [theme, setTheme] = useState("dark");
+  const [ theme, setTheme ] = usePersistedState("theme", "dark");
+
+  function toogleTheme() {
+    setTheme(theme === "dark" ? "light" : "dark");
+  }
 
   return (
     <div>
@@ -37,9 +43,7 @@ const Layout = ({ children, router }: LayoutProps) => {
         <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
           <InputToggleTheme
             type="checkbox"
-            onClick={() =>
-              theme == "light" ? setTheme("dark") : setTheme("light")
-            }
+            onClick={toogleTheme}
           />
           {/* <ButtonBack
             isArrow={false}
