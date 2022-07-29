@@ -25,7 +25,7 @@ interface LayoutProps {
 const Layout = ({ children, router }: LayoutProps) => {
   const { back } = useRouter();
   const { user, error, isLoading } = useUser();
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
 
   return (
     <div>
