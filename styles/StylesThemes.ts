@@ -186,6 +186,9 @@ export const LoginTheme = styled.div`
 `;
 
 export const InputToggleTheme = styled.input`
+  --ray-size: calc(var(--size) * -0.4);
+  --offset-orthogonal: calc(var(--size) * 0.65);
+  --offset-diagonal: calc(var(--size) * 0.45);
   --size: 2rem;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -211,11 +214,8 @@ export const InputToggleTheme = styled.input`
     var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
     calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
     var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
-  
+
   &:checked {
-    --ray-size: calc(var(--size) * -0.4);
-    --offset-orthogonal: calc(var(--size) * 0.65);
-    --offset-diagonal: calc(var(--size) * 0.45);
     color: #ffaa00;
     transform: scale(0.75);
     box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
