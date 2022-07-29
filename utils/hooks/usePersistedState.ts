@@ -12,8 +12,8 @@ function usePersistedState<String>(key: string, initialState: string): Response<
 
     if (storageValue) {
       return storageValue;
-    } else {
-      return initialState;
+    } else { 
+      return initialState || 'dark';
     }
   });
 
