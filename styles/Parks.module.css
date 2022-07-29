@@ -43,8 +43,8 @@
   transition: color .1s, -webkit-color .2s, box-shadow .2s, -webkit-box-shadow .2s;
   white-space: nowrap;
   border: 0;
-  user-select: none;
-  -webkit-user-select: none;
+  /* user-select: none;
+  -webkit-user-select: none; */
   touch-action: manipulation;
 }
 

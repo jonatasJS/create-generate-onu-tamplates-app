@@ -8,6 +8,8 @@ declare module 'styled-components' {
       secondary: string;
       selected: string;
       background: string;
+      backgroundInput: string;
+      backgroundButton: string;
       text: string;
     }
   }

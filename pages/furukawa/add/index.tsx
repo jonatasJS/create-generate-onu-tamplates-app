@@ -8,6 +8,7 @@ import { FaServer as OLTIcon } from "react-icons/fa";
 import { AiFillProfile as ProfileIcon } from "react-icons/ai";
 
 import styles from "../../../styles/Parks.module.css";
+import { FurukawaAddTheme } from "../../../styles/StylesThemes";
 
 export default function FurukawaAdd() {
   const [PonNumber, setPonNumber] = useState<number | string>(0 || "");
@@ -32,105 +33,107 @@ export default function FurukawaAdd() {
       <Head>
         <title>Autorizar uma Furukawa</title>
       </Head>
-      <div className={styles.container}>
-        <form onSubmit={generateTamplate} className={styles.main}>
-          <h1 className={styles.title}>Autorizar uma Furukawa</h1>
 
-          <div className={styles.grid}>
-            <div className={styles.contentBox}>
-              {/**
-               * Numero do PON
-               */}
-              <label className={styles.inp}>
-                <input
-                  required
-                  type="number"
-                  value={PonNumber}
-                  onChange={(e) => setPonNumber(parseInt(e.target.value))}
-                  className={styles.inputText}
-                  placeholder="&nbsp;"
-                />
-                <span className={styles.label}>PON</span>
-                <span className={styles.inputIcon}>
-                  <OLTIcon
-                    width={10}
-                    height={10}
-                    style={{
-                      borderRadius: "6px"
-                    }}
+      <FurukawaAddTheme>
+        <div className={styles.container}>
+          <form onSubmit={generateTamplate} className={styles.main}>
+            <h1 className={styles.title}>Autorizar uma Furukawa</h1>
+
+            <div className={styles.grid}>
+              <div className={styles.contentBox}>
+                {/**
+                 * Numero do PON
+                 */}
+                <label className={styles.inp}>
+                  <input
+                    required
+                    type="number"
+                    value={PonNumber}
+                    onChange={(e) => setPonNumber(parseInt(e.target.value))}
+                    className={styles.inputText}
+                    placeholder="&nbsp;"
                   />
-                </span>
-              </label>
-              {/**
-               * Numero do ONU
-               */}
-              <label className={styles.inp}>
-                <input
-                  required
-                  onChange={(e) => setOnuNumber(parseInt(e.target.value))}
-                  type="number"
-                  value={OnuNumber}
-                  className={styles.inputText}
-                  placeholder="&nbsp;"
-                />
-                <span className={styles.label}>ONU</span>
-                <span className={styles.inputIcon}>
-                  <ONUIcon
-                    style={{
-                      height: "2.5rem",
-                      width: "2.5rem",
-                    }}
-                    width={20}
-                    height={20}
+                  <span className={styles.label}>PON</span>
+                  <span className={styles.inputIcon}>
+                    <OLTIcon
+                      width={10}
+                      height={10}
+                      style={{
+                        borderRadius: "6px",
+                      }}
+                    />
+                  </span>
+                </label>
+                {/**
+                 * Numero do ONU
+                 */}
+                <label className={styles.inp}>
+                  <input
+                    required
+                    onChange={(e) => setOnuNumber(parseInt(e.target.value))}
+                    type="number"
+                    value={OnuNumber}
+                    className={styles.inputText}
+                    placeholder="&nbsp;"
                   />
-                </span>
-              </label>
-              {/**
-               * Profile
-               */}
-              <label className={styles.inp}>
-                <input
-                  required
-                  onChange={(e) => setOnuProfile(e.target.value)}
-                  type="text"
-                  value={OnuProfile}
-                  className={styles.inputText}
-                  placeholder="&nbsp;"
-                />
-                <span className={styles.label}>Profile</span>
-                <span className={styles.inputIcon}>
-                  <ProfileIcon
-                    style={{
-                      height: "2.5rem",
-                      width: "2.5rem",
-                      borderRadius: "15px"
-                    }}
-                    width={20}
-                    height={20}
+                  <span className={styles.label}>ONU</span>
+                  <span className={styles.inputIcon}>
+                    <ONUIcon
+                      style={{
+                        height: "2.5rem",
+                        width: "2.5rem",
+                      }}
+                      width={20}
+                      height={20}
+                    />
+                  </span>
+                </label>
+                {/**
+                 * Profile
+                 */}
+                <label className={styles.inp}>
+                  <input
+                    required
+                    onChange={(e) => setOnuProfile(e.target.value)}
+                    type="text"
+                    value={OnuProfile}
+                    className={styles.inputText}
+                    placeholder="&nbsp;"
                   />
-                </span>
-              </label>
+                  <span className={styles.label}>Profile</span>
+                  <span className={styles.inputIcon}>
+                    <ProfileIcon
+                      style={{
+                        height: "2.5rem",
+                        width: "2.5rem",
+                        borderRadius: "15px",
+                      }}
+                      width={20}
+                      height={20}
+                    />
+                  </span>
+                </label>
+              </div>
             </div>
-          </div>
-          <button
-            type="submit"
-            style={
-              statsCopied
-                ? {
-                    backgroundColor: "#00ff00",
-                    color: "#363636",
-                    fontWeight: "bold",
-                  }
-                : {}
-            }
-            className={`${styles.btn} ${styles.btnLogin}`}
-          >
-            {statsCopied ? "Copiado!" : "Gerar Template"}
-          </button>
-        </form>
+            <input
+              type="submit"
+              style={
+                statsCopied
+                  ? {
+                      backgroundColor: "#00ff00",
+                      color: "#363636",
+                      fontWeight: "bold",
+                    }
+                  : {}
+              }
+              className={`${styles.btn} ${styles.btnLogin}`}
+              value={statsCopied ? "Copiado!" : "Gerar Template"}
+            />
+          </form>
 
-        <div></div>
-      </div>
+          <div></div>
+        </div>
+      </FurukawaAddTheme>
     </div>
   );
 }

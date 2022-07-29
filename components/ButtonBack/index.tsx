@@ -24,11 +24,13 @@ export default function ButtonBack({
   console.log(styles.buttonBack);
   return (
     <motion.button
+      type="button"
       onClick={onClick}
       whileHover={{ scale: 1.1, zIndex: 9999 }}
       whileTap={{ scale: 0.9 }}
       className={`${styles.goBackPage} ${!isArrow ? styles.arrow : ""}`}
       style={style}
+      value={value}
     >
       {isArrow && <ArrowLeft width={20} height={20} />} {value || children}
     </motion.button>

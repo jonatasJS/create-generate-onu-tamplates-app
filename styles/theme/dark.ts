@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'dark',
   
@@ -6,6 +7,8 @@ export default {
     secondary: '#36383a',
     selected: '#2196f3',
     background: '#27292a',
+    backgroundInput: '#696969',
+    backgroundButton: '#333637',
     text: '#efebe6',
   },
 };

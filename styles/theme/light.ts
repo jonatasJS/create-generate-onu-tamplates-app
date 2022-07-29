@@ -6,6 +6,8 @@ export default {
     secondary: '#eee',
     selected: '#2196f3',
     background: '#FFF',
+    backgroundInput: '#EEE',
+    backgroundButton: '##f2f2f2',
     text: '#000',
   },
 };

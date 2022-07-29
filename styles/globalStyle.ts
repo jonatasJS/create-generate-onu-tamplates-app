@@ -5,10 +5,24 @@ export default createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    color: ${props => props.theme.colors.text};
-    background-color: ${props => props.theme.colors.background} !important;
+    color: ${(props) => props.theme.colors.text};
+    background-color: ${(props) => props.theme.colors.background} !important;
     font-family: "Ubuntu", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+      
+    transition-property: color, background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+  }
+
+  button {
+    background-color: ${(props) =>
+      props.theme.colors.backgroundButton} !important;
+    color: ${(props) => props.theme.colors.text} !important;
+
+    &:hover {
+      color: ${(props) => props.theme.colors.selected} !important;
+    }
   }
 
   a,
@@ -29,7 +43,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    user-select: none;
+    /* user-select: none; */
     overflow-x: hidden;
   }
 `;
