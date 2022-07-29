@@ -1,12 +1,12 @@
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
 import { get, set } from 'local-storage';
 
-type Response<T> = [
-  String,
-  Dispatch<SetStateAction<String>>,
+type Response<str> = [
+  str,
+  Dispatch<SetStateAction<string>>,
 ];
 
-function usePersistedState<String>(key: string, initialState: string): Response<String> {
+function usePersistedState<String>(key: string, initialState: string): Response<string> {
   const [state, setState] = useState(() => {
     const storageValue: string = get(key);
 

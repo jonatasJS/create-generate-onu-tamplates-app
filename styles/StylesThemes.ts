@@ -196,19 +196,19 @@ export const InputToggleTheme = styled.input`
   height: var(--size);
   box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
   border-radius: 999px;
-  color: #efebe6;
   transition: all 500ms;
+  color: #ffaa00;
   z-index: 999;
   position: fixed;
   margin-top: 1rem;
   left: calc(50% - var(--size) / 2);
-
+  
   &:checked {
     --ray-size: calc(var(--size) * -0.4);
     --offset-orthogonal: calc(var(--size) * 0.65);
     --offset-diagonal: calc(var(--size) * 0.45);
     transform: scale(0.75);
-    color: #ffaa00;
+    color: #efebe6;
     box-shadow: inset 0 0 0 var(--size),
       calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
       var(--offset-orthogonal) 0 0 var(--ray-size),
