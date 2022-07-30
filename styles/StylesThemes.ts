@@ -186,10 +186,10 @@ export const LoginTheme = styled.div`
 `;
 
 export const InputToggleTheme = styled.input`
+  --size: 2rem;
   --ray-size: calc(var(--size) * -0.4);
   --offset-orthogonal: calc(var(--size) * 0.65);
   --offset-diagonal: calc(var(--size) * 0.45);
-  --size: 2rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

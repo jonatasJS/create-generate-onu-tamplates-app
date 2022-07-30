@@ -20,32 +20,30 @@ import styles2 from "../../styles/Parks.module.css";
 import { InputToggleTheme, LoginTheme } from "../../styles/StylesThemes";
 
 interface LayoutProps {
-  children: React.ReactNode;
-  router: AppProps["router"];
+	children: React.ReactNode;
+	router: AppProps["router"];
 }
 
 const Layout = ({ children, router }: LayoutProps) => {
-  const { back } = useRouter();
-  const { user, error, isLoading } = useUser();
-  const [ theme, setTheme ] = usePersistedState("theme", "dark");
+	const { back } = useRouter();
+	const { user, error, isLoading } = useUser();
+	// const [ theme, setTheme ] = usePersistedState("theme", "dark");
+	const [theme, setTheme] = useState("dark");
 
-  function toogleTheme() {
-    setTheme(theme === "dark" ? "light" : "dark");
-  }
+	function toogleTheme() {
+		setTheme(theme === "dark" ? "light" : "dark");
+	}
 
-  return (
-    <div>
-      {router.pathname !== "/" && (
-        <ButtonBack isArrow={true} onClick={back} value="VOLTAR" />
-      )}
+	return (
+		<div>
+			{router.pathname !== "/" && (
+				<ButtonBack isArrow={true} onClick={back} value="VOLTAR" />
+			)}
 
-      <AnimatePresence exitBeforeEnter={true}>
-        <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-          <InputToggleTheme
-            type="checkbox"
-            onClick={toogleTheme}
-          />
-          {/* <ButtonBack
+			<AnimatePresence exitBeforeEnter={true}>
+				<ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
+					<InputToggleTheme type="checkbox" onClick={toogleTheme} />
+					{/* <ButtonBack
             isArrow={false}
             onClick={() =>
               theme == "light" ? setTheme("dark") : setTheme("light")
@@ -62,108 +60,112 @@ const Layout = ({ children, router }: LayoutProps) => {
             >
             {theme.toLocaleUpperCase()}
           </ButtonBack> */}
-          <LoginTheme>
-            <motion.div
-              key={router.pathname}
-              initial="pageInitial"
-              animate="pageAnimate"
-              exit="pageExit"
-              transition={{
-                type: "spring",
-                stiffness: 700,
-                damping: 30,
-              }}
-              variants={{
-                pageInitial: {
-                  opacity: 0,
-                  x: -100,
-                  // scale: 0,
-                },
-                pageAnimate: {
-                  opacity: 1,
-                  x: 0,
-                  // scale: 1,
-                },
-                pageExit: {
-                  opacity: 0,
-                  x: "15vw",
-                  // scale: 0,
-                },
-              }}
-              style={{
-                width: "100vw",
-                height: "97vh",
-                display: "flex",
-                justifyContent: "center",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-            >
-              {isLoading ? (
-                <div
-                  style={{
-                    fontSize: "2rem",
-                    fontWeight: "bold",
-                  }}
-                >
-                  Loading...
-                </div>
-              ) : (
-                <>
-                  {user && (
-                    <motion.div
-                      onClick={() => {
-                        window.location.href = "/profile";
-                      }}
-                      whileHover={{ scale: 1.1, zIndex: 9999 }}
-                      whileTap={{ scale: 0.9 }}
-                      style={{
-                        position: "fixed",
-                        right: "10px",
-                        top: "10px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        cursor: "pointer",
-                        width: "100px",
-                        borderRadius: "50%",
-                        transition: "color border box-shadow 1s linear",
-                      }}
-                    >
-                      <img src={user.picture || ""} alt={user.name || ""} />
-                    </motion.div>
-                  )}
-                  {!user ? (
-                    router.pathname === "/ogimage" ? (
-                      <>{children}</>
-                    ) : (
-                      <Link href="/api/auth/login">
-                        <motion.a
-                          whileHover={{ scale: 1.1, zIndex: 9999 }}
-                          whileTap={{ scale: 0.9 }}
-                          className={styles2.goBackPage}
-                          style={{
-                            position: "fixed",
-                            transition: "color border box-shadow 1s linear",
-                          }}
-                        >
-                          <UserIcon width={20} height={20} /> LOGIN
-                        </motion.a>
-                      </Link>
-                    )
-                  ) : (
-                    children
-                  )}
-                </>
-              )}
-            </motion.div>
-          </LoginTheme>
-        </ThemeProvider>
-      </AnimatePresence>
+					<LoginTheme>
+						<motion.div
+							key={router.pathname}
+							initial="pageInitial"
+							animate="pageAnimate"
+							exit="pageExit"
+							transition={{
+								type: "spring",
+								stiffness: 700,
+								damping: 30,
+							}}
+							variants={{
+								pageInitial: {
+									opacity: 0,
+									x: -100,
+									// scale: 0,
+								},
+								pageAnimate: {
+									opacity: 1,
+									x: 0,
+									// scale: 1,
+								},
+								pageExit: {
+									opacity: 0,
+									x: "15vw",
+									// scale: 0,
+								},
+							}}
+							style={{
+								width: "100vw",
+								height: "97vh",
+								display: "flex",
+								justifyContent: "center",
+								flexDirection: "column",
+								alignItems: "center",
+							}}
+						>
+							{isLoading ? (
+								router.pathname === "/ogimage" ? (
+									<>{children}</>
+								) : (
+									<div
+										style={{
+											fontSize: "2rem",
+											fontWeight: "bold",
+										}}
+									>
+										Loading...
+									</div>
+								)
+							) : (
+								<>
+									{user && (
+										<motion.div
+											onClick={() => {
+												window.location.href = "/profile";
+											}}
+											whileHover={{ scale: 1.1, zIndex: 9999 }}
+											whileTap={{ scale: 0.9 }}
+											style={{
+												position: "fixed",
+												right: "10px",
+												top: "10px",
+												display: "flex",
+												alignItems: "center",
+												justifyContent: "center",
+												cursor: "pointer",
+												width: "100px",
+												borderRadius: "50%",
+												transition: "color border box-shadow 1s linear",
+											}}
+										>
+											<img src={user.picture || ""} alt={user.name || ""} />
+										</motion.div>
+									)}
+									{!user ? (
+										router.pathname === "/ogimage" ? (
+											<>{children}</>
+										) : (
+											<Link href="/api/auth/login">
+												<motion.a
+													whileHover={{ scale: 1.1, zIndex: 9999 }}
+													whileTap={{ scale: 0.9 }}
+													className={styles2.goBackPage}
+													style={{
+														position: "fixed",
+														transition: "color border box-shadow 1s linear",
+													}}
+												>
+													<UserIcon width={20} height={20} /> LOGIN
+												</motion.a>
+											</Link>
+										)
+									) : (
+										children
+									)}
+								</>
+							)}
+						</motion.div>
+					</LoginTheme>
+				</ThemeProvider>
+			</AnimatePresence>
 
-      <WhatsAppButton />
+			<WhatsAppButton />
 
-      {/* <footer
+			{/* <footer
         style={{ top: "47vw", position: "fixed" }}
         className={styles.footer}
       >
@@ -181,8 +183,8 @@ const Layout = ({ children, router }: LayoutProps) => {
           </a>
         </Link>
       </footer> */}
-    </div>
-  );
+		</div>
+	);
 };
 
 export default Layout;
