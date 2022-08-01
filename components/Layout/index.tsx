@@ -135,26 +135,30 @@ const Layout = ({ children, router }: LayoutProps) => {
 											<img src={user.picture || ""} alt={user.name || ""} />
 										</motion.div>
 									)}
-									{!user ? (
-										router.pathname === "/ogimage" ? (
-											<>{children}</>
-										) : (
-											<Link href="/api/auth/login">
-												<motion.a
-													whileHover={{ scale: 1.1, zIndex: 9999 }}
-													whileTap={{ scale: 0.9 }}
-													className={styles2.goBackPage}
-													style={{
-														position: "fixed",
-														transition: "color border box-shadow 1s linear",
-													}}
-												>
-													<UserIcon width={20} height={20} /> LOGIN
-												</motion.a>
-											</Link>
-										)
-									) : (
-										children
+									{process.env.DEV !== "development" ? children : (
+										<>
+											{!user ? (
+												router.pathname === "/ogimage" || router.pathname === "/t" ? (
+													<>{children}</>
+												) : (
+													<Link href="/api/auth/login">
+														<motion.a
+															whileHover={{ scale: 1.1, zIndex: 9999 }}
+															whileTap={{ scale: 0.9 }}
+															className={styles2.goBackPage}
+															style={{
+																position: "fixed",
+																transition: "color border box-shadow 1s linear",
+															}}
+														>
+															<UserIcon width={20} height={20} /> LOGIN
+														</motion.a>
+													</Link>
+												)
+											) : (
+												children
+											)}
+										</>
 									)}
 								</>
 							)}

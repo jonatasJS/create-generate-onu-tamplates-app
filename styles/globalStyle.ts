@@ -9,7 +9,7 @@ export default createGlobalStyle`
     background-color: ${(props) => props.theme.colors.background} !important;
     font-family: "Ubuntu", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-      
+
     transition-property: color, background-color;
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
@@ -17,11 +17,18 @@ export default createGlobalStyle`
 
   button {
     background-color: ${(props) =>
-      props.theme.colors.backgroundButton} !important;
+			props.theme.colors.backgroundButton} !important;
     color: ${(props) => props.theme.colors.text} !important;
+
+    transition-property: color, background-color;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
 
     &:hover {
       color: ${(props) => props.theme.colors.selected} !important;
+			transition-property: color;
+			transition-duration: 0.1s;
+			transition-timing-function: linear;
     }
   }
 

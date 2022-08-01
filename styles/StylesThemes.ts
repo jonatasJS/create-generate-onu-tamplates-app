@@ -77,8 +77,10 @@ export const FurukawaRemoveTheme = styled.div`
 
 	label {
 		transition: transform 0.2s linear, top 0.2s linear;
+
 		input {
 			background-color: ${(e) => e.theme.colors.backgroundInput} !important;
+			color: ${(e) => e.theme.colors.text} !important;
 
 			transition-property: color, background-color;
 			transition-duration: 0.3s;
@@ -104,7 +106,7 @@ export const FurukawaAddTheme = styled.div`
 	transition-duration: 0.3s;
 	transition-timing-function: ease-in-out;
 
-	H1 {
+	h1 {
 		color: ${(props) => props.theme.colors.text};
 
 		transition-property: color, background-color;
@@ -115,6 +117,7 @@ export const FurukawaAddTheme = styled.div`
 	label {
 		input {
 			background-color: ${(e) => e.theme.colors.backgroundInput} !important;
+			color: ${(e) => e.theme.colors.text} !important;
 
 			transition-property: color, background-color;
 			transition-duration: 0.3s;
@@ -138,7 +141,7 @@ export const FormatTheme = styled.div`
 	transition-duration: 0.3s;
 	transition-timing-function: ease-in-out;
 
-	H1 {
+	h1 {
 		color: ${(props) => props.theme.colors.text};
 
 		transition-property: color, background-color;
@@ -149,6 +152,7 @@ export const FormatTheme = styled.div`
 	label {
 		input {
 			background-color: ${(e) => e.theme.colors.backgroundInput} !important;
+			color: ${(e) => e.theme.colors.text} !important;
 
 			transition-property: color, background-color;
 			transition-duration: 0.3s;
@@ -199,8 +203,8 @@ export const InputToggleTheme = styled.input`
 	height: var(--size);
 	border-radius: 999px;
 	transition: all 500ms;
-	color: #efebe6;
 	z-index: 999;
+	color: #ffaa00;
 	position: fixed;
 	margin-top: 1rem;
 	left: calc(50% - var(--size) / 2);
@@ -215,9 +219,9 @@ export const InputToggleTheme = styled.input`
 		calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
 		var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
 
-	&:checked {
-		transform: scale(0.75);
-		color: #ffaa00;
+		&:checked {
+			transform: scale(0.75);
+			color: #333637;
 		box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
 	}
 `;
