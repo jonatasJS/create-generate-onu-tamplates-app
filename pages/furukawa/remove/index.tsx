@@ -107,7 +107,7 @@ export default function remove() {
 						/>
 					</form>
 
-					{DATA && (
+					{/* {DATA && (
 						<div
 							style={{
 								height: "61%",
@@ -129,7 +129,7 @@ export default function remove() {
 								);
 							})}
 						</div>
-					)}
+					)} */}
 
 					{/* {DATA.map(({ onu, pon, id }) => {
 						console.log({ onu, pon, id });
