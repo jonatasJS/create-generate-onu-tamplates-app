@@ -207,6 +207,7 @@ export const InputToggleTheme = styled.input`
 	color: #ffaa00;
 	position: fixed;
 	margin-top: 1rem;
+	top: 1.5rem;
 	left: calc(50% - var(--size) / 2);
 	box-shadow: inset 0 0 0 var(--size),
 		calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
