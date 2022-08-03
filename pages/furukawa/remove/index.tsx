@@ -6,7 +6,11 @@ import CopyToClipboard from "copy-to-clipboard";
 import { CgModem as ONUIcon } from "react-icons/cg";
 import { FaServer as OLTIcon } from "react-icons/fa";
 
-import DATA from "./data.json";
+const DATA: [{
+	id: number;
+	pon: string;
+	onu: string;
+}] = require("./data.json");
 
 import styles from "../../../styles/Parks.module.css";
 import { FurukawaRemoveTheme } from "../../../styles/StylesThemes";
@@ -25,6 +29,17 @@ export default function remove() {
 		await CopyToClipboard(template);
 		setStatsCopied(true);
 		setTimeout(() => setStatsCopied(false), 2000);
+	}
+
+	function addToList () {
+		DATA.push({
+			id: DATA?.length + 1,
+			pon: String(PonNumber),
+			onu: String(OnuNumber)
+		});
+
+		setPonNumber("");
+		setOnuNumber("");
 	}
 
 	return (
@@ -90,24 +105,46 @@ export default function remove() {
 								</label>
 							</div>
 						</div>
-						<input
-							type="submit"
-							style={
-								statsCopied
+						<div style={{
+							display: "flex",
+							gap: "1rem",
+						}}>
+							<input
+								type="submit"
+								style={
+									statsCopied
 									? {
-											backgroundColor: "#00ff00",
-											color: "#363636",
-											fontWeight: "bold",
-											animation: "copy .2s ease-in-out",
-									  }
+										backgroundColor: "#00ff00",
+										color: "#363636",
+										fontWeight: "bold",
+										animation: "copy .2s ease-in-out",
+									}
 									: {}
-							}
-							className={`${styles.btn} ${styles.btnLogin}`}
-							value={statsCopied ? "Copiado!" : "Gerar Template"}
-						/>
+								}
+								className={`${styles.btn} ${styles.btnLogin}`}
+								value={statsCopied ? "Copiado!" : "Gerar Template"}
+								/>
+							<input
+								type="button"
+								onClick={addToList}
+								style={
+									statsCopied
+										? {
+												backgroundColor: "##2196f3",
+												fontWeight: "bold",
+												animation: "copy .2s ease-in-out",
+										  }
+										: {
+											backgroundColor: '#00ff00',
+										}
+								}
+								className={`${styles.btn} ${styles.btnLogin}`}
+								value={statsCopied ? "Adicionar!" : "Adicionar na lista"}
+							/>
+						</div>
 					</form>
 
-					{/* {DATA && (
+					{(DATA && process.env.DEV == "development") && (
 						<div
 							style={{
 								height: "61%",
@@ -122,15 +159,28 @@ export default function remove() {
 							<h2 className={styles.title}>Lista</h2>
 							{DATA.map((item, index) => {
 								return (
-									<ul key={index}>
-										<li>{item.pon}</li>
-										<li>{item.onu}</li>
+									<ul
+										style={{
+											border: "1px solid #363636",
+											borderRadius: "5px",
+											padding: "10px",
+											width: "50%",
+											margin: "10px auto",
+										}}
+										key={index}
+									>
+										<li>PON: {item.pon}</li>
+										<li>ONU: {item.onu}</li>
 									</ul>
 								);
 							})}
 						</div>
-					)} */}
+					)}
 
+					{/**
+					 * DEV="development"
+					*/}
+					
 					{/* {DATA.map(({ onu, pon, id }) => {
 						console.log({ onu, pon, id });
 
