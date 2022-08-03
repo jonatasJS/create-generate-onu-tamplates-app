@@ -124,7 +124,7 @@ export default function remove() {
 								className={`${styles.btn} ${styles.btnLogin}`}
 								value={statsCopied ? "Copiado!" : "Gerar Template"}
 								/>
-							<input
+							{process.env.DEV == "development" && (<input
 								type="button"
 								onClick={addToList}
 								style={
@@ -140,7 +140,7 @@ export default function remove() {
 								}
 								className={`${styles.btn} ${styles.btnLogin}`}
 								value={statsCopied ? "Adicionar!" : "Adicionar na lista"}
-							/>
+							/>)}
 						</div>
 					</form>
 
@@ -180,7 +180,7 @@ export default function remove() {
 					{/**
 					 * DEV="development"
 					*/}
-					
+
 					{/* {DATA.map(({ onu, pon, id }) => {
 						console.log({ onu, pon, id });
 
