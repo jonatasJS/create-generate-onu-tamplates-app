@@ -277,6 +277,10 @@
   color: #00000070;
 }
 
+.inputText:focus ~ .inputIcon {
+	color: #2196f3;
+}
+
 .input-icon-password {
   cursor: pointer;
 }
