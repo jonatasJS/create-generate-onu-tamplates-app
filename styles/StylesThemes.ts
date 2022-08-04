@@ -256,6 +256,28 @@ export const ListStyle = styled.div`
 	z-index: 9999;
 	opacity: 0;
 	transform: opacity 1s ease-in-out;
+
+	ul {
+		list-style: none;
+		outline: 1px solid #363636;
+		border-radius: 5px;
+		padding: 10px;
+		width: 50%;
+		margin: 10px auto;
+		cursor: pointer;
+		font-weight: bold;
+
+		li {
+			cursor: pointer;
+		}
+
+		:hover {
+			outline: 3px solid ${(e) => e.theme.colors.selected};
+			color: ${(e) => e.theme.colors.selected};
+			text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px;
+			font-weight: bold;
+		}
+	}
 `;
 
 export const HeaderListStyle = styled.div`

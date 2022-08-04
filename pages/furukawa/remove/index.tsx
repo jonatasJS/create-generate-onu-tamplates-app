@@ -212,13 +212,15 @@ export default function remove() {
 								return (
 									<ul
 										style={{
-											border: "1px solid #363636",
-											borderRadius: "5px",
-											padding: "10px",
 											width: "50%",
 											margin: "10px auto",
+											cursor: "pointer"
 										}}
 										key={index}
+										// ao cliclar no item da lista, ele será excluido
+										onClick={() => {
+											setDATA(DATA.filter((_: any, i: Key | null | undefined) => i !== index));
+										}}
 									>
 										<li>PON: {item.pon}</li>
 										<li>ONU: {item.onu}</li>
