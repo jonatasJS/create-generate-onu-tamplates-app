@@ -8,8 +8,8 @@ export function WhatsAppButton() {
           position: "fixed",
           width: "60px",
           height: "60px",
-          bottom: "115px",
-          right: "45px",
+          bottom: "40px",
+          right: "40px",
           background: "#25D366",
           color: "white",
           borderRadius: "50%",
@@ -20,6 +20,7 @@ export function WhatsAppButton() {
           display: "grid",
           alignItems: "center",
           justifyItems: "center",
+					textDecorationLine: "none",
         }}
         target="_blank"
       >
