@@ -56,8 +56,7 @@ export default function remove() {
 			await CopyToClipboard(template);
 			setStatsCopied(true);
 			setTimeout(() => setStatsCopied(false), 2000);
-		}
-		else {
+		} else {
 			alert("Não há dados para gerar o template!");
 		}
 	}
@@ -144,19 +143,10 @@ export default function remove() {
 							</div>
 						</div>
 						<div
-							style={
-								!(process.env.APPDEV == "development")
-									? {
-											display: "flex",
-											gap: "1rem",
-									  }
-									: {
-											display: "flex",
-											width: "100%",
-											justifyContent: "center",
-											alignItems: "center",
-									  }
-							}
+							style={{
+								display: "flex",
+								gap: "1rem",
+							}}
 						>
 							<input
 								type="submit"
