@@ -21,6 +21,7 @@ export function WhatsAppButton() {
           alignItems: "center",
           justifyItems: "center",
 					textDecorationLine: "none",
+					cursor: "pointer"
         }}
         target="_blank"
       >
