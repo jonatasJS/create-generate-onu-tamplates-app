@@ -89,7 +89,7 @@ const Layout = ({ children, router }: LayoutProps) => {
 								},
 							}}
 							style={{
-								width: "100vw",
+								width: "100%",
 								height: "97vh",
 								display: "flex",
 								justifyContent: "center",

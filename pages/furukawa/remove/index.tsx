@@ -1,42 +1,76 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { useState } from "react";
+import {
+	JSXElementConstructor,
+	Key,
+	ReactElement,
+	ReactFragment,
+	ReactPortal,
+	useState,
+} from "react";
 import Head from "next/head";
 import CopyToClipboard from "copy-to-clipboard";
-import { env } from 'process';
+import { env } from "process";
 
 import { CgModem as ONUIcon } from "react-icons/cg";
 import { FaServer as OLTIcon } from "react-icons/fa";
 
-const DATA: [{
-	id: number;
-	pon: string;
-	onu: string;
-}] = require("./data.json");
+const DATAJ: [
+	{
+		id: number;
+		pon: string;
+		onu: string;
+	}
+] = require("./data.json");
 
 import styles from "../../../styles/Parks.module.css";
-import { FurukawaRemoveTheme } from "../../../styles/StylesThemes";
+import {
+	FurukawaRemoveTheme,
+	HeaderListStyle,
+	ListStyle,
+} from "../../../styles/StylesThemes";
 
 export default function remove() {
 	const [PonNumber, setPonNumber] = useState<number | string>(0 || "");
 	const [OnuNumber, setOnuNumber] = useState<number | string>(0 || "");
 	const [statsCopied, setStatsCopied] = useState(false);
+	const [DATA, setDATA] = useState<any>(DATAJ);
+
+	// Função pra pegar os dados do DATAJ e colocar na string template
+	async function getData(template: string) {
+		await DATAJ.forEach(
+			async (item) =>
+				(template += `en\nconf t\ngpon\ngpon-olt ${item.pon}\nno onu ${item.onu}\nwrite memory\nen\n`)
+		);
+		return template;
+	}
 
 	async function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
-		const template = `en\nconf t\ngpon\ngpon-olt ${PonNumber}\nno onu ${OnuNumber}\nwrite memory\nen\nexit\n\n`;
+		if (DATA.length > 0) {
+			const DataList = await getData("");
+			const template = `${DataList}exit\n\n`;
 
-		setPonNumber("");
-		setOnuNumber("");
-		await CopyToClipboard(template);
-		setStatsCopied(true);
-		setTimeout(() => setStatsCopied(false), 2000);
+			setPonNumber("");
+			setOnuNumber("");
+			setDATA([]);
+			await CopyToClipboard(template);
+			setStatsCopied(true);
+			setTimeout(() => setStatsCopied(false), 2000);
+		}
+		else {
+			alert("Não há dados para gerar o template!");
+		}
 	}
 
-	function addToList () {
+	function addToList() {
+		if (PonNumber === "" || OnuNumber === "") {
+			return;
+		}
+
 		DATA.push({
 			id: DATA?.length + 1,
 			pon: String(PonNumber),
-			onu: String(OnuNumber)
+			onu: String(OnuNumber),
 		});
 
 		setPonNumber("");
@@ -61,7 +95,6 @@ export default function remove() {
 					style={{
 						height: "100%",
 						justifyContent: "space-evenly",
-						position: "relative",
 					}}
 				>
 					<form onSubmit={generateTamplate} className={styles.main}>
@@ -74,7 +107,6 @@ export default function remove() {
 								 */}
 								<label className={styles.inp}>
 									<input
-										required
 										type="number"
 										value={PonNumber}
 										onChange={(e) => setPonNumber(parseInt(e.target.value))}
@@ -91,7 +123,6 @@ export default function remove() {
 								 */}
 								<label className={styles.inp}>
 									<input
-										required
 										onChange={(e) => setOnuNumber(parseInt(e.target.value))}
 										type="number"
 										value={OnuNumber}
@@ -112,31 +143,37 @@ export default function remove() {
 								</label>
 							</div>
 						</div>
-						<div style={(process.env.APPDEV == "development") ? {
-							display: "flex",
-							gap: "1rem",
-						} : {
-							display: "flex",
-							width: "100%",
-							justifyContent: "center",
-							alignItems: "center",
-						}}>
+						<div
+							style={
+								!(process.env.APPDEV == "development")
+									? {
+											display: "flex",
+											gap: "1rem",
+									  }
+									: {
+											display: "flex",
+											width: "100%",
+											justifyContent: "center",
+											alignItems: "center",
+									  }
+							}
+						>
 							<input
 								type="submit"
 								style={
 									statsCopied
-									? {
-										backgroundColor: "#00ff00",
-										color: "#363636",
-										fontWeight: "bold",
-										animation: "copy .2s ease-in-out",
-									}
-									: {}
+										? {
+												backgroundColor: "#00ff00",
+												color: "#363636",
+												fontWeight: "bold",
+												animation: "copy .2s ease-in-out",
+										  }
+										: {}
 								}
 								className={`${styles.btn} ${styles.btnLogin}`}
 								value={statsCopied ? "Copiado!" : "Gerar Template"}
-								/>
-							{process.env.APPDEV == "development" && (<input
+							/>
+							<input
 								type="button"
 								onClick={addToList}
 								style={
@@ -147,29 +184,41 @@ export default function remove() {
 												animation: "copy .2s ease-in-out",
 										  }
 										: {
-											backgroundColor: '#00ff00',
-										}
+												backgroundColor: "#00ff00",
+										  }
 								}
 								className={`${styles.btn} ${styles.btnLogin}`}
 								value={statsCopied ? "Adicionar!" : "Adicionar na lista"}
-							/>)}
+							/>
 						</div>
 					</form>
 
-					{(DATA && process.env.APPDEV == "development") && (
-						<div
-							style={{
-								height: "61%",
-								width: "30%",
-								display: "fixed",
-								position: "absolute",
-								right: "10px",
-								textAlign: "center",
-								zIndex: 9999,
-							}}
-						>
+					<ListStyle
+						style={{
+							position: "absolute",
+							opacity: DATA.length > 0 ? 1 : 0,
+						}}
+					>
+						<HeaderListStyle>
 							<h2 className={styles.title}>Lista</h2>
-							{DATA.map((item, index) => {
+							<button
+								className={styles.clearListBtn}
+								onClick={() => {
+									setDATA([]);
+									setStatsCopied(false);
+								}}
+							>
+								X
+							</button>
+						</HeaderListStyle>
+						{DATA.map(
+							(
+								item: {
+									pon: number | null | undefined;
+									onu: number | null | undefined;
+								},
+								index: Key | null | undefined
+							) => {
 								return (
 									<ul
 										style={{
@@ -185,13 +234,13 @@ export default function remove() {
 										<li>ONU: {item.onu}</li>
 									</ul>
 								);
-							})}
-						</div>
-					)}
+							}
+						)}
+					</ListStyle>
 
 					{/**
 					 * DEV="development"
-					*/}
+					 */}
 
 					{/* {DATA.map(({ onu, pon, id }) => {
 						console.log({ onu, pon, id });
@@ -229,8 +278,7 @@ export default function remove() {
           <Grid>
             <ContentBox>
                <Inp>
-               <InputText
-                 required
+               <InputTex
                  type="number"
                  value={PonNumber}
                  onChange={e => setPonNumber(parseInt(e.target.value))}
@@ -242,8 +290,7 @@ export default function remove() {
                </InputIcon>
              </Inp>
              <Inp>
-               <InputText
-                 required
+               <InputTex
                  onChange={e => setOnuNumber(parseInt(e.target.value))}
                  type="number"
                  value={OnuNumber}
@@ -278,15 +325,13 @@ export default function remove() {
  *
  * <div className={styles.enabled}>
               <label>
-                <input
-                  required ref={inputRef} type="checkbox" />
+                <inpu ref={inputRef} type="checkbox" />
                 <h1>Mudar IP DHCP</h1>
               </label>
             </div>
             <div className={styles.contentBox + ` ${!isChecked ? styles.activeM : ''}`}>
               <label className={styles.inp}>
-                <input
-                  required
+                <inpu
                   disabled={!isChecked}
                   type="text"
                   className={styles.inputText}
@@ -297,8 +342,7 @@ export default function remove() {
                 </span>
               </label>
               <label className={styles.inp}>
-                <input
-                  required
+                <inpu
                   disabled={!isChecked}
                   type="number"
                   className={styles.inputText}
@@ -310,8 +354,7 @@ export default function remove() {
                 </span>
               </label>
               <label className={styles.inp}>
-                <input
-                  required
+                <inpu
                   disabled={!isChecked}
                   type="text"
                   className={styles.inputText}
@@ -323,8 +366,7 @@ export default function remove() {
                 </span>
               </label>
               <label className={styles.inp}>
-                <input
-                  required
+                <inpu
                   disabled={!isChecked}
                   type="text"
                   className={styles.inputText}

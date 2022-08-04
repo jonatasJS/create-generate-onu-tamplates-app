@@ -119,6 +119,8 @@ export const FurukawaAddTheme = styled.div`
 	}
 
 	label {
+		transition: transform 0.2s linear, top 0.2s linear;
+
 		input {
 			background-color: ${(e) => e.theme.colors.backgroundInput} !important;
 			color: ${(e) => e.theme.colors.text} !important;
@@ -138,6 +140,8 @@ export const FurukawaAddTheme = styled.div`
 			transition-property: color, background-color;
 			transition-duration: 0.3s;
 			transition-timing-function: ease-in-out;
+
+			transition: transform 0.1s linear, top 0.1s linear, border 0.1s linear;
 		}
 	}
 `;
@@ -232,5 +236,46 @@ export const InputToggleTheme = styled.input`
 		transform: scale(0.75);
 		color: #333637;
 		box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+	}
+`;
+
+export const ListStyle = styled.div`
+	height: auto;
+	width: 30%;
+	position: absolute;
+	right: 10px;
+	text-align: center;
+	z-index: 9999;
+	opacity: 0;
+	transform: opacity 1s ease-in-out;
+`;
+
+export const HeaderListStyle = styled.div`
+	display: flex;
+	justify-content: center;
+	gap: 5rem;
+	align-items: center;
+	background: ${(props) => props.theme.colors.background} !important;
+	color: ${(props) => props.theme.colors.text} !important;
+
+	h2 {
+		position: fixed;
+	}
+
+	button {
+		background: transparent !important;
+		color: ${(props) => props.theme.colors.text} !important;
+		border: none;
+		border-radius: 999px;
+		transition: all 500ms;
+		z-index: 999;
+		margin-left: 45%;
+		margin-bottom: 3%;
+		font-size: 1.5rem;
+
+		&:hover {
+			color: ${(props) => props.theme.colors.selected} !important;
+			transition: color 0.1s linear;
+		}
 	}
 `;
