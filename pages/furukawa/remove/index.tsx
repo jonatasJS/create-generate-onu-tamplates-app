@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Head from "next/head";
 import CopyToClipboard from "copy-to-clipboard";
+import { env } from 'process';
 
 import { CgModem as ONUIcon } from "react-icons/cg";
 import { FaServer as OLTIcon } from "react-icons/fa";
@@ -41,6 +42,12 @@ export default function remove() {
 		setPonNumber("");
 		setOnuNumber("");
 	}
+
+	console.log("DATA");
+	console.log(DATA);
+	console.log("process.env");
+	console.log(env);
+	console.log(process.env);
 
 	return (
 		<div className={styles.total}>
@@ -105,9 +112,14 @@ export default function remove() {
 								</label>
 							</div>
 						</div>
-						<div style={{
+						<div style={(process.env.APPDEV == "development") ? {
 							display: "flex",
 							gap: "1rem",
+						} : {
+							display: "flex",
+							width: "100%",
+							justifyContent: "center",
+							alignItems: "center",
 						}}>
 							<input
 								type="submit"
@@ -124,7 +136,7 @@ export default function remove() {
 								className={`${styles.btn} ${styles.btnLogin}`}
 								value={statsCopied ? "Copiado!" : "Gerar Template"}
 								/>
-							{process.env.DEV == "development" && (<input
+							{process.env.APPDEV == "development" && (<input
 								type="button"
 								onClick={addToList}
 								style={
@@ -144,7 +156,7 @@ export default function remove() {
 						</div>
 					</form>
 
-					{(DATA && process.env.DEV == "development") && (
+					{(DATA && process.env.APPDEV == "development") && (
 						<div
 							style={{
 								height: "61%",

@@ -85,6 +85,10 @@ export const FurukawaRemoveTheme = styled.div`
 			transition-property: color, background-color;
 			transition-duration: 0.3s;
 			transition-timing-function: ease-in-out;
+
+			::placeholder {
+				color: ${(e) => e.theme.colors.text} !important;
+			}
 		}
 
 		span {
@@ -122,6 +126,10 @@ export const FurukawaAddTheme = styled.div`
 			transition-property: color, background-color;
 			transition-duration: 0.3s;
 			transition-timing-function: ease-in-out;
+
+			::placeholder {
+				color: ${(e) => e.theme.colors.text} !important;
+			}
 		}
 
 		span {
@@ -220,9 +228,9 @@ export const InputToggleTheme = styled.input`
 		calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
 		var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
 
-		&:checked {
-			transform: scale(0.75);
-			color: #333637;
+	&:checked {
+		transform: scale(0.75);
+		color: #333637;
 		box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
 	}
 `;

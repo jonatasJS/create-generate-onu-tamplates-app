@@ -13,7 +13,7 @@
 }
 
 .arrow {
-  
+
 }
 
 .arrow:hover {
@@ -209,6 +209,10 @@
 .inputText:focus {
   outline-color: #2196f3;
   box-shadow: inset 0 0 1px 3px #2196f3;
+}
+
+.inputText:focus-visible {
+	outline: none;
 }
 
 .btn {
