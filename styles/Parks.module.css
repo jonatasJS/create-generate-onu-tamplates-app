@@ -241,6 +241,10 @@
 	background: #2180f9;
 }
 
+.btnLogin:nth-child(2):hover {
+	background-color: #00c500 !important;
+}
+
 .inp {
 	position: relative;
 }

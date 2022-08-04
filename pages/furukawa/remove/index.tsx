@@ -174,7 +174,7 @@ export default function remove() {
 												animation: "copy .2s ease-in-out",
 										  }
 										: {
-												backgroundColor: "#00ff00",
+												backgroundColor: "#25D366",
 										  }
 								}
 								className={`${styles.btn} ${styles.btnLogin}`}

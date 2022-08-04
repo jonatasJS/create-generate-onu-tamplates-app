@@ -39,11 +39,14 @@ export default createGlobalStyle`
   h3,
   span,
   input[type="number"],
+	input[type=number]::-webkit-inner-spin-button,
   input::-webkit-outer-spin-button,
-  input::-webkit-inner-spin-button {
+  input::-webkit-inner-spin-butto {
     text-decoration: none;
     -webkit-appearance: none;
     overflow-y: hidden;
+   -moz-appearance: textfield;
+   appearance: textfield;
   }
 
   * {

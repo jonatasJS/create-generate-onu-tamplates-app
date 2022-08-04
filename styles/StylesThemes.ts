@@ -89,6 +89,13 @@ export const FurukawaRemoveTheme = styled.div`
 			::placeholder {
 				color: ${(e) => e.theme.colors.text} !important;
 			}
+
+		}
+		
+		input:nth-child(2) {
+			&:hover {
+				background-color: #008200 !important;
+			}
 		}
 
 		span {
