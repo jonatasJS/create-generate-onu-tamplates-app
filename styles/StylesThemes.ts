@@ -191,6 +191,12 @@ export const LoginTheme = styled.div`
 	transition-duration: 0.3s;
 	transition-timing-function: ease-in-out;
 
+	div[title="Perfil"] {
+		:hover {
+			outline: ${(props) => props.theme.colors.primary} solid 1px;
+		}
+	}
+
 	a {
 		color: ${(props) => props.theme.colors.text};
 		background: ${(props) => props.theme.colors.backgroundButton} !important;

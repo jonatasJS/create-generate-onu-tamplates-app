@@ -112,11 +112,12 @@ const Layout = ({ children, router }: LayoutProps) => {
 								)
 							) : (
 								<>
-									{user && (
+									{(user && router.pathname !== '/profile') && (
 										<motion.div
 											onClick={() => {
 												window.location.href = "/profile";
 											}}
+											title="Perfil"
 											whileHover={{ scale: 1.1, zIndex: 9999 }}
 											whileTap={{ scale: 0.9 }}
 											style={{
