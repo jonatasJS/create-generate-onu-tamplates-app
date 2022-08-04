@@ -15,25 +15,35 @@ export const HomeTheme = styled.div`
 		transition-timing-function: ease-in-out;
 
 		a {
+			background-color: transparent !important;
 			color: ${(props) => props.theme.colors.selected};
 		}
 	}
 
-	p span {
-		background: ${(props) => props.theme.colors.secondary};
+	p {
+		span {
+			background: ${(props) => props.theme.colors.secondary};
+			border: 0;
+			margin: 0;
+			border-radius: 15px;
 
+			a {
+				cursor: pointer;
+				padding: 2rem .1rem;
+				color: ${(props) => props.theme.colors.selected};
+			}
+		}
+	}
+
+	div {
 		a {
-			color: ${(props) => props.theme.colors.selected};
-		}
-	}
+			background-color: ${(props) =>
+				props.theme.colors.backgroundButton} !important;
+			border: solid ${(props) => props.theme.colors.backgroundInput} 1px;
 
-	div a {
-		background-color: ${(props) =>
-			props.theme.colors.backgroundButton} !important;
-		border: solid ${(props) => props.theme.colors.backgroundInput} 1px;
-
-		&:hover {
-			color: ${(props) => props.theme.colors.selected} !important;
+			&:hover {
+				color: ${(props) => props.theme.colors.selected} !important;
+			}
 		}
 	}
 `;
@@ -89,9 +99,8 @@ export const FurukawaRemoveTheme = styled.div`
 			::placeholder {
 				color: ${(e) => e.theme.colors.text} !important;
 			}
-
 		}
-		
+
 		input:nth-child(2) {
 			&:hover {
 				background-color: #008200 !important;

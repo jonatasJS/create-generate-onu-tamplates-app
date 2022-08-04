@@ -28,6 +28,7 @@ import {
 	HeaderListStyle,
 	ListStyle,
 } from "../../../styles/StylesThemes";
+import { motion } from "framer-motion";
 
 export default function remove() {
 	const [PonNumber, setPonNumber] = useState<number | string>(0 || "");
@@ -146,9 +147,13 @@ export default function remove() {
 							style={{
 								display: "flex",
 								gap: "1rem",
+								width: "100%",
+								height: "100%"
 							}}
 						>
-							<input
+							<motion.input
+								whileHover={{ scale: .9, zIndex: 9999 }}
+								whileTap={{ scale: .7 }}
 								type="submit"
 								style={
 									statsCopied
@@ -163,7 +168,9 @@ export default function remove() {
 								className={`${styles.btn} ${styles.btnLogin}`}
 								value={statsCopied ? "Copiado!" : "Gerar Template"}
 							/>
-							<input
+							<motion.input
+								whileHover={{ scale: .9, zIndex: 9999 }}
+								whileTap={{ scale: .7 }}
 								type="button"
 								onClick={addToList}
 								style={
@@ -214,12 +221,16 @@ export default function remove() {
 										style={{
 											width: "50%",
 											margin: "10px auto",
-											cursor: "pointer"
+											cursor: "pointer",
 										}}
 										key={index}
 										// ao cliclar no item da lista, ele será excluido
 										onClick={() => {
-											setDATA(DATA.filter((_: any, i: Key | null | undefined) => i !== index));
+											setDATA(
+												DATA.filter(
+													(_: any, i: Key | null | undefined) => i !== index
+												)
+											);
 										}}
 									>
 										<li>PON: {item.pon}</li>
