@@ -45,8 +45,8 @@ export default createGlobalStyle`
     text-decoration: none;
     -webkit-appearance: none;
     overflow-y: hidden;
-   -moz-appearance: textfield;
-   appearance: textfield;
+   -moz-appearance: none;
+   appearance: none;
   }
 
   * {
