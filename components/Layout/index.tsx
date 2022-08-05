@@ -129,7 +129,7 @@ const Layout = ({ children, router }: LayoutProps) => {
 												transition: "color border box-shadow 1s linear",
 											}}
 										>
-											<img src={user.picture || ""} alt={user.name || ""} />
+											<img src={user.picture || "https://random.imagecdn.app/225/225"} alt={user.name || ""} />
 										</motion.div>
 									)}
 									{process.env.DEV !== "development" ? (
