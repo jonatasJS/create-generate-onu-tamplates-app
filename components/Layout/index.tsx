@@ -8,14 +8,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ThemeProvider } from "styled-components";
 import { FaUserAlt as UserIcon } from "react-icons/fa";
 
-import usePersistedState from "../../utils/hooks/usePersistedState";
-
 import { WhatsAppButton } from "../../components/WhatsAppButton";
 import ButtonBack from "../../components/ButtonBack";
 
 import lightTheme from "../../styles/theme/light";
 import darkTheme from "../../styles/theme/dark";
-import styles from "../../styles/Home.module.css";
 import styles2 from "../../styles/Parks.module.css";
 import { InputToggleTheme, LoginTheme } from "../../styles/StylesThemes";
 
@@ -35,14 +32,12 @@ const Layout = ({ children, router }: LayoutProps) => {
 	}
 
 	return (
-		<div>
+		<>
 			{router.pathname !== "/" && (
 				<ButtonBack isArrow={true} onClick={back} value="VOLTAR" />
 			)}
-
 			<AnimatePresence exitBeforeEnter={true}>
 				<ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-					<InputToggleTheme type="checkbox" onClick={toogleTheme} />
 					{/* <ButtonBack
             isArrow={false}
             onClick={() =>
@@ -97,6 +92,7 @@ const Layout = ({ children, router }: LayoutProps) => {
 								alignItems: "center",
 							}}
 						>
+							<InputToggleTheme type="checkbox" onClick={toogleTheme} />
 							{isLoading ? (
 								router.pathname === "/ogimage" ? (
 									<>{children}</>
@@ -112,7 +108,7 @@ const Layout = ({ children, router }: LayoutProps) => {
 								)
 							) : (
 								<>
-									{(user && router.pathname !== '/profile') && (
+									{user && router.pathname !== "/profile" && (
 										<motion.div
 											onClick={() => {
 												window.location.href = "/profile";
@@ -136,10 +132,13 @@ const Layout = ({ children, router }: LayoutProps) => {
 											<img src={user.picture || ""} alt={user.name || ""} />
 										</motion.div>
 									)}
-									{process.env.DEV !== "development" ? children : (
+									{process.env.DEV !== "development" ? (
+										children
+									) : (
 										<>
 											{!user ? (
-												router.pathname === "/ogimage" || router.pathname === "/t" ? (
+												router.pathname === "/ogimage" ||
+												router.pathname === "/t" ? (
 													<>{children}</>
 												) : (
 													<Link href="/api/auth/login">
@@ -188,7 +187,7 @@ const Layout = ({ children, router }: LayoutProps) => {
           </a>
         </Link>
       </footer> */}
-		</div>
+		</>
 	);
 };
 

@@ -10,6 +10,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+	images: {
+    domains: ['random.imagecdn.app'],
+  },
   reactStrictMode: true,
 };
 

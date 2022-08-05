@@ -44,12 +44,13 @@ class MyDocument extends Document {
           <meta property="og:image" content={"https://screenshotify.vercel.app/api/screenshot?url=https://onu.jonatas.app/ogimage&width=1920&height=1080&upload=true&fullpage=true" || "/ogimage.png"} />
           <meta name="Revisit-after" content="1 Day" />
           <meta name="expires" content="Saturday, 12 Dec 2140" />
-          <link rel="icon" href="/noc2.png" />
+          <link rel="icon" href={"https://random.imagecdn.app/225/225" || "/noc2.png"} />
           <script
             async
             src="https://www.googletagmanager.com/gtag/js?id=G-H2B3G6Y4J8"
           ></script>
           <script
+						async
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];
