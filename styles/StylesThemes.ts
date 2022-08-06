@@ -276,7 +276,7 @@ export const ListStyle = styled.div`
 	ul {
 		list-style: none;
 		outline: 1px solid #363636;
-		background-color: ${(props) => props.theme.colors.background};
+		background-color: ${(props) => props.theme.colors.backgroundButton};
 		border-radius: 5px;
 		padding: 10px;
 		width: 50%;
