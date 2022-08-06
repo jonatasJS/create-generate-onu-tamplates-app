@@ -227,6 +227,7 @@ export default function remove() {
 											cursor: "pointer",
 										}}
 										key={index}
+										title={`Remover ${item.pon} - ${item.onu}`}
 										// ao cliclar no item da lista, ele será excluido
 										onClick={() => {
 											setDATA(
@@ -238,6 +239,12 @@ export default function remove() {
 									>
 										<li>PON: {item.pon}</li>
 										<li>ONU: {item.onu}</li>
+
+										<span
+											style={{
+
+											}}
+										>Remover</span>
 									</ListItem>
 								);
 							}

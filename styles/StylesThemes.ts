@@ -282,11 +282,22 @@ export const ListItem = styled(motion.ul)`
 			cursor: pointer;
 		}
 
+		span {
+			color: ${(props) => props.theme.colors.text};
+			background-color: transparent;
+			position: absolute;
+			opacity: 0;
+			transform: opacity 1s ease-in-out;
+		}
+
 		:hover {
 			outline: 3px solid ${(e) => e.theme.colors.selected};
 			color: ${(e) => e.theme.colors.selected};
 			text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px;
 			font-weight: bold;
+		}
+		:hover > span {
+			opacity: 1;
 		}
 `;
 
