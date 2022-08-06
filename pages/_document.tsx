@@ -90,6 +90,8 @@ class MyDocument extends Document {
             rel="stylesheet"
           ></link>
           <link rel="stylesheet" href="/np/np.css" />
+					<script async src="/pwabuilder-sw/pwabuilder-sw-register.js"></script>
+					<script async src="/pwabuilder-sw/pwabuilder-sw.js"></script>
 
           <link
             rel="stylesheet"

@@ -1,18 +1,18 @@
 {
-	"name": "Gerador de template para configuração",
-	"short_name": "Gerador de template",
-	"theme_color": "#2196f3",
-	"background_color": "#2196f3",
-	"display": "standalone",
-	"scope": "/",
-	"start_url": "/?utm_source=homescreen",
-	"lang": "pt-BR",
-	"orientation": "any",
-	"icons": [
-		{
-			"src": "/noc2.png",
-			"sizes": "225x225",
-			"type": "image/png"
-		}
-	]
+  "name": "Gerador de template para configuração",
+  "short_name": "Gerador de template",
+  "theme_color": "#2196f3",
+  "background_color": "#2196f3",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/?utm_source=homescreen",
+  "lang": "pt-BR",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "images/225x225.png",
+      "sizes": "225x225",
+      "type": "image/png"
+    }
+  ]
 }
