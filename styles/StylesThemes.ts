@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const HomeTheme = styled.div`
 	color: ${(props) => props.theme.colors.text} !important;
@@ -47,7 +48,6 @@ export const HomeTheme = styled.div`
 		}
 	}
 `;
-
 export const FurukawaTheme = styled.div`
 	color: ${(props) => props.theme.colors.text} !important;
 
@@ -69,7 +69,6 @@ export const FurukawaTheme = styled.div`
 		border: solid ${(props) => props.theme.colors.backgroundInput} 1px;
 	}
 `;
-
 export const FurukawaRemoveTheme = styled.div`
 	color: ${(props) => props.theme.colors.text} !important;
 
@@ -118,7 +117,6 @@ export const FurukawaRemoveTheme = styled.div`
 		}
 	}
 `;
-
 export const FurukawaAddTheme = styled.div`
 	color: ${(props) => props.theme.colors.text} !important;
 
@@ -161,7 +159,6 @@ export const FurukawaAddTheme = styled.div`
 		}
 	}
 `;
-
 export const FormatTheme = styled.div`
 	color: ${(props) => props.theme.colors.text} !important;
 
@@ -196,7 +193,6 @@ export const FormatTheme = styled.div`
 		}
 	}
 `;
-
 export const LoginTheme = styled.div`
 	color: ${(props) => props.theme.colors.text} !important;
 	background: ${(props) => props.theme.colors.background} !important;
@@ -224,7 +220,6 @@ export const LoginTheme = styled.div`
 		}
 	}
 `;
-
 export const InputToggleTheme = styled.input`
 	--size: 2rem;
 	--ray-size: calc(var(--size) * -0.4);
@@ -262,7 +257,6 @@ export const InputToggleTheme = styled.input`
 		box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
 	}
 `;
-
 export const ListStyle = styled.div`
 	height: auto;
 	width: 30%;
@@ -272,8 +266,8 @@ export const ListStyle = styled.div`
 	z-index: 9999;
 	opacity: 0;
 	transform: opacity 1s ease-in-out;
-
-	ul {
+`;
+export const ListItem = styled(motion.ul)`
 		list-style: none;
 		outline: 1px solid #363636;
 		background-color: ${(props) => props.theme.colors.backgroundButton};
@@ -294,7 +288,6 @@ export const ListStyle = styled.div`
 			text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px;
 			font-weight: bold;
 		}
-	}
 `;
 
 export const HeaderListStyle = styled.div`

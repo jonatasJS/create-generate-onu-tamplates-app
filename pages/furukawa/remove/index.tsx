@@ -26,6 +26,7 @@ import styles from "../../../styles/Parks.module.css";
 import {
 	FurukawaRemoveTheme,
 	HeaderListStyle,
+	ListItem,
 	ListStyle,
 } from "../../../styles/StylesThemes";
 import { motion } from "framer-motion";
@@ -148,12 +149,12 @@ export default function remove() {
 								display: "flex",
 								gap: "1rem",
 								width: "100%",
-								height: "100%"
+								height: "100%",
 							}}
 						>
 							<motion.input
-								whileHover={{ scale: .9, zIndex: 9999 }}
-								whileTap={{ scale: .7 }}
+								whileHover={{ scale: 0.9, zIndex: 9999 }}
+								whileTap={{ scale: 0.7 }}
 								type="submit"
 								style={
 									statsCopied
@@ -169,8 +170,8 @@ export default function remove() {
 								value={statsCopied ? "Copiado!" : "Gerar Template"}
 							/>
 							<motion.input
-								whileHover={{ scale: .9, zIndex: 9999 }}
-								whileTap={{ scale: .7 }}
+								whileHover={{ scale: 0.9, zIndex: 9999 }}
+								whileTap={{ scale: 0.7 }}
 								type="button"
 								onClick={addToList}
 								style={
@@ -217,7 +218,9 @@ export default function remove() {
 								index: Key | null | undefined
 							) => {
 								return (
-									<ul
+									<ListItem
+										whileHover={{ scale: 1.1, zIndex: 9999 }}
+										whileTap={{ scale: 0.9 }}
 										style={{
 											width: "50%",
 											margin: "10px auto",
@@ -235,7 +238,7 @@ export default function remove() {
 									>
 										<li>PON: {item.pon}</li>
 										<li>ONU: {item.onu}</li>
-									</ul>
+									</ListItem>
 								);
 							}
 						)}
