@@ -30,7 +30,10 @@ class MyDocument extends Document {
             content="onu, template, gerar, sim internet, sim, internet"
           />
           <meta name="copyright" content="Next Rockets - 2022" />
-          <meta name="author" content="JÕnatas/Next Rockets" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+					<meta name="theme-color" content="#2196f3"/>
+					<link rel="manifest" href="/manifest.json" />
+          <meta name="author" content="Jônatas/Next Rockets" />
           <meta name="email" content="soaresjonatas398@gmail.com" />
           <meta httpEquiv="content-language" content="PT" />
           <meta name="Charset" content="UTF-8" />
