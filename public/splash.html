@@ -28,6 +28,9 @@
 				const randomImage = `https://unsplash.it/${innerWidth}/${innerHeight}?random=${Math.random()}`;
 				backgoundImage.style.backgroundImage = `url(${randomImage})  no-repeat center center fixed`;
 			};
+
+			getRandomImage();
+			window.addEventListener("load", getRandomImage);
 		</script>
 	</body>
 </html>
