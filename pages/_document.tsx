@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-css-tags */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @next/next/next-script-for-ga */
 /* eslint-disable @next/next/no-title-in-document-head */
