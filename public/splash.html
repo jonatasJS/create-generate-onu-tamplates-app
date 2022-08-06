@@ -1,0 +1,33 @@
+<html>
+	<body>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.background-image {
+				background: url(https://random.imagecdn.app/225/225) no-repeat center
+					center fixed;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+				width: 100vw;
+				height: 100vh;
+			}
+		</style>
+		<!-- random imag backgound	-->
+		<div class="background-image"></div>
+		<script>
+			const backgoundImage = document.querySelector(".background-image");
+			// get window size
+			const { innerWidth, innerHeight } = window;
+			// get random image from unsplash
+			const getRandomImage = () => {
+				const randomImage = `https://unsplash.it/${innerWidth}/${innerHeight}?random=${Math.random()}`;
+				backgoundImage.style.backgroundImage = `url(${randomImage})  no-repeat center center fixed`;
+			};
+		</script>
+	</body>
+</html>

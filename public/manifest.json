@@ -5,9 +5,18 @@
   "background_color": "#27292a",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/?utm_source=homescreen",
+  "start_url": "/",
   "lang": "pt-BR",
   "orientation": "any",
+	"splash_pages": [
+		{
+			"title": "Gerador de template",
+			"background_color": "#27292a",
+			"theme_color": "#2196f3",
+			"orientation": "any",
+			"path": "splash.html"
+		}
+	],
   "icons": [
     {
       "src": "images/225x225.png",
