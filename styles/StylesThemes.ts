@@ -314,7 +314,7 @@ export const HeaderListStyle = styled.div`
 		font-size: 1.5rem;
 
 		&:hover {
-			color: ${(props) => props.theme.colors.selected} !important;
+			color: ${(props) => props.theme.colors.red} !important;
 			transition: color 0.1s linear;
 		}
 	}
