@@ -266,6 +266,7 @@ export const ListStyle = styled.div`
 	z-index: 9999;
 	opacity: 0;
 	transform: opacity 1s ease-in-out;
+	overflow: auto;
 `;
 export const ListItem = styled(motion.ul)`
 		list-style: none;
@@ -277,9 +278,11 @@ export const ListItem = styled(motion.ul)`
 		margin: 10px auto;
 		cursor: pointer;
 		font-weight: bold;
+		overflow: hidden;
 
 		li {
 			cursor: pointer;
+			overflow: hidden;
 		}
 
 		span {
@@ -308,6 +311,7 @@ export const HeaderListStyle = styled.div`
 	align-items: center;
 	background: ${(props) => props.theme.colors.background} !important;
 	color: ${(props) => props.theme.colors.text} !important;
+	overflow: hidden;
 
 	h2 {
 		position: fixed;
