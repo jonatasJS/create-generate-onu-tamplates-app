@@ -14,7 +14,8 @@
 			"background_color": "#27292a",
 			"theme_color": "#2196f3",
 			"orientation": "any",
-			"path": "splash.html"
+			"path": "splash.html",
+			"lang": "pt-BR"
 		}
 	],
   "icons": [
