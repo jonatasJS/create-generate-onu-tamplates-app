@@ -48,7 +48,7 @@ module.exports = withPlugins([
       }
     ],
     register: true,
-    sw: '/sw.js'
+    sw: '/pwabuilder-sw/pwabuilder-sw.js' | 'pwabuilder-sw.js' | '/sw.js'
 
   } }],
   withSVGR,
