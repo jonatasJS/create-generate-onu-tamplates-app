@@ -239,12 +239,6 @@ export default function remove() {
 									>
 										<li>PON: {item.pon}</li>
 										<li>ONU: {item.onu}</li>
-
-										<span
-											style={{
-
-											}}
-										>Remover</span>
 									</ListItem>
 								);
 							}

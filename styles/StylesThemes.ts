@@ -299,9 +299,6 @@ export const ListItem = styled(motion.ul)`
 			text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px;
 			font-weight: bold;
 		}
-		:hover > span {
-			opacity: 1;
-		}
 `;
 
 export const HeaderListStyle = styled.div`
