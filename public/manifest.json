@@ -2,7 +2,7 @@
   "name": "Gerador de template para configuração",
   "short_name": "Gerador de template",
   "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "background_color": "#27292a",
   "display": "standalone",
   "scope": "/",
   "start_url": "/?utm_source=homescreen",
