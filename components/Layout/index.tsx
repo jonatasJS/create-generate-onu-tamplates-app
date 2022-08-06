@@ -132,7 +132,7 @@ const Layout = ({ children, router }: LayoutProps) => {
 											<img src={user.picture || "https://random.imagecdn.app/225/225"} alt={user.name || ""} />
 										</motion.div>
 									)}
-									{process.env.DEV !== "development" ? (
+									{process.env.DEV == "development" ? (
 										children
 									) : (
 										<>
