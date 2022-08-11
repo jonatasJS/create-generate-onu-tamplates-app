@@ -149,12 +149,7 @@ export default function remove(): JSX.Element {
 							</div>
 						</div>
 						<div
-							style={{
-								display: "flex",
-								gap: "1rem",
-								width: "100%",
-								height: "100%",
-							}}
+							className="btns"
 						>
 							<motion.input
 								whileHover={{ scale: 0.9, zIndex: 9999 }}

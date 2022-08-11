@@ -118,6 +118,20 @@ export const FurukawaRemoveTheme = styled.div`
 			transition: transform 0.1s linear, top 0.1s linear, border 0.1s linear;
 		}
 	}
+
+	div {
+		display: "flex";
+		align-items: "center";
+		justify-content: "center";
+		flex-direction: "column";
+		gap: "1rem";
+		width: "100%";
+		height: "100%";
+
+		@media (min-width: 768px) {
+			flex-direction: "row";
+		}
+	}
 `;
 
 export const FurukawaAddTheme = styled.div`
