@@ -205,6 +205,7 @@ export default function remove({ ENV }: { ENV: string }): JSX.Element {
 					>
 						<HeaderListStyle>
 							<h2 className={styles.title}>Lista</h2>
+							<span></span>
 							{/* <button
 								className={styles.clearListBtn}
 								onClick={() => {

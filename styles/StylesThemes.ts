@@ -30,7 +30,7 @@ export const HomeTheme = styled.div`
 
 			a {
 				cursor: pointer;
-				padding: 2rem .1rem;
+				padding: 2rem 0.1rem;
 				color: ${(props) => props.theme.colors.selected};
 			}
 		}
@@ -262,9 +262,9 @@ export const InputToggleTheme = styled.input`
 		color: #333637;
 		box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
 	}
-`; 
+`;
 
-export const ListStyle = styled(motion.div)`
+export const ListStyle = styled.div`
 	height: auto;
 	width: 30%;
 	position: absolute;
@@ -273,27 +273,32 @@ export const ListStyle = styled(motion.div)`
 	z-index: 9999;
 	opacity: 0;
 	transform: opacity 1s ease-in-out;
+`;
 
-	ul {
-		list-style: none;
-		outline: 1px solid #363636;
-		border-radius: 5px;
-		padding: 10px;
-		width: 50%;
-		margin: 10px auto;
+export const ListItem = styled(motion.ul)`
+	list-style: none;
+	outline: 1px solid #363636;
+	border-radius: 5px;
+	padding: 10px;
+	width: 50%;
+	margin: 10px auto;
+	cursor: pointer;
+	font-weight: bold;
+	background-color: ${(props) => props.theme.colors.backgroundButton};
+
+	&:hover {
+		background-color: ${(props) => props.theme.colors.backgroundInput};
+	}
+
+	li {
 		cursor: pointer;
+	}
+
+	:hover {
+		outline: 3px solid ${(e) => e.theme.colors.selected};
+		/* color: ${(e) => e.theme.colors.selected}; */
+		/* text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px; */
 		font-weight: bold;
-
-		li {
-			cursor: pointer;
-		}
-
-		:hover {
-			outline: 3px solid ${(e) => e.theme.colors.selected};
-			color: ${(e) => e.theme.colors.selected};
-			text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px;
-			font-weight: bold;
-		}
 	}
 `;
 
@@ -307,29 +312,12 @@ export const HeaderListStyle = styled.div`
 
 	h2 {
 		position: fixed;
-		margin-right: 5%;
+		margin-bottom: 10%;
 	}
 
-	button {
-		background: transparent !important;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		color: ${(props) => props.theme.colors.text} !important;
-		fill: ${(props) => props.theme.colors.text} !important;
-		border: none;
-		border-radius: 999px;
-		transition: all 500ms;
-		z-index: 999;
-		margin-left: 50%;
+	span {
 		margin-bottom: 5%;
-		font-size: 1.5rem;
-
-		&:hover svg {
-			color: ${(props) => props.theme.colors.selected} !important;
-			fill: ${(props) => props.theme.colors.selected} !important;
-			transform: scale(1.2) rotate(360deg);
-			transition: color 0.1s linear, transform 0.4s ease-in-out;
-		}
+		width: 50%;
+		border-bottom: 1px solid ${(e) => e.theme.colors.backgroundInput};
 	}
 `;
