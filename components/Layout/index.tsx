@@ -47,6 +47,7 @@ const Layout = ({ children, router }: LayoutProps) => {
 			{router.pathname !== "/" && (
 				<ButtonBack isArrow={true} onClick={back} value="VOLTAR" />
 			)}
+			<InputToggleTheme type="checkbox" onClick={toogleTheme} />
 			<AnimatePresence exitBeforeEnter={true}>
 				<ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
 					{/* <ButtonBack
@@ -103,7 +104,6 @@ const Layout = ({ children, router }: LayoutProps) => {
 								alignItems: "center",
 							}}
 						>
-							<InputToggleTheme type="checkbox" onClick={toogleTheme} />
 							{isLoading ? (
 								router.pathname === "/ogimage" ? (
 									<>{children}</>
