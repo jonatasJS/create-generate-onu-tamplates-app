@@ -1,9 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Key, useEffect, useState } from "react";
 import Head from "next/head";
-import CopyToClipboard from "copy-to-clipboard";
 import { motion } from "framer-motion";
-import { NextPageContext } from "next";
 
 import generateTamplateRemove from "../../../utils/functionality/generateTamplateRemove";
 import notify from "../../../utils/functionality/toastify";
@@ -27,7 +25,7 @@ import {
 	ListStyle,
 } from "../../../styles/StylesThemes";
 
-export default function remove({ ENV }: { ENV: string }): JSX.Element {
+export default function remove(): JSX.Element {
 	const [PonNumber, setPonNumber] = useState<number | string>(0 || "");
 	const [OnuNumber, setOnuNumber] = useState<number | string>(0 || "");
 	const [statsCopied, setStatsCopied] = useState(false);
@@ -277,12 +275,3 @@ export default function remove({ ENV }: { ENV: string }): JSX.Element {
 		</div>
 	);
 }
-
-export const getStaticProps = async (ctx: NextPageContext) => {
-	const ENV = process.env.APPDEV;
-	return {
-		props: {
-			ENV,
-		},
-	};
-};
