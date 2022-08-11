@@ -1,0 +1,28 @@
+{
+  "name": "Gerador de template para configuração",
+  "short_name": "Gerador de template",
+  "theme_color": "#2196f3",
+  "background_color": "#27292a",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "lang": "pt-BR",
+  "orientation": "any",
+	"splash_pages": [
+		{
+			"title": "Gerador de template",
+			"background_color": "#27292a",
+			"theme_color": "#2196f3",
+			"orientation": "any",
+			"path": "splash.html",
+			"lang": "pt-BR"
+		}
+	],
+  "icons": [
+    {
+      "src": "images/225x225.png",
+      "sizes": "225x225",
+      "type": "image/png"
+    }
+  ]
+}

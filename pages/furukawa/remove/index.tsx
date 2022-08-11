@@ -238,6 +238,7 @@ export default function remove({ ENV }: { ENV: string }): JSX.Element {
 											cursor: "pointer",
 										}}
 										key={index}
+										title={`Remover ${item.pon} - ${item.onu}`}
 										// ao cliclar no item da lista, ele será excluido
 										onClick={() => {
 											setDATA(

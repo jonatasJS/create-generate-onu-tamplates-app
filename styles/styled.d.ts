@@ -7,6 +7,7 @@ declare module 'styled-components' {
       primary: string;
       secondary: string;
       selected: string;
+			red: string;
       background: string;
       backgroundInput: string;
       backgroundButton: string;

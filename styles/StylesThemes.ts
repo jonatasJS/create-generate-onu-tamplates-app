@@ -30,7 +30,7 @@ export const HomeTheme = styled.div`
 
 			a {
 				cursor: pointer;
-				padding: 2rem 0.1rem;
+				padding: 2rem .1rem;
 				color: ${(props) => props.theme.colors.selected};
 			}
 		}
@@ -264,7 +264,7 @@ export const InputToggleTheme = styled.input`
 	}
 `;
 
-export const ListStyle = styled.div`
+export const ListStyle = styled(motion.div)`
 	height: auto;
 	width: 30%;
 	position: absolute;
@@ -273,27 +273,27 @@ export const ListStyle = styled.div`
 	z-index: 9999;
 	opacity: 0;
 	transform: opacity 1s ease-in-out;
-`;
 
-export const ListItem = styled(motion.ul)`
-	list-style: none;
-	outline: 1px solid #363636;
-	border-radius: 5px;
-	padding: 10px;
-	width: 50%;
-	margin: 10px auto;
-	cursor: pointer;
-	font-weight: bold;
-
-	li {
+	ul {
+		list-style: none;
+		outline: 1px solid #363636;
+		border-radius: 5px;
+		padding: 10px;
+		width: 50%;
+		margin: 10px auto;
 		cursor: pointer;
-	}
-
-	:hover {
-		outline: 3px solid ${(e) => e.theme.colors.selected};
-		color: ${(e) => e.theme.colors.selected};
-		text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px;
 		font-weight: bold;
+
+		li {
+			cursor: pointer;
+		}
+
+		:hover {
+			outline: 3px solid ${(e) => e.theme.colors.selected};
+			color: ${(e) => e.theme.colors.selected};
+			text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px;
+			font-weight: bold;
+		}
 	}
 `;
 
@@ -307,10 +307,10 @@ export const HeaderListStyle = styled.div`
 
 	h2 {
 		position: fixed;
-		/* margin-right: 5%; */
+		margin-right: 5%;
 	}
 
-	/* button {
+	button {
 		background: transparent !important;
 		display: flex;
 		justify-content: center;
@@ -331,5 +331,5 @@ export const HeaderListStyle = styled.div`
 			transform: scale(1.2) rotate(360deg);
 			transition: color 0.1s linear, transform 0.4s ease-in-out;
 		}
-	} */
+	}
 `;
