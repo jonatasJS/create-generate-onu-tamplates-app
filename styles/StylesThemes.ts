@@ -262,7 +262,7 @@ export const InputToggleTheme = styled.input`
 		color: #333637;
 		box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
 	}
-`;
+`; 
 
 export const ListStyle = styled(motion.div)`
 	height: auto;
