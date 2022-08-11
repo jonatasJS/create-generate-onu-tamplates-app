@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const HomeTheme = styled.div`
 	color: ${(props) => props.theme.colors.text} !important;
@@ -29,7 +30,7 @@ export const HomeTheme = styled.div`
 
 			a {
 				cursor: pointer;
-				padding: 2rem .1rem;
+				padding: 2rem 0.1rem;
 				color: ${(props) => props.theme.colors.selected};
 			}
 		}
@@ -272,27 +273,27 @@ export const ListStyle = styled.div`
 	z-index: 9999;
 	opacity: 0;
 	transform: opacity 1s ease-in-out;
+`;
 
-	ul {
-		list-style: none;
-		outline: 1px solid #363636;
-		border-radius: 5px;
-		padding: 10px;
-		width: 50%;
-		margin: 10px auto;
+export const ListItem = styled(motion.ul)`
+	list-style: none;
+	outline: 1px solid #363636;
+	border-radius: 5px;
+	padding: 10px;
+	width: 50%;
+	margin: 10px auto;
+	cursor: pointer;
+	font-weight: bold;
+
+	li {
 		cursor: pointer;
+	}
+
+	:hover {
+		outline: 3px solid ${(e) => e.theme.colors.selected};
+		color: ${(e) => e.theme.colors.selected};
+		text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px;
 		font-weight: bold;
-
-		li {
-			cursor: pointer;
-		}
-
-		:hover {
-			outline: 3px solid ${(e) => e.theme.colors.selected};
-			color: ${(e) => e.theme.colors.selected};
-			text-shadow: ${(e) => e.theme.colors.selected} 0px 0px 10px;
-			font-weight: bold;
-		}
 	}
 `;
 
@@ -306,22 +307,29 @@ export const HeaderListStyle = styled.div`
 
 	h2 {
 		position: fixed;
+		/* margin-right: 5%; */
 	}
 
-	button {
+	/* button {
 		background: transparent !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		color: ${(props) => props.theme.colors.text} !important;
+		fill: ${(props) => props.theme.colors.text} !important;
 		border: none;
 		border-radius: 999px;
 		transition: all 500ms;
 		z-index: 999;
-		margin-left: 45%;
-		margin-bottom: 3%;
+		margin-left: 50%;
+		margin-bottom: 5%;
 		font-size: 1.5rem;
 
-		&:hover {
+		&:hover svg {
 			color: ${(props) => props.theme.colors.selected} !important;
-			transition: color 0.1s linear;
+			fill: ${(props) => props.theme.colors.selected} !important;
+			transform: scale(1.2) rotate(360deg);
+			transition: color 0.1s linear, transform 0.4s ease-in-out;
 		}
-	}
+	} */
 `;

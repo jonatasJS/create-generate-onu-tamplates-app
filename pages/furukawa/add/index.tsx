@@ -7,8 +7,11 @@ import { CgModem as ONUIcon } from "react-icons/cg";
 import { FaServer as OLTIcon } from "react-icons/fa";
 import { AiFillProfile as ProfileIcon } from "react-icons/ai";
 
+import generateTamplateAdd from "../../../utils/functionality/generateTamplateAdd";
+
 import styles from "../../../styles/Parks.module.css";
 import { FurukawaAddTheme } from "../../../styles/StylesThemes";
+import { motion } from "framer-motion";
 
 export default function FurukawaAdd() {
   const [PonNumber, setPonNumber] = useState<number | string>(0 || "");
@@ -16,17 +19,18 @@ export default function FurukawaAdd() {
   const [OnuProfile, setOnuProfile] = useState<string>("");
   const [statsCopied, setStatsCopied] = useState(false);
 
-  async function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const template = `en\nconf t\ngpon\ngpon-olt ${PonNumber}\nonu-profile ${OnuNumber} ${OnuProfile}\nwrite memory\nen\nshow onu ip ${PonNumber} ${OnuNumber}\nshow onu info | grep ${PonNumber} ${OnuNumber}\n\n`;
+  /* async function generateTamplate(e: React.FormEvent<HTMLFormElement>) {
+  //   e.preventDefault();
+  //   const template = `en\nconf t\n
+	// gpon\ngpon-olt ${PonNumber}\nonu-profile ${OnuNumber} ${OnuProfile}\nwrite memory\nen\nshow onu ip ${PonNumber} ${OnuNumber}\nshow onu info | grep ${PonNumber} ${OnuNumber}\n\n`;
 
-    setPonNumber("");
-    setOnuNumber("");
-    setOnuProfile("");
-    await CopyToClipboard(template);
-    setStatsCopied(true);
-    setTimeout(() => setStatsCopied(false), 2000);
-  }
+  //   setPonNumber("");
+  //   setOnuNumber("");
+  //   setOnuProfile("");
+  //   await CopyToClipboard(template);
+  //   setStatsCopied(true);
+  //   setTimeout(() => setStatsCopied(false), 2000);
+  // } */
 
   return (
     <div className={styles.total}>
@@ -36,7 +40,16 @@ export default function FurukawaAdd() {
 
       <FurukawaAddTheme>
         <div className={styles.container}>
-          <form onSubmit={generateTamplate} className={styles.main}>
+          <form onSubmit={e => generateTamplateAdd(e, {
+						PonNumber,
+						OnuNumber,
+						OnuProfile
+					}, {
+						setPonNumber,
+						setOnuNumber,
+						setOnuProfile,
+						setStatsCopied,
+					})} className={styles.main}>
             <h1 className={styles.title}>Autorizar uma Furukawa</h1>
 
             <div className={styles.grid}>
@@ -115,7 +128,9 @@ export default function FurukawaAdd() {
                 </label>
               </div>
             </div>
-            <input
+            <motion.input
+								whileHover={{ scale: 1.1, zIndex: 9999 }}
+								whileTap={{ scale: .9 }}
               type="submit"
               style={
                 statsCopied
@@ -139,7 +154,7 @@ export default function FurukawaAdd() {
 }
 
 /**
- * 
+ *
  * <div className={styles.enabled}>
               <label>
                 <input

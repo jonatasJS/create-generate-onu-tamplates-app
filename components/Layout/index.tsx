@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { AppProps } from "next/app";
 import Link from "next/link";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useUser } from "@auth0/nextjs-auth0";
 import { AnimatePresence, motion } from "framer-motion";
 import { ThemeProvider } from "styled-components";
 import { FaUserAlt as UserIcon } from "react-icons/fa";
+import { ToastContainer } from "react-toastify";
 
 import { WhatsAppButton } from "../../components/WhatsAppButton";
 import ButtonBack from "../../components/ButtonBack";
@@ -33,6 +33,17 @@ const Layout = ({ children, router }: LayoutProps) => {
 
 	return (
 		<>
+			<ToastContainer
+				position="top-right"
+				autoClose={5000}
+				hideProgressBar={false}
+				newestOnTop={false}
+				closeOnClick
+				rtl={false}
+				pauseOnFocusLoss
+				draggable
+				pauseOnHover
+			/>
 			{router.pathname !== "/" && (
 				<ButtonBack isArrow={true} onClick={back} value="VOLTAR" />
 			)}
@@ -129,7 +140,12 @@ const Layout = ({ children, router }: LayoutProps) => {
 												transition: "color border box-shadow 1s linear",
 											}}
 										>
-											<img src={user.picture || "https://random.imagecdn.app/225/225"} alt={user.name || ""} />
+											<img
+												src={
+													user.picture || "https://random.imagecdn.app/225/225"
+												}
+												alt={user.name || ""}
+											/>
 										</motion.div>
 									)}
 									{process.env.DEV !== "development" ? (

@@ -6,7 +6,6 @@ export default function ImagePage() {
   const { height, width } = useWindowDimensions();
 
 	return (
-		console.log(height, width),
 		<div
 			style={{
 				display: "flex",

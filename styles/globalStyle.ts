@@ -15,6 +15,10 @@ export default createGlobalStyle`
     transition-timing-function: ease-in-out;
   }
 
+	div[class="Toastify"] button {
+		background-color: transparent !important;
+	}
+
   button {
     background-color: ${(props) =>
 			props.theme.colors.backgroundButton} !important;
@@ -31,6 +35,26 @@ export default createGlobalStyle`
 			transition-timing-function: linear;
     }
   }
+
+	input[type="submit"] {
+		color: ${(props) => {
+			if(props.theme.title === "light") {
+				return "#fff";
+			}
+			return props.theme.colors.text;
+		}} !important;
+		background-color: ${(props) => props.theme.colors.backgroundButton} !important;
+		text-align: center;
+
+		&:hover {
+			z-index: 999;
+			background-color: ${(props) => props.theme.colors.backgroundInput} !important;
+		}
+
+		@media (max-width: 1068px) {
+			width: 80%;
+		}
+	}
 
   a,
   p,

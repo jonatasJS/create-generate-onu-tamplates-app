@@ -11,8 +11,6 @@ export default function parks() {
     if (inputRef.current) {
       setIsChecked(inputRef.current.checked);
       inputRef.current.addEventListener("click", () => {
-        console.log(inputRef.current);
-        console.log(inputRef.current?.checked);
         setIsChecked(inputRef.current?.checked);
       });
     }
@@ -87,7 +85,7 @@ export default function parks() {
                 </span>
               </label>
             </div>
-            
+
           </div>
           <button className={`${styles.btn} ${styles.btnLogin}`}>Copiar</button>
         </form> */}
@@ -97,7 +95,7 @@ export default function parks() {
 }
 
 /**
- * 
+ *
  * <div className={styles.enabled}>
               <label>
                 <input

@@ -20,8 +20,6 @@ export default function ButtonBack({
   children,
 }: ButtonBackProps) {
 
-  console.log(styles);
-  console.log(styles.buttonBack);
   return (
     <motion.button
       type="button"

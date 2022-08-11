@@ -25,12 +25,12 @@
 .goBackPage a {
 	position: fixed;
 	align-items: center;
-	background-color: #f2f2f2;
+	/* background-color: #f2f2f2; */
 	width: 8rem;
 	border-radius: 12px;
 	box-shadow: #1212121d 0 0 2px .5px, inset #1212121d 0 0 3px .5px, #1212121a 5px 19px 20px;
 	box-sizing: border-box;
-	color: #121212;
+	/* color: #121212; */
 	cursor: pointer;
 	font-family: "Ubuntu", sans-serif;
 	font-size: 1.2rem;
@@ -50,7 +50,7 @@
 
 .goBackPage:hover {
 	box-shadow: #0070f3 0 0 0 3px, transparent 0 0 0 0;
-	color: #0070f3;
+	/* color: #0070f3; */
 }
 
 .goBackPage svg {
@@ -87,6 +87,7 @@
 	justify-content: center;
 	align-items: center;
 	transform: scale(.8, .8);
+	width: 100%;
 }
 
 .grid {
@@ -105,12 +106,12 @@
 }
 
 .grid .card {
-	background-color: #fff !important;
+	/* background-color: #fff !important; */
 }
 
 .contentBox.activeM label .inputText {
-	background-color: rgb(168, 168, 168);
-	color: #ffffff;
+	/* background-color: rgb(168, 168, 168); */
+	/* color: #ffffff; */
 	border: 1px solid #0070f3;
 	font-family: inherit;
 	font-size: 1.8rem;
@@ -231,6 +232,12 @@
 	width: 54%;
 	margin-top: 2rem;
 	box-shadow: 0 5px 5px #00000020;
+
+	transition: color .2s linear,
+							-webkit-color .2s linear,
+							box-shadow .2s linear,
+							-webkit-box-shadow .2s linear,
+							background-color .2s linear;
 }
 
 .btnLogin:active {
@@ -238,7 +245,7 @@
 }
 
 .btnLogin:hover {
-	background: #2180f9;
+	/* background: #2180f9; */
 }
 
 .btnLogin:nth-child(2):hover {
