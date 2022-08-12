@@ -18,7 +18,7 @@ export function WhatsAppButton() {
 					borderRadius: "50%",
 					textAlign: "center",
 					fontSize: "30px",
-					boxShadow: "1.5px 2px 5px 1px #696969",
+					boxShadow: "0 0 10px 2px #00000099",
 					zIndex: 9999,
 					display: "grid",
 					alignItems: "center",
