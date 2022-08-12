@@ -8,7 +8,7 @@ export const HomeTheme = styled.div`
 	transition-duration: 0.3s;
 	transition-timing-function: ease-in-out;
 
-	h1 {
+	main div span h1 {
 		color: ${(props) => props.theme.colors.text};
 
 		transition-property: color, background-color;
@@ -21,22 +21,19 @@ export const HomeTheme = styled.div`
 		}
 	}
 
-	p {
-		span {
-			background: ${(props) => props.theme.colors.secondary};
-			border: 0;
-			margin: 0;
-			border-radius: 15px;
-
-			a {
-				cursor: pointer;
-				padding: 2rem 0.1rem;
-				color: ${(props) => props.theme.colors.selected};
-			}
-		}
+	main div span h1 a[target="_blank"] {
+		background: ${(props) => props.theme.colors.backgroundButton} !important;
+		font-size: 1.5rem;
+		text-align: center;
+		border: 0;
+		margin: 0;
+		border-radius: 15px;
+		cursor: pointer;
+		padding: 2rem 0.1rem;
+		color: ${(props) => props.theme.colors.selected};
 	}
 
-	div {
+	main div {
 		a {
 			background-color: ${(props) =>
 				props.theme.colors.backgroundButton} !important;
@@ -118,19 +115,11 @@ export const FurukawaRemoveTheme = styled.div`
 			transition: transform 0.1s linear, top 0.1s linear, border 0.1s linear;
 		}
 	}
+`;
 
-	div[class="btns"] {
-		display: "flex";
-		align-items: "center";
-		justify-content: "center";
-		flex-direction: "column";
-		gap: "1rem";
-		width: "100%";
-		height: "100%";
-
-		@media (min-width: 768px) {
-			flex-direction: "row";
-		}
+export const Btns = styled.div`
+	@media (min-width: 768px) {
+		flex-direction: "row" !important;
 	}
 `;
 

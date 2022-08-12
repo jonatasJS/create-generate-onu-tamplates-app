@@ -19,6 +19,7 @@ const DATAJ: [
 
 import styles from "../../../styles/Parks.module.css";
 import {
+	Btns,
 	FurukawaRemoveTheme,
 	HeaderListStyle,
 	ListItem,
@@ -148,8 +149,16 @@ export default function remove(): JSX.Element {
 								</label>
 							</div>
 						</div>
-						<div
-							className="btns"
+						<Btns
+							style={{
+								display: "flex",
+								justifyContent: "center",
+								alignItems: "center",
+								flexDirection: "column",
+								gap: "1rem",
+								width: "100%",
+								height: "100%",
+							}}
 						>
 							<motion.input
 								whileHover={{ scale: 0.9, zIndex: 9999 }}
@@ -187,7 +196,7 @@ export default function remove(): JSX.Element {
 								className={`${styles.btn} ${styles.btnLogin}`}
 								value={statsCopied ? "Adicionar!" : "Adicionar na lista"}
 							/>
-						</div>
+						</Btns>
 					</form>
 
 					<ListStyle

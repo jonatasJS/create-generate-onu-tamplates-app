@@ -15,15 +15,13 @@ import lightTheme from "../../styles/theme/light";
 import darkTheme from "../../styles/theme/dark";
 import styles2 from "../../styles/Parks.module.css";
 import { InputToggleTheme, LoginTheme } from "../../styles/StylesThemes";
-import { GetServerSideProps } from "next";
 
 interface LayoutProps {
 	children: React.ReactNode;
 	router: AppProps["router"];
-	dev: string;
 }
 
-const Layout = ({ children, router, dev }: LayoutProps) => {
+const Layout = ({ children, router }: LayoutProps) => {
 	const { back } = useRouter();
 	const { user, error, isLoading } = useUser();
 	// const [ theme, setTheme ] = usePersistedState("theme", "dark");
@@ -32,8 +30,6 @@ const Layout = ({ children, router, dev }: LayoutProps) => {
 	function toogleTheme() {
 		setTheme(theme === "dark" ? "light" : "dark");
 	}
-
-	console.log(dev);
 
 	return (
 		<>
@@ -152,7 +148,7 @@ const Layout = ({ children, router, dev }: LayoutProps) => {
 											/>
 										</motion.div>
 									)}
-									{dev == "development" ? (
+									{process.env.NODE_ENV == "development" ? (
 										children
 									) : (
 										<>
@@ -212,12 +208,3 @@ const Layout = ({ children, router, dev }: LayoutProps) => {
 };
 
 export default Layout;
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-	const dev = process.env.APPDEV;
-	return {
-		props: {
-			dev
-		},
-	};
-}

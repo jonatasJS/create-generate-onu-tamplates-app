@@ -16,9 +16,9 @@ class MyDocument extends Document {
 
 		return initialProps;
 	}
-  render() {
-    return (
-      <Html lang="pt-BR">
+	render() {
+		return (
+			<Html lang="pt-BR">
 				<Head>
 					<title>Gerador de template para configuração!</title>
 					<meta
@@ -55,10 +55,10 @@ class MyDocument extends Document {
 						href={"https://random.imagecdn.app/225/225" || "/noc2.png"}
 					/>
 					<script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-H2B3G6Y4J8"
-          ></script>
-          <script
+						async
+						src="https://www.googletagmanager.com/gtag/js?id=G-H2B3G6Y4J8"
+					></script>
+					<script
 						async
 						src="https://www.googletagmanager.com/gtag/js?id=G-H2B3G6Y4J8"
 					></script>
@@ -72,7 +72,7 @@ class MyDocument extends Document {
                 gtag('js', new Date());
 
                 gtag('config', 'G-H2B3G6Y4J8');
-              `
+              `,
 						}}
 					></script>
 					<script
@@ -99,34 +99,34 @@ class MyDocument extends Document {
 						rel="stylesheet"
 					></link>
 					<link rel="stylesheet" href="/np/np.css" />
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672"
-            crossOrigin="anonymous"
-          ></script>
-          <script
-            async
-            src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          ></script>
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-          />
-          <meta charSet="utf-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
-          <meta name="theme-color" content="#2196f3" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          ></link>
-          <link rel="stylesheet" href="/np/np.css" />
-					<script async src="/pwabuilder-sw/pwabuilder-sw-register.js"></script>
-					<script async src="/pwabuilder-sw/pwabuilder-sw.js"></script>
+					<script
+						async
+						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672"
+						crossOrigin="anonymous"
+					></script>
+					<script
+						async
+						src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+					></script>
+					<link
+						rel="stylesheet"
+						href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+					/>
+					<meta charSet="utf-8" />
+					<meta
+						name="viewport"
+						content="width=device-width, initial-scale=1, shrink-to-fit=no"
+					/>
+					<meta name="theme-color" content="#2196f3" />
+					<link
+						href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+						rel="stylesheet"
+					></link>
+					<link rel="stylesheet" href="/np/np.css" />
+					{/* <script async src="/pwabuilder-sw/pwabuilder-sw-register.js"></script>
+					<script async src="/pwabuilder-sw/pwabuilder-sw.js"></script> */}
 
-<link
+					<link
 						rel="stylesheet"
 						href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 						integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"

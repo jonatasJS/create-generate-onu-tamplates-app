@@ -32,20 +32,14 @@ const Home: NextPage = () => {
 								Gerador de template para <a style="background-color: transparent !important;border: none !important;" onclick="${handleClick}">configuração</a>!
 							</h1>`,
 							`<h1 class="${styles.title}">
-								Qualquer bug ou problema:
-								<span >
-									<a class="${styles.code}" target="_blank" href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20estou%20com%20problema%20no%20gerador%20de%20templates!">
-										Jônatas - NOC 1
-									</a>
-								</span>
+								Qualquer bug ou problema: <a class="${styles.code}" target="_blank" href="https://bit.ly/3QCpUYr">Jônatas - NOC 1</a>
 							</h1>`,
 						],
 						autoStart: true,
 						delay: 51,
-
 						loop: true,
 						deleteSpeed: 0,
-						cursor: '|',
+						cursor: '|'
 					}} />
 
 
