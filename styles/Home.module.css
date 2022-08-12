@@ -52,10 +52,10 @@
 }
 
 .title,
-.description { 
+.description {
   text-align: center;
 
-  
+
 }
 
 .description {
@@ -68,7 +68,7 @@
   color: black;
   background: #fafafa;
   border-radius: 10px;
-  padding: 0.75rem;
+  padding: 0.2rem;
   font-size: 1.25rem;
   font-family: "Inter", Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
@@ -80,7 +80,7 @@
 
 .code:hover,
 .code:focus,
-.code:active 
+.code:active
 .code a:hover,
 .code a:focus,
 .code a:active {

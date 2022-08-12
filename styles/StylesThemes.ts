@@ -119,7 +119,7 @@ export const FurukawaRemoveTheme = styled.div`
 		}
 	}
 
-	div {
+	div[class="btns"] {
 		display: "flex";
 		align-items: "center";
 		justify-content: "center";

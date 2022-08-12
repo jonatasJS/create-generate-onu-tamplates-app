@@ -38,7 +38,7 @@ export default createGlobalStyle`
 
 	input[type="submit"] {
 		color: ${(props) => {
-			if(props.theme.title === "light") {
+			if (props.theme.title === "light") {
 				return "#fff";
 			}
 			return props.theme.colors.text;
@@ -53,6 +53,49 @@ export default createGlobalStyle`
 
 		@media (max-width: 1068px) {
 			width: 80%;
+		}
+	}
+
+	.Typewriter {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		height: 100%;
+		margin-bottom: 4rem;
+
+		.Typewriter__wrapper {
+			text-align: center;
+			display: flex;
+			flex-direction: center;
+			align-items: center;
+			height: 100%;
+			span {
+				background-color: transparent;
+
+				&:hover a {
+					color: ${(props) => props.theme.colors.selected} !important;
+					text-decoration: underline !important;
+				}
+			}
+
+			a {
+				color: ${(props) => props.theme.colors.selected} !important;
+				:hover a {
+					text-decoration: underline !important;
+				}
+			}
+
+			&:hover a {
+				text-decoration: underline !important;
+			}
+		}
+
+		.Typewriter__cursor {
+			transform: scale(1.2) !important;
+			font-size: 2rem;
+			text-align: center;
 		}
 	}
 

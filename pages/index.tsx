@@ -1,17 +1,21 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import fs from "fs";
-import http from "http";
-import { Transform } from "stream";
 import { motion } from "framer-motion";
 import { useUser } from "@auth0/nextjs-auth0";
+import Typewriter from "typewriter-effect";
 
 import { HomeTheme } from "../styles/StylesThemes";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   const { user, error, isLoading } = useUser();
+
+	function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
+		e.stopPropagation();
+		e.preventDefault();
+		// não deixa a pagina recarregar
+	}
 
   return (
     <div className={styles.container}>
@@ -21,22 +25,38 @@ const Home: NextPage = () => {
 
       <HomeTheme>
         <main className={styles.main}>
-          <h1 className={styles.title}>
-            Gerador de template para{" "}
-            <Link href="/">
-              <a>configuração</a>
-            </Link>
-            !
-          </h1>
 
-          <p className={styles.description}>
+					<Typewriter options={{
+						strings: [
+							`<h1 class="${styles.title}">
+								Gerador de template para <a style="background-color: transparent !important;border: none !important;" onclick="${handleClick}">configuração</a>!
+							</h1>`,
+							`<h1 class="${styles.title}">
+								Qualquer bug ou problema:
+								<span >
+									<a class="${styles.code}" target="_blank" href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20estou%20com%20problema%20no%20gerador%20de%20templates!">
+										Jônatas - NOC 1
+									</a>
+								</span>
+							</h1>`,
+						],
+						autoStart: true,
+						delay: 51,
+
+						loop: true,
+						deleteSpeed: 0,
+						cursor: '|',
+					}} />
+
+
+          {/* <p className={styles.description}>
             Qualquer bug ou problema{": "}
             <span className={styles.code}>
               <Link href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20estou%20com%20problema%20no%20gerador%20de%20templates!">
                 <a target={"_blank"}>Jônatas - NOC 1</a>
               </Link>
             </span>
-          </p>
+          </p> */}
           <div className={styles.grid}>
             <Link href="/furukawa">
               <motion.a
