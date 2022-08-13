@@ -77,7 +77,7 @@ class MyDocument extends Document {
 					></script>
 					<script
 						async
-						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672"
+						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4515639184646084"
 						crossOrigin="anonymous"
 					></script>
 					<script
@@ -101,7 +101,7 @@ class MyDocument extends Document {
 					<link rel="stylesheet" href="/np/np.css" />
 					{/* <script
 						async
-						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672"
+						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4515639184646084"
 						crossOrigin="anonymous"
 					></script> */}
 					<script
