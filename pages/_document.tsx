@@ -108,6 +108,11 @@ class MyDocument extends Document {
 						async
 						src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
 					></script>
+					<script
+						async
+						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4515639184646084"
+						crossOrigin="anonymous"
+					></script>
 					<link
 						rel="stylesheet"
 						href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"

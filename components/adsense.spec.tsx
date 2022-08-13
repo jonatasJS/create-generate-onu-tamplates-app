@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
 import { Adsense } from './Ads';
+import Image from 'next/image';
 
 describe('Adsense', () => {
   it('should be instantiable', () => {
@@ -12,7 +13,7 @@ describe('Adsense', () => {
   it('should allow children', () => {
     const { container } = render(
       <Adsense client="123" slot="abc" className="ads-class">
-        <img alt="placeholder" />
+        <Image src="" width={180} height={80} alt="placeholder" />
       </Adsense>,
     );
     expect(container.firstChild).toMatchSnapshot();
