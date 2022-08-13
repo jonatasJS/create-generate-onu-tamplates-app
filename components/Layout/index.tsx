@@ -148,7 +148,7 @@ const Layout = ({ children, router }: LayoutProps) => {
 											/>
 										</motion.div>
 									)}
-									{process.env.NODE_ENV == "development" ? (
+									{/*process.env.NODE_ENV == "development"*/ true ? (
 										children
 									) : (
 										<>
