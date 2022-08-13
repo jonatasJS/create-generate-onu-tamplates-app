@@ -99,11 +99,11 @@ class MyDocument extends Document {
 						rel="stylesheet"
 					></link>
 					<link rel="stylesheet" href="/np/np.css" />
-					<script
+					{/* <script
 						async
 						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672"
 						crossOrigin="anonymous"
-					></script>
+					></script> */}
 					<script
 						async
 						src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
