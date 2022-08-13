@@ -7,12 +7,12 @@ import Image from 'next/image';
 
 describe('Adsense', () => {
   it('should be instantiable', () => {
-    const { container } = render(<Adsense client="123" slot="abc" className="ads-class" />);
+    const { container } = render(<Adsense client="ca-pub-4515639184646084" slot="6793505140" className="ads-class" />);
     expect(container.firstChild).toMatchSnapshot();
   });
   it('should allow children', () => {
     const { container } = render(
-      <Adsense client="123" slot="abc" className="ads-class">
+      <Adsense client="ca-pub-4515639184646084" slot="6793505140" className="ads-class">
         <Image src="" width={180} height={80} alt="placeholder" />
       </Adsense>,
     );
@@ -20,7 +20,7 @@ describe('Adsense', () => {
   });
   it('should call window adsbygoogle', () => {
     (window as any).adsbygoogle = [];
-    render(<Adsense client="123" slot="abc" />);
+    render(<Adsense client="ca-pub-4515639184646084" slot="6793505140" />);
     expect((window as any).adsbygoogle).toHaveLength(1);
     (window as any).adsbygoogle = undefined;
   });
