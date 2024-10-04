@@ -32,7 +32,7 @@ const Home: NextPage = () => {
 								Gerador de template para <a style="background-color: transparent !important;border: none !important;" onclick="${handleClick}">configuração</a>!
 							</h1>`,
 								`<h1 class="${styles.title}">
-								Qualquer bug ou problema: <a class="${styles.code}" target="_blank" href="https://bit.ly/3QCpUYr">Jônatas - NOC 1</a>
+								Qualquer bug ou problema, contate <a class="${styles.code}" target="_blank" href="https://bit.ly/3QCpUYr">Jônatas</a>
 							</h1>`,
 							],
 							autoStart: true,
