@@ -34,10 +34,6 @@ const Home: NextPage = () => {
 								`<h1 class="${styles.title}">
 								Qualquer bug ou problema: <a class="${styles.code}" target="_blank" href="https://bit.ly/3QCpUYr">Jônatas - NOC 1</a>
 							</h1>`,
-								,
-								`<h1 class="${styles.title}">
-								Quem leu isso é gay
-							</h1>`,
 							],
 							autoStart: true,
 							delay: 51,
