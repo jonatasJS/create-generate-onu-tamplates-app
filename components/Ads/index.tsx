@@ -1,64 +1,50 @@
-import React, { useEffect } from 'react';
+import Script from 'next/script';
+import React, { useEffect } from 'react'
 
-interface Props {
-  className?: string;
-  style?: React.CSSProperties;
-  client: string;
-  slot: string;
-  layout?: string;
-  layoutKey?: string;
-  format?: string;
-  responsive?: string;
-  pageLevelAds?: boolean;
-  adTest?: string;
-  children?: React.ReactNode;
+export type AdsenseTypes = {
+	pId: string;
 }
 
-export function Adsense({
-  className = '',
-  style = { display: 'block' },
-  client,
-  slot,
-  layout = '',
-  layoutKey = '',
-  format = 'auto',
-  responsive = 'false',
-  pageLevelAds = false,
-  adTest,
-  children,
-  ...rest
-}: Props) {
-  useEffect(() => {
-    const p: any = {};
-    if (pageLevelAds) {
-      p.google_ad_client = client;
-      p.enable_page_level_ads = true;
-    }
+export type AdBannerTypes = {
+	dataAdSlot: string;
+	dataAdFormat: string;
+	dataFullWidthResponsive: boolean;
+};
 
-    try {
-      if (typeof window === 'object') {
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(p);
-      }
-    } catch {
-      // Pass
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  return (
-    <ins
-      className={`adsbygoogle ${className}`}
-      style={style}
-      data-ad-client={client}
-      data-ad-slot={slot}
-      data-ad-layout={layout}
-      data-ad-layout-key={layoutKey}
-      data-ad-format={format}
-      data-full-width-responsive={responsive}
-      data-adtest={adTest}
-      {...rest}
-    >
-      {children}
-    </ins>
-  );
+export const AdSense = ({ pId }: AdsenseTypes) => {
+	return (
+		<Script
+			async
+			src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=pub-${pId}`}
+			crossOrigin='anonymous'
+			strategy='afterInteractive'
+		/>
+	)
 }
+
+export const AdBanner = ({
+	dataAdSlot,
+	dataAdFormat,
+	dataFullWidthResponsive,
+}: AdBannerTypes) => {
+	useEffect(() => {
+		try {
+			((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
+				{}
+			);
+		} catch (error: any) {
+			console.log(error.message);
+		}
+	}, []);
+
+	return (
+		<ins
+			className="adsbygoogle"
+			style={{ display: "block" }}
+			data-ad-client="ca-pub-5593915309329672"
+			data-ad-slot={dataAdSlot}
+			data-ad-format={dataAdFormat}
+			data-full-width-responsive={dataFullWidthResponsive.toString()}
+		></ins>
+	);
+};

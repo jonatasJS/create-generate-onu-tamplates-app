@@ -1,20 +1,19 @@
 import "../styles/globals.css";
+import 'react-toastify/dist/ReactToastify.min.css';
+
 import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Router from "next/router";
 import { useRouter } from "next/router";
 import { withPageAuthRequired, UserProvider } from "@auth0/nextjs-auth0";
-import { ToastContainer } from "react-toastify";
-
-import { Adsense } from "../components/Ads";
 
 import NProgress from "nprogress";
 
 import GlobalStyle from "../styles/globalStyle";
-import 'react-toastify/dist/ReactToastify.min.css';
 // import "custom-cursor-react/dist/index.css";
 import Layout from "../components/Layout";
+import { AdSense } from "../components/Ads";
 
 NProgress.configure({
   showSpinner: false,
@@ -60,23 +59,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <Layout router={router}>
         <Head>
           <title>Gerador de template para configuração!</title>
+					<AdSense pId="5593915309329672" />
         </Head>
 
         <GlobalStyle />
 
-        <Adsense client="ca-pub-4515639184646084" slot="7238080479" />
-        {/* <GoogleAdsense
-          adClient={"ca-pub-4515639184646084"}
-          adSlot={"7238080479"}
-        /> */}
-
         <Component {...pageProps} />
-
-        <Adsense client="ca-pub-4515639184646084" slot="1915214729" />
-        {/* <GoogleAdsense
-          adClient={"ca-pub-4515639184646084"}
-          adSlot={"1915214729"}
-        /> */}
       </Layout>
     </UserProvider>
   );

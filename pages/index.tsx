@@ -7,9 +7,10 @@ import Typewriter from "typewriter-effect";
 
 import { HomeTheme } from "../styles/StylesThemes";
 import styles from "../styles/Home.module.css";
+import { AdBanner } from "../components/Ads";
 
 const Home: NextPage = () => {
-  const { user, error, isLoading } = useUser();
+	const { user, error, isLoading } = useUser();
 
 	function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
 		e.stopPropagation();
@@ -17,7 +18,7 @@ const Home: NextPage = () => {
 		// não deixa a pagina recarregar
 	}
 
-  return (
+	return (
 		<div className={styles.container}>
 			<Head>
 				<title>Gerador de template para configuração!</title>
@@ -42,15 +43,7 @@ const Home: NextPage = () => {
 							cursor: "|",
 						}}
 					/>
-
-					{/* <p className={styles.description}>
-            Qualquer bug ou problema{": "}
-            <span className={styles.code}>
-              <Link href="https://api.whatsapp.com/send?phone=5563991321180&text=Ol%C3%A1%2C%20estou%20com%20problema%20no%20gerador%20de%20templates!">
-                <a target={"_blank"}>Jônatas - NOC 1</a>
-              </Link>
-            </span>
-          </p> */}
+					<AdBanner dataAdFormat="auto" dataAdSlot="6553838709" dataFullWidthResponsive />
 					<div className={styles.grid}>
 						<Link href="/furukawa">
 							<motion.a
@@ -98,6 +91,8 @@ const Home: NextPage = () => {
 							</motion.a>
 						</Link>
 					</div>
+
+					<AdBanner dataAdFormat="auto" dataAdSlot="6553838709" dataFullWidthResponsive />
 				</main>
 			</HomeTheme>
 		</div>
