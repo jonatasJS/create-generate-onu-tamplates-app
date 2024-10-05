@@ -111,12 +111,12 @@ class MyDocument extends Document {
 						rel="stylesheet"
 						href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
 					/>
-
 					<AdSense pId="5593915309329672" />
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
+					<AdSense pId="5593915309329672" />
 				</body>
 			</Html>
 		);

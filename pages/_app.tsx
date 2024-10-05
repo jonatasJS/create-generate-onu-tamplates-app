@@ -13,59 +13,61 @@ import NProgress from "nprogress";
 import GlobalStyle from "../styles/globalStyle";
 // import "custom-cursor-react/dist/index.css";
 import Layout from "../components/Layout";
+import { AdSense } from "../components/Ads";
 
 NProgress.configure({
-  showSpinner: false,
-  easing: "ease",
-  speed: 500,
-  trickleSpeed: 200,
-  minimum: 0.1,
-  trickle: true
+	showSpinner: false,
+	easing: "ease",
+	speed: 500,
+	trickleSpeed: 200,
+	minimum: 0.1,
+	trickle: true
 });
 
 Router.events.on("routeChangeStart", () => {
-  NProgress.start();
+	NProgress.start();
 });
 
 Router.events.on("routeChangeComplete", () => {
-  NProgress.done();
+	NProgress.done();
 });
 
 Router.events.on("routeChangeError", () => {
-  NProgress.done();
+	NProgress.done();
 });
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  const { back } = useRouter();
-  const [cursorX, setCursorX] = useState(0);
-  const [cursorY, setCursorY] = useState(0);
+	const { back } = useRouter();
+	const [cursorX, setCursorX] = useState(0);
+	const [cursorY, setCursorY] = useState(0);
 
-  useEffect(() => {
-    window.addEventListener("mousemove", (e: MouseEvent) => {
-      setCursorX(e.clientX);
-      setCursorY(e.clientY);
-    });
-    return () => {
-      window.removeEventListener("mousemove", (e: MouseEvent) => {
-        setCursorX(e.clientX);
-        setCursorY(e.clientY);
-      });
-    };
-  }, [cursorX, cursorY]);
+	useEffect(() => {
+		window.addEventListener("mousemove", (e: MouseEvent) => {
+			setCursorX(e.clientX);
+			setCursorY(e.clientY);
+		});
+		return () => {
+			window.removeEventListener("mousemove", (e: MouseEvent) => {
+				setCursorX(e.clientX);
+				setCursorY(e.clientY);
+			});
+		};
+	}, [cursorX, cursorY]);
 
-  return (
-    <UserProvider>
-      <Layout router={router}>
-        <Head>
-          <title>Gerador de template para configuração!</title>
-        </Head>
+	return (
+		<UserProvider>
+			<Layout router={router}>
+				<Head>
+					<title>Gerador de template para configuração!</title>
+					<AdSense pId="5593915309329672" />
+				</Head>
 
-        <GlobalStyle />
+				<GlobalStyle />
 
-        <Component {...pageProps} />
-      </Layout>
-    </UserProvider>
-  );
+				<Component {...pageProps} />
+			</Layout>
+		</UserProvider>
+	);
 }
 
 export default MyApp;
