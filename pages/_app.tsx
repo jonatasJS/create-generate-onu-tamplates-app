@@ -13,7 +13,6 @@ import NProgress from "nprogress";
 import GlobalStyle from "../styles/globalStyle";
 // import "custom-cursor-react/dist/index.css";
 import Layout from "../components/Layout";
-import { AdSense } from "../components/Ads";
 
 NProgress.configure({
   showSpinner: false,
@@ -59,7 +58,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <Layout router={router}>
         <Head>
           <title>Gerador de template para configuração!</title>
-					<AdSense pId="5593915309329672" />
         </Head>
 
         <GlobalStyle />

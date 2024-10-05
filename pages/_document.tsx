@@ -9,6 +9,7 @@ import Document, {
 	Main,
 	NextScript,
 } from "next/document";
+import { AdSense } from "../components/Ads";
 
 class MyDocument extends Document {
 	static async getInitialProps(ctx: DocumentContext) {
@@ -75,15 +76,6 @@ class MyDocument extends Document {
               `,
 						}}
 					></script>
-					<script
-						async
-						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4515639184646084"
-						crossOrigin="anonymous"
-					></script>
-					<script
-						async
-						src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-					></script>
 					<link
 						rel="stylesheet"
 						href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
@@ -94,25 +86,7 @@ class MyDocument extends Document {
 						content="width=device-width, initial-scale=1, shrink-to-fit=no"
 					/>
 					<meta name="theme-color" content="#2196f3" />
-					<link
-						href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-						rel="stylesheet"
-					></link>
 					<link rel="stylesheet" href="/np/np.css" />
-					{/* <script
-						async
-						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4515639184646084"
-						crossOrigin="anonymous"
-					></script> */}
-					<script
-						async
-						src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-					></script>
-					<script
-						async
-						src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4515639184646084"
-						crossOrigin="anonymous"
-					></script>
 					<link
 						rel="stylesheet"
 						href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
@@ -123,10 +97,6 @@ class MyDocument extends Document {
 						content="width=device-width, initial-scale=1, shrink-to-fit=no"
 					/>
 					<meta name="theme-color" content="#2196f3" />
-					<link
-						href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-						rel="stylesheet"
-					></link>
 					<link rel="stylesheet" href="/np/np.css" />
 					{/* <script async src="/pwabuilder-sw/pwabuilder-sw-register.js"></script>
 					<script async src="/pwabuilder-sw/pwabuilder-sw.js"></script> */}
@@ -141,6 +111,8 @@ class MyDocument extends Document {
 						rel="stylesheet"
 						href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
 					/>
+
+					<AdSense pId="5593915309329672" />
 				</Head>
 				<body>
 					<Main />
