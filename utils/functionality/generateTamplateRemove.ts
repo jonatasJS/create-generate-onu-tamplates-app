@@ -2,8 +2,8 @@ import CopyToClipboard from "copy-to-clipboard";
 import notify from "../../utils/functionality/toastify";
 
 interface Vars {
-	PonNumber: number | string;
-	OnuNumber: number | string;
+	PonNumber: number;
+	OnuNumber: number;
 	DATA: Array<{
 		id: number;
 		pon: string;

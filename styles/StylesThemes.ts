@@ -36,7 +36,7 @@ export const HomeTheme = styled.div`
 	main div {
 		a {
 			background-color: ${(props) =>
-				props.theme.colors.backgroundButton} !important;
+		props.theme.colors.backgroundButton} !important;
 			border: solid ${(props) => props.theme.colors.backgroundInput} 1px;
 
 			&:hover {
@@ -63,7 +63,7 @@ export const FurukawaTheme = styled.div`
 
 	div a {
 		background-color: ${(props) =>
-			props.theme.colors.backgroundButton} !important;
+		props.theme.colors.backgroundButton} !important;
 		border: solid ${(props) => props.theme.colors.backgroundInput} 1px;
 	}
 `;
@@ -268,19 +268,30 @@ export const InputToggleTheme = styled.input`
 `;
 
 export const ListStyle = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+    justify-content: start;
+		overflow-y: auto;
 	height: auto;
+	max-height: 90%;
+    margin-top: 15%;
 	width: 30%;
 	position: absolute;
 	right: 10px;
 	text-align: center;
-	z-index: 9999;
+	z-index: 4;
 	opacity: 0;
 	transform: opacity 1s ease-in-out;
 `;
 
-export const ListItem = styled(motion.ul)`
+export const ListItem = styled(motion.li)`
+			display: flex;
+			flex-direction: column;
+			width: 90%;
 	list-style: none;
 	outline: 1px solid #363636;
+		overflow: hidden;
 	border-radius: 5px;
 	padding: 10px;
 	width: 50%;
@@ -293,7 +304,7 @@ export const ListItem = styled(motion.ul)`
 		background-color: ${(props) => props.theme.colors.backgroundInput};
 	}
 
-	li {
+	span {
 		cursor: pointer;
 	}
 
@@ -310,7 +321,7 @@ export const HeaderListStyle = styled.div`
 	justify-content: center;
 	gap: 5rem;
 	align-items: center;
-	background: ${(props) => props.theme.colors.background} !important;
+	background: transparent !important;
 	color: ${(props) => props.theme.colors.text} !important;
 
 	h2 {

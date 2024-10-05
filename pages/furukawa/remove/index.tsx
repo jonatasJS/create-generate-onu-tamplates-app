@@ -64,7 +64,7 @@ export default function remove(): JSX.Element {
 	}
 
 	useEffect(() => {
-		if(DATA.length == 0) while (DATAJ.length > 0) {
+		if (DATA.length == 0) while (DATAJ.length > 0) {
 			DATAJ.pop();
 		}
 	}, [DATA]);
@@ -88,8 +88,8 @@ export default function remove(): JSX.Element {
 							generateTamplateRemove(
 								e,
 								{
-									PonNumber,
-									OnuNumber,
+									PonNumber: Number(PonNumber),
+									OnuNumber: Number(OnuNumber),
 									DATA,
 								},
 								{
@@ -167,11 +167,11 @@ export default function remove(): JSX.Element {
 								style={
 									statsCopied
 										? {
-												backgroundColor: "#00ff00",
-												color: "#363636",
-												fontWeight: "bold",
-												animation: "copy .2s ease-in-out",
-										  }
+											backgroundColor: "#00ff00",
+											color: "#363636",
+											fontWeight: "bold",
+											animation: "copy .2s ease-in-out",
+										}
 										: {}
 								}
 								className={`${styles.btn} ${styles.btnLogin}`}
@@ -185,13 +185,13 @@ export default function remove(): JSX.Element {
 								style={
 									statsCopied
 										? {
-												backgroundColor: "##2196f3",
-												fontWeight: "bold",
-												animation: "copy .2s ease-in-out",
-										  }
+											backgroundColor: "##2196f3",
+											fontWeight: "bold",
+											animation: "copy .2s ease-in-out",
+										}
 										: {
-												backgroundColor: "#25D366",
-										  }
+											backgroundColor: "#25D366",
+										}
 								}
 								className={`${styles.btn} ${styles.btnLogin}`}
 								value={statsCopied ? "Adicionar!" : "Adicionar na lista"}
@@ -208,72 +208,52 @@ export default function remove(): JSX.Element {
 						<HeaderListStyle>
 							<h2 className={styles.title}>Lista</h2>
 							<span></span>
-							{/* <button
-								className={styles.clearListBtn}
-								onClick={() => {
-									setDATA([]);
-									setStatsCopied(false);
-								}}
-							>
-								<svg aria-hidden="true" viewBox="0 0 14 16">
-									<path
-										fillRule="evenodd"
-										d="M7.71 8.23l3.75 3.75-1.48 1.48-3.75-3.75-3.75 3.75L1 11.98l3.75-3.75L1 4.48 2.48 3l3.75 3.75L9.98 3l1.48 1.48-3.75 3.75z"
-									></path>
-								</svg>
-							</button> */}
 						</HeaderListStyle>
-						{DATA.map(
-							(
-								item: {
-									pon: number | null | undefined;
-									onu: number | null | undefined;
-								},
-								index: Key | null | undefined
-							) => {
-								return (
-									<ListItem
-										whileHover={{ scale: 1.1, zIndex: 9999 }}
-										whileTap={{ scale: 0.9 }}
-										style={{
-											width: "50%",
-											margin: "10px auto",
-											cursor: "pointer",
-										}}
-										key={index}
-										title={`Remover ${item.pon} - ${item.onu}`}
-										// ao cliclar no item da lista, ele será excluido
-										onClick={() => {
-											setDATA(
-												DATA.filter(
-													(_: any, i: Key | null | undefined) => i !== index
-												)
-											);
-										}}
-									>
-										<li>PON: {item.pon}</li>
-										<li>ONU: {item.onu}</li>
-									</ListItem>
-								);
-							}
-						)}
+						<ul
+							style={{
+								display: 'flex',
+								flexDirection: "column",
+								width: "100%"
+							}}
+						>
+							{DATA.map(
+								(
+									item: {
+										pon: number | null | undefined;
+										onu: number | null | undefined;
+									},
+									index: Key | null | undefined
+								) => {
+									return (
+										<ListItem
+											whileHover={{ scale: 1.1, zIndex: 9999 }}
+											whileTap={{ scale: 0.9 }}
+											style={{
+												width: "50%",
+												margin: "10px auto",
+												cursor: "pointer",
+											}}
+											key={index}
+											title={`Remover ${item.pon} - ${item.onu}`}
+											// ao cliclar no item da lista, ele será excluido
+											onClick={() => {
+												setDATA(
+													DATA.filter(
+														(_: any, i: Key | null | undefined) => i !== index
+													)
+												);
+											}}
+										>
+											<span>PON: {item.pon}</span>
+											<span>ONU: {item.onu}</span>
+										</ListItem>
+									);
+								}
+							)}
+						</ul>
 					</ListStyle>
 
-					{/**
-					 * DEV="development"
-					 */}
 
-					{/* {DATA.map(({ onu, pon, id }) => {
-						console.log({ onu, pon, id });
-
-						return (
-							<ul key={id}>
-								<h3>Item {id}</h3>
-								<li>Pon: {pon}</li>
-								<li>ONU: {onu}</li>
-							</ul>
-						);
-					})} */}
 				</div>
 			</FurukawaRemoveTheme>
 		</div>
