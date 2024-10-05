@@ -40,7 +40,7 @@ export const AdBanner = ({
 	return (
 		<ins
 			className="adsbygoogle"
-			style={{ display: "block" }}
+			style={{ display: "block", height: "auto", width: "auto" }}
 			data-ad-client="ca-pub-5593915309329672"
 			data-ad-slot={dataAdSlot}
 			data-ad-format={dataAdFormat}
