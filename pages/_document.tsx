@@ -113,11 +113,10 @@ class MyDocument extends Document {
 						href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
 					/>
 					<AdSense pId="5593915309329672" />
-					<Script
+					<script
 						async
 						src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672`}
 						crossOrigin='anonymous'
-						strategy='afterInteractive'
 					/>
 				</Head>
 				<body>
@@ -129,7 +128,6 @@ class MyDocument extends Document {
 						async
 						src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672`}
 						crossOrigin='anonymous'
-						strategy='afterInteractive'
 					/>
 				</body>
 			</Html>

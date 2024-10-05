@@ -61,11 +61,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 				<Head>
 					<title>Gerador de template para configuração!</title>
 					<AdSense pId="5593915309329672" />
-					<Script
+					<script
 						async
 						src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672`}
 						crossOrigin='anonymous'
-						strategy='afterInteractive'
 					/>
 				</Head>
 
