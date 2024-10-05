@@ -10,6 +10,7 @@ import Document, {
 	NextScript,
 } from "next/document";
 import { AdSense } from "../components/Ads";
+import Script from "next/script";
 
 class MyDocument extends Document {
 	static async getInitialProps(ctx: DocumentContext) {
@@ -112,11 +113,24 @@ class MyDocument extends Document {
 						href="https://cdn.auth0.com/js/auth0-samples-theme/1.0/css/auth0-theme.min.css"
 					/>
 					<AdSense pId="5593915309329672" />
+					<Script
+						async
+						src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672`}
+						crossOrigin='anonymous'
+						strategy='afterInteractive'
+					/>
 				</Head>
 				<body>
 					<Main />
 					<NextScript />
 					<AdSense pId="5593915309329672" />
+
+					<Script
+						async
+						src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672`}
+						crossOrigin='anonymous'
+						strategy='afterInteractive'
+					/>
 				</body>
 			</Html>
 		);

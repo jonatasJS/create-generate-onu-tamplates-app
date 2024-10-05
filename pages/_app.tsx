@@ -14,6 +14,7 @@ import GlobalStyle from "../styles/globalStyle";
 // import "custom-cursor-react/dist/index.css";
 import Layout from "../components/Layout";
 import { AdSense } from "../components/Ads";
+import Script from "next/script";
 
 NProgress.configure({
 	showSpinner: false,
@@ -60,6 +61,12 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 				<Head>
 					<title>Gerador de template para configuração!</title>
 					<AdSense pId="5593915309329672" />
+					<Script
+						async
+						src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5593915309329672`}
+						crossOrigin='anonymous'
+						strategy='afterInteractive'
+					/>
 				</Head>
 
 				<GlobalStyle />
