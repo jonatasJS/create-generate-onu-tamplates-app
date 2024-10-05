@@ -44,7 +44,7 @@ export const AdBanner = ({
 			data-ad-client="ca-pub-5593915309329672"
 			data-ad-slot={dataAdSlot}
 			data-ad-format={dataAdFormat}
-			data-full-width-responsive={dataFullWidthResponsive.toString()}
+			data-full-width-responsive="true"
 		></ins>
 	);
 };
