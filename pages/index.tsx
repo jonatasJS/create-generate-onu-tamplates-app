@@ -43,7 +43,7 @@ const Home: NextPage = () => {
 							cursor: "|",
 						}}
 					/>
-					<AdBanner dataAdFormat="auto" dataAdSlot="6553838709" dataFullWidthResponsive />
+					<AdBanner dataAdFormat="rectangle" dataAdSlot="6553838709" dataFullWidthResponsive />
 					<div className={styles.grid}>
 						<Link href="/furukawa">
 							<motion.a
@@ -92,7 +92,7 @@ const Home: NextPage = () => {
 						</Link>
 					</div>
 
-					<AdBanner dataAdFormat="auto" dataAdSlot="6553838709" dataFullWidthResponsive />
+					<AdBanner dataAdFormat="rectangle" dataAdSlot="6553838709" dataFullWidthResponsive />
 				</main>
 			</HomeTheme>
 		</div>
